@@ -286,6 +286,163 @@ footer {
     font-size: 0.9rem;
 }
 
+/* Services Section Styling - NEW */
+.services-section {
+    margin-bottom: 4rem;
+}
+
+.service-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.service-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border-top: 3px solid #f4821e;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.card-header i {
+    color: #f4821e;
+    font-size: 1.5rem;
+}
+
+.card-header h3 {
+    color: #fff;
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.card-content .journal-name {
+    color: #61dafb;
+    font-style: italic;
+    margin-bottom: 0.5rem;
+}
+
+.card-content .role-description {
+    color: #a3b3c9;
+    font-size: 0.9rem;
+}
+
+.special-issue-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #f4821e;
+    text-decoration: none;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.special-issue-link:hover {
+    text-decoration: underline;
+}
+
+/* Review Summary Section - NEW */
+.review-summary {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    padding: 2rem;
+}
+
+.review-count {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: #f4821e;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.journals-list h3 {
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.journals-list ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 0.5rem 2rem;
+    list-style: none;
+}
+
+.journals-list li {
+    color: #a3b3c9;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.journals-list li::before {
+    content: "•";
+    color: #f4821e;
+    position: absolute;
+    left: 0;
+}
+
+/* Timeline Section - NEW */
+.timeline {
+    position: relative;
+    padding-left: 2rem;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: rgba(244, 130, 30, 0.3);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 2rem;
+    padding-left: 1.5rem;
+}
+
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -2rem;
+    top: 0.5rem;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background: #f4821e;
+    border: 2px solid #1a1d23;
+}
+
+.timeline-date {
+    color: #f4821e;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-content h3 {
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-content p {
+    color: #a3b3c9;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .main-content {
@@ -303,6 +460,26 @@ footer {
     .nav-links a {
         padding: 0.25rem 0.5rem;
         font-size: 0.9rem;
+    }
+    
+    .service-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .journals-list ul {
+        grid-template-columns: 1fr;
+    }
+    
+    .timeline {
+        padding-left: 1.5rem;
+    }
+    
+    .timeline-item {
+        padding-left: 1rem;
+    }
+    
+    .timeline-item::before {
+        left: -1.5rem;
     }
 }
 
