@@ -5,35 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV - Amar Razzaq</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <div class="header-container">
-            <div class="header-text">
-                <h1>Curriculum Vitae</h1>
-                <h3>Academic and Professional Experience</h3>
-            </div>
-        </div>
+    <header class="top-header">
+        <a href="index.htm" class="logo">
+            <span class="logo-text">Amar Razzaq</span>
+        </a>
+        <nav class="nav-links">
+            <a href="index.htm">About</a>
+            <a href="research.htm">Research</a>
+            <a href="outreach.htm">Outreach</a>
+            <a href="services.htm">Professional Services</a>
+            <a href="cv.htm" class="active">CV</a>
+            <button class="theme-toggle" aria-label="Toggle dark mode">
+                <i class="fas fa-moon"></i>
+            </button>
+        </nav>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="index.htm">About</a></li>
-            <li><a href="research.htm">Research</a></li>
-            <li><a href="outreach.htm">Outreach</a></li>
-            <li><a href="services.htm">Professional Services</a></li>
-            <li><a href="cv.htm">CV</a></li>
-        </ul>
-    </nav>
+    <main class="main-content single-column">
+        <div class="content-section">
+            <h1>Curriculum Vitae</h1>
+            <h2 class="subtitle">Academic and Professional Experience</h2>
 
-    <main>
-        <section>
-            <h2>Download My CV</h2>
-            <p>For a detailed overview of my academic and professional experience, please download my complete CV.</p>
-            <p style="margin-top: 20px;">
-                <a href="cv.pdf" download style="background-color: #ff6600; color: white; padding: 10px 20px; text-decoration: none; border-radius: 4px; display: inline-block;">Download CV (PDF)</a>
-            </p>
-        </section>
+            <section class="cv-section">
+                <div class="cv-download">
+                    <i class="fas fa-file-pdf"></i>
+                    <h3>Download Complete CV</h3>
+                    <p>For a detailed overview of my academic and professional experience, please download my complete CV.</p>
+                    <a href="cv.pdf" download class="download-button">
+                        Download CV (PDF)
+                        <i class="fas fa-download"></i>
+                    </a>
+                </div>
+            </section>
+        </div>
     </main>
 
     <footer>

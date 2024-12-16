@@ -1,3 +1,4 @@
+/* research.htm */
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,59 +9,67 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <!-- Top Navigation -->
-    <div class="top-nav">
+    <header class="top-header">
         <a href="index.htm" class="logo">
-            <img src="images/logo.png" alt="Logo" class="logo-img">
-            <span>Amar Razzaq</span>
+            <span class="logo-text">Amar Razzaq</span>
         </a>
-        <nav>
+        <nav class="nav-links">
             <a href="index.htm">About</a>
-            <a href="research.htm">Research</a>
+            <a href="research.htm" class="active">Research</a>
             <a href="outreach.htm">Outreach</a>
             <a href="services.htm">Professional Services</a>
             <a href="cv.htm">CV</a>
-            <button class="theme-toggle">
+            <button class="theme-toggle" aria-label="Toggle dark mode">
                 <i class="fas fa-moon"></i>
             </button>
         </nav>
-    </div>
+    </header>
 
-    <div class="container">
-        <div class="content">
+    <main class="main-content single-column">
+        <div class="content-section">
             <h1>Research</h1>
-            
-            <p class="research-intro">
-                In general, my research agenda focuses on agricultural sustainability issue in the food system. I believe that my work should not be determined by a fixed set of methods, but by the questions that are relevant and interesting to me and my stakeholders.
-            </p>
+            <h2 class="subtitle">Exploring Agricultural Economics & Environmental Sustainability</h2>
 
-            <div class="publications">
-                <h2 class="section-title">Peer-Reviewed Publications</h2>
-
-                <section class="pub-category">
-                    <h3 class="category-title">Environmental Economics & Water Resources</h3>
-                    <div class="pub-item">
-                        <p>Razzaq, A., Qing, P., Naseer, M. A. u. R., Abid, M., Anwar, M., & Javed, I. (2019). Can the informal groundwater markets improve water use efficiency and equity? Evidence from a semi-arid region of Pakistan. <span class="journal">Science of the Total Environment</span>, 666, 849-857.</p>
-                        <p class="impact">Impact Factor: 9.80 (Q1)</p>
+            <section class="research-section">
+                <h2>Research Directions</h2>
+                <div class="research-areas">
+                    <div class="research-area">
+                        <h3><i class="fas fa-leaf"></i> Environmental Economics</h3>
+                        <p>Focusing on sustainable agricultural practices and their economic implications, including market-based environmental policies and ecosystem services valuation.</p>
                     </div>
-
-                    <div class="pub-item">
-                        <p>Razzaq, A., Liu, H., Xiao, M., Mehmood, K., Shahzad, M. A., & Zhou, Y. (2022). Analyzing past and future trends in Pakistan's groundwater irrigation development: implications for environmental sustainability and food security. <span class="journal">Environmental Science and Pollution Research</span>, 30(12), 35413-35429.</p>
-                        <p class="impact">Impact Factor: 5.80 (Q1)</p>
+                    <div class="research-area">
+                        <h3><i class="fas fa-water"></i> Water Resource Management</h3>
+                        <p>Studying efficient water allocation and conservation strategies in agriculture, with emphasis on sustainable irrigation practices and water markets.</p>
                     </div>
-                </section>
-
-                <section class="pub-category">
-                    <h3 class="category-title">Agricultural Sustainability & Food Systems</h3>
-                    <div class="pub-item">
-                        <p>Chen, T., Razzaq, A., Qing, P., & Cao, B. (2021). Do you bear to reject them? The effect of anthropomorphism on empathy and consumer preference for unattractive produce. <span class="journal">Journal of Retailing and Consumer Services</span>, 61, 102556.</p>
-                        <p class="impact">Impact Factor: 10.40 (Q1)</p>
+                    <div class="research-area">
+                        <h3><i class="fas fa-chart-line"></i> Agricultural Economics and Food Policy</h3>
+                        <p>Analyzing market dynamics and policy impacts on food systems, including food security, supply chain efficiency, and rural development.</p>
                     </div>
-                </section>
+                </div>
+            </section>
 
-                <!-- Add more categories and publications as needed -->
-            </div>
+            <section class="publications-section">
+                <h2>Selected Publications</h2>
+                <div class="publication-list">
+                    <article class="publication">
+                        <h3>Publication Title 1</h3>
+                        <p class="authors">Authors et al.</p>
+                        <p class="journal">Journal Name, Year</p>
+                        <p class="abstract">Brief description or abstract of the publication...</p>
+                    </article>
+                    <article class="publication">
+                        <h3>Publication Title 2</h3>
+                        <p class="authors">Authors et al.</p>
+                        <p class="journal">Journal Name, Year</p>
+                        <p class="abstract">Brief description or abstract of the publication...</p>
+                    </article>
+                </div>
+            </section>
         </div>
-    </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Amar Razzaq | All Rights Reserved</p>
+    </footer>
 </body>
 </html>

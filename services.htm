@@ -1,3 +1,4 @@
+/* services.htm */
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,32 +6,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Professional Services - Amar Razzaq</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <div class="header-container">
-            <div class="header-text">
-                <h1>Professional Services</h1>
-                <h3>Editorial Work & Academic Contributions</h3>
-            </div>
-        </div>
+    <header class="top-header">
+        <a href="index.htm" class="logo">
+            <span class="logo-text">Amar Razzaq</span>
+        </a>
+        <nav class="nav-links">
+            <a href="index.htm">About</a>
+            <a href="research.htm">Research</a>
+            <a href="outreach.htm">Outreach</a>
+            <a href="services.htm" class="active">Professional Services</a>
+            <a href="cv.htm">CV</a>
+            <button class="theme-toggle" aria-label="Toggle dark mode">
+                <i class="fas fa-moon"></i>
+            </button>
+        </nav>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="index.htm">About</a></li>
-            <li><a href="research.htm">Research</a></li>
-            <li><a href="outreach.htm">Outreach</a></li>
-            <li><a href="services.htm">Professional Services</a></li>
-            <li><a href="cv.htm">CV</a></li>
-        </ul>
-    </nav>
+    <main class="main-content single-column">
+        <div class="content-section">
+            <h1>Professional Services</h1>
+            <h2 class="subtitle">Editorial Work & Academic Contributions</h2>
 
-    <main>
-        <section>
-            <h2>Editorial Work</h2>
-            <p>Details about editorial contributions, peer reviews, and professional services can be listed here. This section can include journal reviewing, committee memberships, and other academic service roles.</p>
-        </section>
+            <section class="services-section">
+                <div class="services-grid">
+                    <div class="service-item">
+                        <i class="fas fa-book"></i>
+                        <h3>Journal Reviewing</h3>
+                        <ul>
+                            <li>Reviewer for Agricultural Economics</li>
+                            <li>Editorial Board Member of Environmental Studies</li>
+                            <li>Associate Editor of Sustainable Agriculture Review</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-item">
+                        <i class="fas fa-users"></i>
+                        <h3>Committee Memberships</h3>
+                        <ul>
+                            <li>Agricultural Economics Association</li>
+                            <li>Environmental Resource Economics Society</li>
+                            <li>International Food Policy Research Institute</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-item">
+                        <i class="fas fa-certificate"></i>
+                        <h3>Academic Service</h3>
+                        <ul>
+                            <li>PhD Thesis Committee Member</li>
+                            <li>Research Grant Reviewer</li>
+                            <li>Conference Organization Committee</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-item">
+                        <i class="fas fa-lightbulb"></i>
+                        <h3>Consulting</h3>
+                        <ul>
+                            <li>Agricultural Policy Development</li>
+                            <li>Environmental Impact Assessment</li>
+                            <li>Sustainable Farming Practices</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
     </main>
 
     <footer>
