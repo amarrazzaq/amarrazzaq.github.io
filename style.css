@@ -203,3 +203,135 @@ body {
         height: 200px;
     }
 }
+/* Research Page Specific Styles */
+.research-content {
+    max-width: 1000px;
+    margin: 100px auto 50px;
+    padding: 0 2rem;
+}
+
+.research-intro {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #d4d4d4;
+    margin-bottom: 3rem;
+}
+
+/* Publication Categories */
+.publication-category {
+    margin-bottom: 3.5rem;
+}
+
+.publication-category h2 {
+    font-size: 2rem;
+    color: #ffffff;
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+.publication-category h3 {
+    font-size: 1.4rem;
+    color: #ff7f50;
+    margin: 2.5rem 0 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid rgba(255, 127, 80, 0.3);
+}
+
+/* Publication Items */
+.publication-list {
+    list-style: none;
+    padding: 0;
+}
+
+.publication-list li {
+    margin-bottom: 1.8rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+    border-left: 3px solid #ff7f50;
+}
+
+.publication-list li:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.pub-citation {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #e0e0e0;
+    margin-bottom: 0.5rem;
+}
+
+.journal-name {
+    font-style: italic;
+    color: #ff7f50;
+}
+
+.impact-factor {
+    font-size: 0.9rem;
+    color: #a0a0a0;
+    margin-top: 0.5rem;
+}
+
+/* Research Projects Section */
+.current-projects {
+    margin-top: 4rem;
+}
+
+.current-projects h2 {
+    font-size: 2rem;
+    color: #ffffff;
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+.project-card {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-left: 3px solid #ff7f50;
+}
+
+.project-card:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.project-card h3 {
+    color: #ff7f50;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.project-title {
+    color: #e0e0e0;
+    margin-bottom: 0.8rem;
+    line-height: 1.5;
+}
+
+.project-details {
+    color: #a0a0a0;
+    font-size: 0.9rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .research-content {
+        padding: 0 1rem;
+        margin-top: 80px;
+    }
+
+    .publication-list li,
+    .project-card {
+        padding: 1.2rem;
+    }
+
+    .publication-category h2,
+    .current-projects h2 {
+        font-size: 1.8rem;
+    }
+
+    .publication-category h3 {
+        font-size: 1.3rem;
+    }
+}
