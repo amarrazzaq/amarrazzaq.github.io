@@ -138,6 +138,34 @@ body {
     color: #f4821e;
 }
 
+.social-links .fa-google {
+    color: #4285F4;
+}
+
+.social-links .fa-researchgate {
+    color: #00CCBB;
+}
+
+.social-links .fa-orcid {
+    color: #A6CE39;
+}
+
+.social-links .fa-university {
+    color: #f4821e;  /* Matching your theme's orange */
+}
+
+.social-links .fa-envelope {
+    color: #EA4335;
+}
+
+.social-links .fa-file-alt {
+    color: #f4821e;  /* Matching your theme's orange */
+}
+
+.social-links a:hover i {
+    color: #f4821e;  /* Matching your hover color */
+}
+
 /* Content Section */
 .content-section {
     background-color: #1a1d23;
