@@ -1,340 +1,116 @@
 /* style.css */
-/* General Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-}
+/* Only including styles that are different or new compared to the original */
 
-body {
-    line-height: 1.6;
-    color: #333;
-    background-color: #f5f5f5;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
-/* Header/Navigation */
-.top-header {
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 1rem 2rem;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.logo-image {
+    height: 40px;
+    width: auto;
+    margin-right: 10px;
 }
 
 .logo {
+    display: flex;
+    align-items: center;
     text-decoration: none;
     color: #333;
 }
 
-.logo-text {
-    font-size: 1.5rem;
-    font-weight: 600;
-}
-
-.nav-links {
-    display: flex;
-    gap: 2rem;
-    align-items: center;
-}
-
-.nav-links a {
-    color: #666;
-    text-decoration: none;
-    font-size: 1rem;
-    font-weight: 500;
-    transition: color 0.3s ease;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-}
-
-.nav-links a:hover {
-    color: #2563eb;
-    background-color: #f0f9ff;
-}
-
-.nav-links a.active {
-    color: #2563eb;
-    background-color: #f0f9ff;
-}
-
-/* Main Content */
-.main-content {
-    max-width: 1200px;
-    margin: 100px auto 2rem;
-    padding: 2rem;
-    flex-grow: 1;
-}
-
-.single-column {
-    max-width: 900px;
-}
-
-/* Profile Section */
 .profile-section {
+    max-width: 800px;
+    margin: 0 auto;
     text-align: center;
     background-color: #fff;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .profile-pic {
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 250px;
     border-radius: 50%;
-    margin-bottom: 1.5rem;
-    object-fit: cover;
-    border: 4px solid #f0f9ff;
-}
-
-.profile-name {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-    color: #1e293b;
-}
-
-.profile-title {
-    color: #2563eb;
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
-}
-
-.profile-affiliation {
-    color: #666;
     margin-bottom: 2rem;
+    object-fit: cover;
+    border: 5px solid #f0f9ff;
 }
 
-/* Social Links */
 .social-links {
     display: flex;
     justify-content: center;
-    gap: 1.5rem;
-    margin-top: 2rem;
-}
-
-.social-links a {
-    color: #666;
-    font-size: 1.5rem;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.social-links a:hover {
-    color: #2563eb;
-}
-
-/* Content Sections */
-.content-section {
-    background-color: #fff;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.content-section h1 {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-    color: #1e293b;
-}
-
-.subtitle {
-    color: #666;
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    font-weight: normal;
-}
-
-/* Research Areas */
-.research-areas {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     margin-top: 2rem;
 }
 
-.research-area {
-    padding: 1.5rem;
-    background-color: #f8fafc;
-    border-radius: 8px;
-    transition: transform 0.3s ease;
-}
-
-.research-area:hover {
-    transform: translateY(-5px);
-}
-
-.research-area h3 {
-    color: #2563eb;
-    margin-bottom: 1rem;
+.social-icon {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-}
-
-/* Outreach Grid */
-.outreach-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-}
-
-.outreach-item {
-    text-align: center;
-    padding: 2rem;
-    background-color: #f8fafc;
-    border-radius: 8px;
-    transition: transform 0.3s ease;
-}
-
-.outreach-item:hover {
-    transform: translateY(-5px);
-}
-
-.outreach-item i {
-    font-size: 2rem;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background-color: #f0f9ff;
+    border-radius: 50%;
     color: #2563eb;
-    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
 }
 
-/* Services Grid */
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-}
-
-.service-item {
-    padding: 1.5rem;
-    background-color: #f8fafc;
-    border-radius: 8px;
-}
-
-.service-item i {
-    font-size: 1.5rem;
-    color: #2563eb;
-    margin-bottom: 1rem;
-}
-
-.service-item ul {
-    list-style: none;
-    margin-top: 1rem;
-}
-
-.service-item li {
-    margin-bottom: 0.5rem;
-    color: #666;
-}
-
-/* CV Download Section */
-.cv-download {
-    text-align: center;
-    padding: 3rem;
-    background-color: #f8fafc;
-    border-radius: 8px;
-}
-
-.cv-download i {
-    font-size: 3rem;
-    color: #2563eb;
-    margin-bottom: 1rem;
-}
-
-.download-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
+.social-icon:hover {
     background-color: #2563eb;
     color: #fff;
-    padding: 1rem 2rem;
-    border-radius: 4px;
-    text-decoration: none;
-    margin-top: 1.5rem;
-    transition: background-color 0.3s ease;
+    transform: translateY(-3px);
 }
 
-.download-button:hover {
-    background-color: #1d4ed8;
+.research-education-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-top: 3rem;
 }
 
-/* Footer */
-footer {
-    background-color: #1e293b;
-    color: #fff;
-    text-align: center;
-    padding: 1rem;
-    margin-top: auto;
+.research-interests ul,
+.education ul {
+    list-style: none;
+    padding: 0;
 }
 
-/* Theme Toggle */
-.theme-toggle {
-    background: none;
-    border: none;
-    color: #666;
-    cursor: pointer;
-    font-size: 1.2rem;
-    padding: 0.5rem;
-    transition: color 0.3s ease;
+.research-interests li {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
 }
 
-.theme-toggle:hover {
+.research-interests li:before {
+    content: "•";
+    color: #2563eb;
+    position: absolute;
+    left: 0;
+}
+
+.education li {
+    margin-bottom: 1.5rem;
+}
+
+.degree {
+    display: block;
+    font-weight: 600;
     color: #2563eb;
 }
 
-/* Dark Mode */
-[data-theme="dark"] {
-    background-color: #1a1a1a;
-    color: #fff;
+.university {
+    display: block;
+    color: #666;
+    font-size: 0.9rem;
 }
 
-[data-theme="dark"] .top-header {
-    background-color: #2d2d2d;
-}
-
-[data-theme="dark"] .content-section,
-[data-theme="dark"] .profile-section {
-    background-color: #2d2d2d;
-}
-
-[data-theme="dark"] .research-area,
-[data-theme="dark"] .outreach-item,
-[data-theme="dark"] .service-item,
-[data-theme="dark"] .cv-download {
-    background-color: #3d3d3d;
-}
-
-/* Responsive Design */
 @media (max-width: 768px) {
-    .top-header {
-        flex-direction: column;
-        padding: 1rem;
-    }
-
-    .nav-links {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 1rem;
-        margin-top: 1rem;
-    }
-
-    .main-content {
-        margin-top: 150px;
-        padding: 1rem;
-    }
-
-    .research-areas,
-    .outreach-grid,
-    .services-grid {
+    .research-education-grid {
         grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .social-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 1.5rem;
     }
 }
