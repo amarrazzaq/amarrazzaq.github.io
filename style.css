@@ -9,62 +9,73 @@
 body {
     line-height: 1.6;
     color: #ddd;
-    background-color: #1E1E2E; /* Keeping remote background color */
+    background-color: #1E1E2E;
 }
 
 /* Header */
 header {
-    background-color: #1E3A8A; /* Local header color */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #1E3A8A;
     color: white;
-    padding: 20px 0;
-    text-align: center;
+    padding: 20px;
 }
 
-.profile-pic {
+header .profile-pic {
     border-radius: 50%;
     width: 120px;
     height: 120px;
-    margin-bottom: 10px;
+    margin-right: 20px;
 }
 
-header nav ul, nav ul {
+header .header-text {
+    flex: 1;
+}
+
+header h1, header h3, header p {
+    margin-bottom: 5px;
+}
+
+/* Navigation */
+nav ul {
     display: flex;
     justify-content: center;
     list-style: none;
     background-color: #333;
 }
 
-header nav ul li, nav ul li {
+nav ul li {
     margin: 10px 15px;
 }
 
-header nav ul li a, nav ul li a {
+nav ul li a {
     text-decoration: none;
     color: #fff;
     font-weight: bold;
 }
 
-header nav ul li a:hover, nav ul li a:hover {
+nav ul li a:hover {
     color: #ff6600;
 }
 
 /* Section */
-.section, section {
+section {
     padding: 20px;
-    background: #292841; /* Combining styles */
+    background: #292841;
     margin: 20px auto;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    max-width: 800px;
+    max-width: 900px;
 }
 
 h2 {
     margin-bottom: 10px;
-    color: #1E3A8A; /* Local h2 color */
+    color: #1E3A8A;
 }
 
 footer {
-    background-color: #1E3A8A; /* Footer color from local */
+    background-color: #1E3A8A;
     color: white;
     text-align: center;
     padding: 10px 0;
