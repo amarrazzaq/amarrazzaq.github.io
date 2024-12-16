@@ -157,6 +157,13 @@
     color: #a3b3c9;
 }
 
+.timeline-content .institution-detail {
+    color: #a3b3c9;
+    font-style: italic;
+    font-size: 0.85rem;
+    margin-top: 0.2rem;
+}
+
 /* Footer */
 footer {
     background-color: #1a1d23;
