@@ -3,51 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - Amar Razzaq</title>
+    <title>Amar Razzaq</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <div class="header-container">
-            <div class="header-text">
-                <h1>Amar Razzaq</h1>
-                <h3>Associate Professor | Research Fellow</h3>
-                <p>Email: amar@example.com | Phone: +123 456 789</p>
-            </div>
-            <div class="profile-pic-container">
-                <img src="images/profile.jpg" alt="Amar Razzaq" class="profile-pic">
-            </div>
-        </div>
+    <header class="top-header">
+        <a href="index.htm" class="logo">
+            <img src="images/logo.png" alt="Logo">
+            <span class="logo-text">Amar Razzaq</span>
+        </a>
+        <nav class="nav-links">
+            <a href="index.htm">About</a>
+            <a href="research.htm">Research</a>
+            <a href="outreach.htm">Outreach</a>
+            <a href="teaching.htm">Teaching</a>
+            <a href="cv.htm">CV</a>
+            <button class="theme-toggle">
+                <i class="fas fa-moon"></i>
+            </button>
+        </nav>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="index.htm">About</a></li>
-            <li><a href="research.htm">Research</a></li>
-            <li><a href="outreach.htm">Outreach</a></li>
-            <li><a href="services.htm">Professional Services</a></li>
-            <li><a href="cv.htm">CV</a></li>
-        </ul>
-    </nav>
+    <div class="main-content">
+        <div class="profile-section">
+            <img src="images/profile.jpg" alt="Amar Razzaq" class="profile-pic">
+            <h2 class="profile-name">Amar Razzaq</h2>
+            <h3 class="profile-title">Associate Professor of Agribusiness</h3>
+            <div class="profile-affiliation">
+                <p>Department of Agricultural Sciences</p>
+                <p>Sandhill Research and Education Center</p>
+                <p>University</p>
+            </div>
+            <div class="social-links">
+                <a href="#" title="University Profile"><i class="fas fa-university"></i></a>
+                <a href="#" title="Email"><i class="fas fa-envelope"></i></a>
+                <a href="#" title="Google Scholar"><i class="fab fa-google"></i></a>
+                <a href="#" title="CV"><i class="fas fa-file-alt"></i></a>
+            </div>
+        </div>
 
-    <main>
-        <section>
-            <h2>About Me</h2>
-            <p>Welcome to my homepage. I am an Associate Professor and Research Fellow, with extensive experience in agricultural economics, environmental sustainability, and food systems.</p>
-        </section>
+        <div class="content-section">
+            <h1>Welcome to my homepage!</h1>
+            <p>I am an Associate Professor and Research Fellow, with extensive experience in agricultural economics, environmental sustainability, and food systems.</p>
+            
+            <p>My current research endeavors revolve around the application of behavioral economic theories and experimental economic methods. My primary focus lies in unraveling the intricate connections between food systems, food policy, and human decision-making processes that underpin agricultural sustainability concerns.</p>
+            
+            <p>My research covers both consumption and production sides of agricultural systems. My work has been published in peer-reviewed journals such as <span class="journal-name">Agribusiness: An International Journal</span>, <span class="journal-name">Applied Economics</span>, <span class="journal-name">Ecological Economics</span>, <span class="journal-name">HortTechnology</span>, and <span class="journal-name">Water Resources Research</span>.</p>
 
-        <section>
-            <h2>Education</h2>
-            <ul>
-                <li>Ph.D. – Agricultural Economics, Huazhong Agricultural University, 2021</li>
-                <li>MSc – Agricultural Economics, University of Agriculture Faisalabad, 2012</li>
-                <li>BSc – Agricultural Resource Economics, University of Agriculture Faisalabad, 2010</li>
-            </ul>
-        </section>
-    </main>
+            <div class="sections-grid">
+                <div class="research-interests">
+                    <h3 class="section-title">Research Interests</h3>
+                    <ul class="interest-list">
+                        <li>Environmental Economics</li>
+                        <li>Water Resource Management</li>
+                        <li>Agricultural Economics and Food Policy</li>
+                        <li>Agricultural Sustainability</li>
+                    </ul>
+                </div>
 
-    <footer>
-        <p>&copy; 2024 Amar Razzaq | All Rights Reserved</p>
-    </footer>
+                <div class="education">
+                    <h3 class="section-title">Education</h3>
+                    <ul class="education-list">
+                        <li>
+                            <div class="degree">Ph.D. – Agricultural Economics, 2021</div>
+                            <div class="university">Huazhong Agricultural University</div>
+                        </li>
+                        <li>
+                            <div class="degree">MSc – Agricultural Economics, 2012</div>
+                            <div class="university">University of Agriculture Faisalabad</div>
+                        </li>
+                        <li>
+                            <div class="degree">BSc – Agricultural Resource Economics, 2010</div>
+                            <div class="university">University of Agriculture Faisalabad</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
