@@ -812,22 +812,25 @@ footer {
 }
 
 /* PDF Container */
-.pdf-container {
+.pdf-wrapper {
     flex: 1;
+    position: relative;
+    width: 100%;
+    min-height: calc(100vh - 250px);
     background: #fff;
     border-radius: 4px;
     overflow: hidden;
-    position: relative;
-    min-height: 500px; /* Minimum height for mobile */
 }
 
-.pdf-container embed {
+.pdf-viewer {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     border: none;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 /* Responsive Design */
@@ -847,10 +850,13 @@ footer {
     .cv-page {
         margin-top: 60px;
         padding: 10px;
+        min-height: 100vh;
+        height: auto;
     }
 
     .cv-container {
-        padding: 15px;
+        padding: 10px;
+        height: auto;
         min-height: calc(100vh - 100px);
     }
 
@@ -860,19 +866,20 @@ footer {
     }
 
     .download-button {
-        padding: 8px 16px;
         width: 100%;
         justify-content: center;
     }
 
-    .pdf-container {
-        height: calc(100vh - 200px);
+    .pdf-wrapper {
+        position: relative;
+        height: calc(100vh - 180px);
     }
 
-    .pdf-container embed {
+    .pdf-viewer {
         position: relative;
         height: 100%;
-        -webkit-overflow-scrolling: touch; /* For smooth scrolling on iOS */
+        overflow-y: scroll;
+        -webkit-overflow-scrolling: touch;
     }
 }
 
@@ -882,15 +889,27 @@ footer {
     }
 
     .cv-container {
-        padding: 10px;
+        padding: 8px;
     }
-    
-    .pdf-container {
-        height: calc(100vh - 180px);
+
+    .pdf-wrapper {
+        height: calc(100vh - 170px);
+    }
+}
+
+/* iOS Safari specific styles */
+@supports (-webkit-touch-callout: none) {
+    .pdf-wrapper {
+        -webkit-overflow-scrolling: touch;
+        overflow-y: scroll;
+    }
+
+    .pdf-viewer {
+        height: 100%;
     }
 }
 
 /* Dark mode considerations */
-[data-theme="dark"] .pdf-container {
+[data-theme="dark"] .pdf-wrapper {
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
