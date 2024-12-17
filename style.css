@@ -750,26 +750,6 @@ footer {
     }
 }
 
-/* PDF Viewer and CV Download Styles 
--------------------------------------------------- */
-
-/* Special handling for CV page layout */
-.main-content {
-    max-width: 100%;
-    margin: 80px auto 2rem;  /* Adjusted top margin */
-    padding: 0;
-}
-
-.cv-content {
-    max-width: 1200px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 2rem;
-    background-color: #1a1d23;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
 /* PDF Viewer and CV Page Styles 
 -------------------------------------------------- */
 
@@ -837,24 +817,17 @@ footer {
     background: #fff;
     border-radius: 4px;
     overflow: hidden;
-    min-height: 0;
-    margin-bottom: 20px;
+    position: relative;
+    min-height: 500px; /* Minimum height for mobile */
 }
 
-.pdf-container object,
-.pdf-container iframe {
+.pdf-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     border: none;
-    display: block;
-}
-
-/* Make sure content section doesn't interfere */
-.content-section.cv-content {
-    padding: 0;
-    margin: 0;
-    background: none;
-    box-shadow: none;
 }
 
 /* Responsive Design */
@@ -878,6 +851,7 @@ footer {
 
     .cv-container {
         padding: 15px;
+        min-height: calc(100vh - 100px);
     }
 
     .download-section {
@@ -890,6 +864,16 @@ footer {
         width: 100%;
         justify-content: center;
     }
+
+    .pdf-container {
+        height: calc(100vh - 200px);
+    }
+
+    .pdf-container embed {
+        position: relative;
+        height: 100%;
+        -webkit-overflow-scrolling: touch; /* For smooth scrolling on iOS */
+    }
 }
 
 @media (max-width: 480px) {
@@ -900,20 +884,13 @@ footer {
     .cv-container {
         padding: 10px;
     }
-
+    
     .pdf-container {
-        margin-bottom: 10px;
+        height: calc(100vh - 180px);
     }
 }
 
 /* Dark mode considerations */
 [data-theme="dark"] .pdf-container {
     border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* Fix for Firefox PDF rendering */
-@-moz-document url-prefix() {
-    .pdf-container object {
-        height: calc(100vh - 220px);
-    }
 }
