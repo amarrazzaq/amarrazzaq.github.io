@@ -770,98 +770,150 @@ footer {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-/* PDF Viewer Styles */
-.pdf-container {
+/* PDF Viewer and CV Page Styles 
+-------------------------------------------------- */
+
+/* Main CV Page Layout */
+.cv-page {
     width: 100%;
-    height: calc(100vh - 220px);  /* Adjusted for better fit */
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: rgba(255, 255, 255, 0.05);
-    border-radius: 8px;
+    min-height: calc(100vh - 120px);
+    margin-top: 80px;
+    padding: 0 20px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    background-color: #282c34;
 }
 
-.pdf-viewer {
+/* CV Container */
+.cv-container {
+    flex: 1;
+    max-width: 1400px;
+    margin: 0 auto;
     width: 100%;
-    height: 100%;
-    border: none;
-    background-color: #fff;
+    background-color: #1a1d23;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
-/* Download Section Styles */
+/* Download Section */
 .download-section {
-    text-align: right;
-    margin-bottom: 1.5rem;
-    padding: 0.5rem 0;
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 0;
+    margin-bottom: 15px;
     border-bottom: 1px solid rgba(244, 130, 30, 0.2);
 }
 
 .download-button {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    color: #f4821e;
-    text-decoration: none;
-    padding: 0.75rem 1.5rem;
-    border: 1px solid #f4821e;
+    gap: 8px;
+    background-color: #f4821e;
+    color: #1a1d23;
+    padding: 10px 20px;
     border-radius: 4px;
-    transition: all 0.3s ease;
-    font-size: 0.95rem;
-    background: transparent;
+    text-decoration: none;
     font-weight: 500;
+    transition: all 0.3s ease;
+    border: none;
 }
 
 .download-button:hover {
-    background-color: #f4821e;
-    color: #1a1d23;
+    background-color: #ff9f4a;
     transform: translateY(-2px);
-    box-shadow: 0 2px 4px rgba(244, 130, 30, 0.2);
+    box-shadow: 0 2px 8px rgba(244, 130, 30, 0.3);
 }
 
 .download-button i {
-    font-size: 1.1rem;
+    font-size: 16px;
 }
 
-/* Responsive adjustments */
+/* PDF Container */
+.pdf-container {
+    flex: 1;
+    background: #fff;
+    border-radius: 4px;
+    overflow: hidden;
+    min-height: 0;
+    margin-bottom: 20px;
+}
+
+.pdf-container object,
+.pdf-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+/* Make sure content section doesn't interfere */
+.content-section.cv-content {
+    padding: 0;
+    margin: 0;
+    background: none;
+    box-shadow: none;
+}
+
+/* Responsive Design */
 @media (max-width: 1400px) {
-    .cv-content {
+    .cv-container {
+        max-width: 1200px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .cv-container {
         max-width: 1000px;
     }
 }
 
 @media (max-width: 768px) {
-    .main-content {
+    .cv-page {
         margin-top: 60px;
-    }
-    
-    .cv-content {
-        padding: 1rem;
-        margin: 0 1rem;
+        padding: 10px;
     }
 
-    .pdf-container {
-        height: calc(100vh - 250px);
+    .cv-container {
+        padding: 15px;
     }
-    
+
     .download-section {
-        text-align: center;
-        margin-bottom: 1rem;
+        justify-content: center;
+        margin-bottom: 10px;
     }
-    
+
     .download-button {
-        padding: 0.5rem 1rem;
+        padding: 8px 16px;
+        width: 100%;
+        justify-content: center;
     }
 }
 
 @media (max-width: 480px) {
-    .cv-content {
-        padding: 0.5rem;
-        margin: 0 0.5rem;
+    .cv-page {
+        padding: 5px;
+    }
+
+    .cv-container {
+        padding: 10px;
     }
 
     .pdf-container {
-        height: calc(100vh - 280px);
+        margin-bottom: 10px;
+    }
+}
+
+/* Dark mode considerations */
+[data-theme="dark"] .pdf-container {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Fix for Firefox PDF rendering */
+@-moz-document url-prefix() {
+    .pdf-container object {
+        height: calc(100vh - 220px);
     }
 }
