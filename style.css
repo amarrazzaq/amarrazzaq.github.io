@@ -158,8 +158,22 @@ body {
     color: #EA4335;
 }
 
-.social-links .fa-file-alt {
-    color: #f4821e;  /* Matching your theme's orange */
+/* CV Link Style */
+.social-links .cv-link {
+    color: #f4821e;
+    font-weight: 500;
+    font-size: 1rem;
+    text-decoration: none;
+    padding: 4px 8px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.social-links .cv-link:hover {
+    color: #f4821e;
+    border-color: #f4821e;
+    transform: translateY(-2px);
 }
 
 .social-links a:hover i {
