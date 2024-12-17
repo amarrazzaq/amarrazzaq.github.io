@@ -18,9 +18,11 @@
             <a href="outreach.htm">Outreach</a>
             <a href="services.htm">Professional Services</a>
             <a href="cv.htm">CV</a>
-            <button class="theme-toggle" aria-label="Theme settings">
-    <i class="fas fa-moon"></i>
-    <div class="theme-dropdown">
+           <div class="theme-toggle">
+    <button class="theme-toggle-button" aria-label="Theme settings">
+        <i class="fas fa-palette"></i> Theme
+    </button>
+    <div class="theme-menu">
         <button class="theme-option" data-theme="dark">
             <i class="fas fa-moon"></i> Dark
         </button>
@@ -31,7 +33,7 @@
             <i class="fas fa-circle-half-stroke"></i> Auto
         </button>
     </div>
-</button>
+</div>
         </nav>
     </header>
 
@@ -126,6 +128,26 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
+    // Theme toggle functionality
+    const themeToggle = document.querySelector('.theme-toggle-button');
+    const themeMenu = document.querySelector('.theme-menu');
+
+    // Toggle menu on button click
+    themeToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        themeMenu.classList.toggle('show');
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', () => {
+        themeMenu.classList.remove('show');
+    });
+
+    // Prevent menu from closing when clicking inside it
+    themeMenu.addEventListener('click', (e) => {
+        e.stopPropagation();
+    });
+
     // Function to set theme
     function setTheme(theme) {
         if (theme === 'auto') {
@@ -142,6 +164,8 @@ document.addEventListener('DOMContentLoaded', () => {
             document.documentElement.setAttribute('data-theme', theme);
             localStorage.setItem('theme', theme);
         }
+        // Close the menu after selection
+        themeMenu.classList.remove('show');
     }
 
     // Initialize theme
