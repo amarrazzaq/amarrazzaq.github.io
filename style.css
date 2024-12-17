@@ -749,3 +749,73 @@ footer {
         height: 150px;
     }
 }
+
+/* Add these styles at the end of your style.css file */
+
+/* PDF Viewer Styles */
+.pdf-container {
+    width: 100%;
+    height: calc(100vh - 200px);
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+}
+
+.pdf-viewer {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: #fff;
+}
+
+/* Download Section Styles */
+.download-section {
+    text-align: right;
+    margin-bottom: 1.5rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(244, 130, 30, 0.2);
+}
+
+.download-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #f4821e;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border: 1px solid #f4821e;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+    background: transparent;
+}
+
+.download-button:hover {
+    background-color: #f4821e;
+    color: #1a1d23;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(244, 130, 30, 0.2);
+}
+
+.download-button i {
+    font-size: 1.1rem;
+}
+
+/* Responsive adjustments for PDF viewer */
+@media (max-width: 768px) {
+    .pdf-container {
+        height: calc(100vh - 250px); /* Slightly more space on mobile */
+    }
+    
+    .download-section {
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+}
+
+/* Ensure proper display in dark mode */
+[data-theme="dark"] .pdf-viewer {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}

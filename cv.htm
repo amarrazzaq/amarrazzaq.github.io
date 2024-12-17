@@ -6,6 +6,51 @@
     <title>CV - Amar Razzaq</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* PDF viewer layout styles */
+        .pdf-container {
+            width: 100%;
+            height: calc(100vh - 200px); /* Adjusted to account for download button */
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        
+        .pdf-viewer {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Download button styles */
+        .download-section {
+            text-align: right;
+            margin-bottom: 1.5rem;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(244, 130, 30, 0.2);
+        }
+
+        .download-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #f4821e;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border: 1px solid #f4821e;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .download-button:hover {
+            background-color: #f4821e;
+            color: #1a1d23;
+        }
+
+        .download-button i {
+            font-size: 1.1rem;
+        }
+    </style>
 </head>
 <body>
     <header class="top-header">
@@ -26,20 +71,18 @@
 
     <main class="main-content single-column">
         <div class="content-section">
-            <h1>Curriculum Vitae</h1>
-            <h2 class="subtitle">Academic and Professional Experience</h2>
-
-            <section class="cv-section">
-                <div class="cv-download">
-                    <i class="fas fa-file-pdf"></i>
-                    <h3>Download Complete CV</h3>
-                    <p>For a detailed overview of my academic and professional experience, please download my complete CV.</p>
-                    <a href="cv.pdf" download class="download-button">
-                        Download CV (PDF)
-                        <i class="fas fa-download"></i>
-                    </a>
-                </div>
-            </section>
+            <!-- Added download section -->
+            <div class="download-section">
+                <a href="cv.pdf" download class="download-button">
+                    <i class="fas fa-download"></i>
+                    Download PDF
+                </a>
+            </div>
+            
+            <!-- PDF viewer -->
+            <div class="pdf-container">
+                <iframe class="pdf-viewer" src="cv.pdf" type="application/pdf"></iframe>
+            </div>
         </div>
     </main>
 
