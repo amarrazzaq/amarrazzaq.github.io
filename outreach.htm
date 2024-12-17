@@ -18,11 +18,22 @@
             <a href="outreach.htm" class="active">Outreach</a>
             <a href="services.htm">Professional Services</a>
             <a href="cv.htm">CV</a>
-            <button class="theme-toggle" aria-label="Toggle dark mode">
-                <i class="fas fa-moon"></i>
-            </button>
-        </nav>
-    </header>
+            <div class="theme-toggle">
+    <button class="theme-toggle-button" aria-label="Theme settings">
+        <i class="fas fa-moon"></i>
+    </button>
+    <div class="theme-menu">
+        <button class="theme-option" data-theme="dark">
+            <i class="fas fa-moon"></i> Dark
+        </button>
+        <button class="theme-option" data-theme="light">
+            <i class="fas fa-sun"></i> Light
+        </button>
+        <button class="theme-option" data-theme="auto">
+            <i class="fas fa-circle-half-stroke"></i> Auto
+        </button>
+    </div>
+</div>
 
     <main class="main-content single-column">
         <div class="content-section">
@@ -208,5 +219,72 @@
     <footer>
         <p>&copy; 2024 Amar Razzaq | All Rights Reserved</p>
     </footer>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // Theme toggle functionality
+    const themeToggle = document.querySelector('.theme-toggle-button');
+    const themeMenu = document.querySelector('.theme-menu');
+
+    // Toggle menu on button click
+    themeToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        themeMenu.classList.toggle('show');
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', () => {
+        themeMenu.classList.remove('show');
+    });
+
+    // Prevent menu from closing when clicking inside it
+    themeMenu.addEventListener('click', (e) => {
+        e.stopPropagation();
+    });
+
+    // Function to set theme
+    function setTheme(theme) {
+        if (theme === 'auto') {
+            // Remove manual theme
+            document.documentElement.removeAttribute('data-theme');
+            localStorage.removeItem('theme');
+            // Apply theme based on system preference
+            if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+                document.documentElement.setAttribute('data-theme', 'light');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        } else {
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+        }
+        // Close the menu after selection
+        themeMenu.classList.remove('show');
+    }
+
+    // Initialize theme
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        setTheme(savedTheme);
+    } else {
+        setTheme('auto');
+    }
+
+    // Listen for theme option clicks
+    document.querySelectorAll('.theme-option').forEach(option => {
+        option.addEventListener('click', (e) => {
+            const theme = e.currentTarget.dataset.theme;
+            setTheme(theme);
+        });
+    });
+
+    // Listen for system theme changes
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+        if (!localStorage.getItem('theme')) { // Only if in auto mode
+            setTheme('auto');
+        }
+    });
+});
+</script>
+
 </body>
 </html>
