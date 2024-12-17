@@ -750,17 +750,37 @@ footer {
     }
 }
 
-/* Add these styles at the end of your style.css file */
+/* PDF Viewer and CV Download Styles 
+-------------------------------------------------- */
+
+/* Special handling for CV page layout */
+.main-content {
+    max-width: 100%;
+    margin: 80px auto 2rem;  /* Adjusted top margin */
+    padding: 0;
+}
+
+.cv-content {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #1a1d23;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
 
 /* PDF Viewer Styles */
 .pdf-container {
     width: 100%;
-    height: calc(100vh - 200px);
+    height: calc(100vh - 220px);  /* Adjusted for better fit */
     margin: 0;
     padding: 0;
     overflow: hidden;
     background-color: rgba(255, 255, 255, 0.05);
     border-radius: 8px;
+    display: flex;
+    justify-content: center;
 }
 
 .pdf-viewer {
@@ -784,12 +804,13 @@ footer {
     gap: 0.5rem;
     color: #f4821e;
     text-decoration: none;
-    padding: 0.5rem 1rem;
+    padding: 0.75rem 1.5rem;
     border: 1px solid #f4821e;
     border-radius: 4px;
     transition: all 0.3s ease;
     font-size: 0.95rem;
     background: transparent;
+    font-weight: 500;
 }
 
 .download-button:hover {
@@ -803,19 +824,44 @@ footer {
     font-size: 1.1rem;
 }
 
-/* Responsive adjustments for PDF viewer */
+/* Responsive adjustments */
+@media (max-width: 1400px) {
+    .cv-content {
+        max-width: 1000px;
+    }
+}
+
 @media (max-width: 768px) {
+    .main-content {
+        margin-top: 60px;
+    }
+    
+    .cv-content {
+        padding: 1rem;
+        margin: 0 1rem;
+    }
+
     .pdf-container {
-        height: calc(100vh - 250px); /* Slightly more space on mobile */
+        height: calc(100vh - 250px);
     }
     
     .download-section {
         text-align: center;
         margin-bottom: 1rem;
     }
+    
+    .download-button {
+        padding: 0.5rem 1rem;
+    }
 }
 
-/* Ensure proper display in dark mode */
-[data-theme="dark"] .pdf-viewer {
-    border: 1px solid rgba(255, 255, 255, 0.1);
+@media (max-width: 480px) {
+    .cv-content {
+        padding: 0.5rem;
+        margin: 0 0.5rem;
+    }
+
+    .pdf-container {
+        height: calc(100vh - 280px);
+    }
 }
