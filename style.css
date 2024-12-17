@@ -471,6 +471,158 @@ footer {
     left: 0;
 }
 
+/* Outreach Work Section */
+.outreach-work-section {
+    margin-bottom: 4rem;
+}
+
+.outreach-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.outreach-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border-top: 3px solid #f4821e;
+}
+
+.outreach-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.outreach-card .card-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.outreach-card .card-header i {
+    color: #f4821e;
+    font-size: 1.5rem;
+}
+
+.outreach-card .card-header h3 {
+    color: #fff;
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.outreach-card .card-content p {
+    color: #a3b3c9;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Outreach Talks Section */
+.outreach-talks-section {
+    margin-top: 4rem;
+}
+
+.talks-timeline {
+    position: relative;
+    padding-left: 2rem;
+    margin-top: 2rem;
+}
+
+.talks-timeline::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: rgba(244, 130, 30, 0.3);
+}
+
+.year-group {
+    margin-bottom: 3rem;
+}
+
+.year-header {
+    color: #f4821e;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.year-header::before {
+    content: "";
+    position: absolute;
+    left: -2rem;
+    top: 0.5rem;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background: #f4821e;
+    border: 2px solid #1a1d23;
+}
+
+.talk-item {
+    position: relative;
+    margin-bottom: 2rem;
+    padding-left: 1.5rem;
+    border-left: 2px solid rgba(244, 130, 30, 0.2);
+}
+
+.talk-item:last-child {
+    margin-bottom: 0;
+}
+
+.talk-date {
+    color: #f4821e;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.talk-content h4 {
+    color: #fff;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.talk-venue {
+    color: #a3b3c9;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.keynote-badge {
+    display: inline-block;
+    background-color: rgba(244, 130, 30, 0.1);
+    color: #f4821e;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+}
+
+/* Responsive Design for Outreach Sections */
+@media (max-width: 768px) {
+    .outreach-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .talks-timeline {
+        padding-left: 1.5rem;
+    }
+
+    .year-header::before {
+        left: -1.5rem;
+    }
+
+    .talk-item {
+        padding-left: 1rem;
+    }
+}
+
 /* Timeline Section - NEW */
 .timeline {
     position: relative;
