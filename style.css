@@ -296,8 +296,9 @@ footer {
     color: #61dafb;
 }
 
-/* Theme Toggle Button */
+/* Theme Toggle Styles */
 .theme-toggle {
+    position: relative;
     background: none;
     border: none;
     color: #a3b3c9;
@@ -309,6 +310,83 @@ footer {
 
 .theme-toggle:hover {
     color: #f4821e;
+}
+
+.theme-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #1a1d23;
+    border-radius: 8px;
+    padding: 0.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    display: none;
+    z-index: 1000;
+    min-width: 150px;
+}
+
+.theme-toggle:focus .theme-dropdown,
+.theme-toggle:focus-within .theme-dropdown {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.theme-option {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: none;
+    border: none;
+    color: #a3b3c9;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.theme-option:hover {
+    background-color: rgba(244, 130, 30, 0.1);
+    color: #f4821e;
+}
+
+/* Light Theme Styles */
+[data-theme="light"] {
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+[data-theme="light"] .top-header {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .content-section {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .nav-links a {
+    color: #666;
+}
+
+[data-theme="light"] .content-section p {
+    color: #444;
+}
+
+[data-theme="light"] .timeline::before {
+    background: rgba(244, 130, 30, 0.2);
+}
+
+[data-theme="light"] .card-content p {
+    color: #666;
+}
+
+[data-theme="light"] .theme-dropdown {
+    background-color: #fff;
+    border: 1px solid #eee;
 }
 
 /* Publications Section */
