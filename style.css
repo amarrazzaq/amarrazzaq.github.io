@@ -981,23 +981,52 @@ footer img {
 /* Footer mobile optimizations */
 footer {
     background-color: #1a1d23;
-    padding: 0.5rem;
+    padding: 0.5rem 1rem; /* Added horizontal padding */
     margin-top: auto;
     border-top: 1px solid #333;
     color: #a3b3c9;
+    /* Removed width: 100%; */
 }
 
+/* Footer Container to Center Content */
+.footer-container {
+    max-width: 1200px; /* Adjust as needed */
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping if needed */
+}
+
+/* Footer Paragraph */
 footer p {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 0.75rem; /* Updated gap */
-    white-space: nowrap;
+    white-space: normal; /* Allow content to wrap */
     font-size: 0.9rem;
+    /* Removed width: 100%; */
+    flex-wrap: wrap; /* Allow flex items to wrap */
+    word-wrap: break-word; /* Prevent long words from causing overflow */
 }
 
+/* Footer Images */
 footer img {
-    height: 20px;
+    max-width: 100%; /* Ensure images do not exceed container */
+    height: auto; /* Maintain aspect ratio */
+}
+
+@media screen and (max-width: 768px) {
+    footer p {
+        font-size: 0.75rem; /* Adjusted font size */
+        gap: 0.35rem; /* Adjusted gap */
+    }
+    
+    footer img {
+        height: 16px; /* Adjusted image height */
+        max-width: 100%; /* Ensure responsiveness */
+    }
 }
 
 /* PDF Viewer and CV Page Styles 
