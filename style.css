@@ -138,6 +138,49 @@ body {
     .nav-links a:last-child {
         border-bottom: none;
     }
+
+    /* Increased Top Spacing and Rounded Corners on Mobile */
+    .main-content {
+        margin-top: 100px; /* Increased from 56px or 72px to provide more space */
+    }
+
+    /* Add Rounded Corners and Subtle Shadows to Card Elements on Mobile */
+    .download-section,
+    .pdf-wrapper,
+    .card, /* General card class */
+    .service-card,
+    .outreach-card,
+    .content-section,
+    .experience-section,
+    .education-list li,
+    .publications-section,
+    .outreach-work-section,
+    .talk-item {
+        border-radius: 8px; /* Slightly rounded corners */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        padding: 1rem; /* Uniform padding */
+        margin-bottom: 1rem; /* Space between cards */
+    }
+
+    /* Optional: Further adjustments for better aesthetics */
+    .content-section h1 {
+        margin-bottom: 1.5rem; /* Increase space below headers */
+    }
+
+    /* Ensure consistent padding within cards */
+    .download-section,
+    .pdf-wrapper,
+    .card,
+    .service-card,
+    .outreach-card,
+    .content-section,
+    .experience-section,
+    .education-list li,
+    .publications-section,
+    .outreach-work-section,
+    .talk-item {
+        padding: 1rem; /* Uniform padding */
+    }
 }
 
 /* Overlay for mobile menu */
@@ -855,6 +898,49 @@ footer img {
         padding: 0.25rem 0.5rem;
         font-size: 0.9rem;
     }
+
+    /* Increased Top Spacing and Rounded Corners on Mobile */
+    .main-content {
+        margin-top: 100px; /* Increased from 56px or 72px to provide more space */
+    }
+
+    /* Add Rounded Corners and Subtle Shadows to Card Elements on Mobile */
+    .download-section,
+    .pdf-wrapper,
+    .card, /* General card class */
+    .service-card,
+    .outreach-card,
+    .content-section,
+    .experience-section,
+    .education-list li,
+    .publications-section,
+    .outreach-work-section,
+    .talk-item {
+        border-radius: 8px; /* Slightly rounded corners */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        padding: 1rem; /* Uniform padding */
+        margin-bottom: 1rem; /* Space between cards */
+    }
+
+    /* Optional: Further adjustments for better aesthetics */
+    .content-section h1 {
+        margin-bottom: 1.5rem; /* Increase space below headers */
+    }
+
+    /* Ensure consistent padding within cards */
+    .download-section,
+    .pdf-wrapper,
+    .card,
+    .service-card,
+    .outreach-card,
+    .content-section,
+    .experience-section,
+    .education-list li,
+    .publications-section,
+    .outreach-work-section,
+    .talk-item {
+        padding: 1rem; /* Uniform padding */
+    }
 }
 
 @media (max-width: 480px) {
@@ -871,6 +957,24 @@ footer img {
     .outreach-card {
         padding: 1.25rem;
     }
+
+    /* Rounded Corners and Shadows on Extra Small Devices */
+    .download-section,
+    .pdf-wrapper,
+    .card, /* General card class */
+    .service-card,
+    .outreach-card,
+    .content-section,
+    .experience-section,
+    .education-list li,
+    .publications-section,
+    .outreach-work-section,
+    .talk-item {
+        border-radius: 8px; /* Slightly rounded corners */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        padding: 1rem; /* Uniform padding */
+        margin-bottom: 1rem; /* Space between cards */
+    }
 }
 
 /* Footer mobile optimizations */
@@ -885,200 +989,6 @@ footer p {
 
 footer img {
     height: 18px;
-}
-
-/* PDF Viewer and CV Page Styles 
--------------------------------------------------- */
-
-/* Ensure box-sizing for all elements */
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
-
-/* Ensure html and body occupy full height */
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-}
-
-/* Main CV Page Layout */
-.cv-page {
-    width: 100%;
-    height: calc(100vh - 80px); /* Full viewport height minus header height */
-    margin-top: 80px; /* Adjust based on your header's height */
-    padding: 0 20px;
-    display: flex;
-    flex-direction: column;
-    background-color: #282c34;
-    box-sizing: border-box;
-}
-
-/* CV Container */
-.cv-container {
-    flex: 1;
-    max-width: 1400px;
-    margin: 0 auto;
-    width: 100%;
-    background-color: #1a1d23;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden; /* Prevents overflow from child elements */
-    height: 100%; /* Fills the parent container */
-}
-
-/* Download Section */
-.download-section {
-    display: flex;
-    justify-content: flex-end;
-    padding: 10px 0;
-    margin-bottom: 15px;
-    border-bottom: 1px solid rgba(244, 130, 30, 0.2);
-}
-
-.download-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background-color: #f4821e;
-    color: #1a1d23;
-    padding: 10px 20px;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    border: none;
-}
-
-.download-button:hover {
-    background-color: #ff9f4a;
-    transform: translateY(-2px);
-    box-shadow: 0 2px 8px rgba(244, 130, 30, 0.3);
-}
-
-.download-button i {
-    font-size: 16px;
-}
-
-/* PDF Wrapper */
-.pdf-wrapper {
-    flex: 1;
-    width: 100%;
-    background: #fff;
-    border-radius: 4px;
-    overflow: hidden; /* Prevents scrollbars on the wrapper */
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0; /* Ensure no padding */
-    margin: 0; /* Ensure no margin */
-}
-
-/* PDF Viewer */
-.pdf-viewer {
-    width: 100%;
-    height: 100%;
-    border: none;
-    overflow: auto; /* Enable scrolling */
-    display: block;
-}
-
-/* Responsive Design */
-
-/* Tablet and above */
-@media (max-width: 1400px) {
-    .cv-container {
-        max-width: 1200px;
-    }
-}
-
-@media (max-width: 1200px) {
-    .cv-container {
-        max-width: 1000px;
-    }
-}
-
-/* Mobile Devices */
-@media (max-width: 768px) {
-    .cv-page {
-        margin-top: 60px; /* Reduced header margin */
-        padding: 10px;
-        min-height: 100vh;
-        height: auto;
-    }
-
-    .cv-container {
-        padding: 10px;
-        height: auto;
-        min-height: calc(100vh - 100px); /* Adjust based on your layout */
-    }
-
-    .download-section {
-        justify-content: center;
-        margin-bottom: 10px;
-    }
-
-    .download-button {
-        width: 100%;
-        justify-content: center;
-    }
-
-    .pdf-wrapper {
-        height: calc(100vh - 180px); /* Adjust based on your layout */
-        overflow: auto; /* Ensure scrolling is enabled */
-    }
-
-    .pdf-viewer {
-        width: 100%;
-        height: 100%;
-        overflow: auto; /* Enable scrolling within the iframe */
-        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
-    }
-}
-
-/* Extra Small Devices */
-@media (max-width: 480px) {
-    .cv-page {
-        padding: 5px;
-    }
-
-    .cv-container {
-        padding: 8px;
-    }
-
-    .pdf-wrapper {
-        height: calc(100vh - 170px); /* Adjust based on your layout */
-    }
-
-    .pdf-viewer {
-        width: 100%;
-        height: 100%;
-        overflow: auto; /* Enable scrolling within the iframe */
-        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
-    }
-}
-
-/* iOS Safari Specific Styles */
-@supports (-webkit-touch-callout: none) {
-    .pdf-wrapper {
-        -webkit-overflow-scrolling: touch;
-        overflow-y: scroll;
-    }
-
-    .pdf-viewer {
-        height: 100%;
-    }
-}
-
-/* Dark Mode Considerations */
-[data-theme="dark"] .pdf-wrapper {
-    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* Desktop Navigation Enhancements */
@@ -1115,4 +1025,3 @@ html, body {
         font-size: 1rem; /* Ensure font size is consistent */
     }
 }
-
