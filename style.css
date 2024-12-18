@@ -160,9 +160,10 @@ body {
 }
 
 /* Main Content */
+
 .main-content {
     max-width: 1200px;
-    margin: 100px auto 2rem;
+    margin: 72px auto 2rem;  /* Changed from 100px to 72px */
     padding: 2rem;
     flex-grow: 1;
     display: grid;
