@@ -13,6 +13,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    padding-top: 60px; /* Add padding to account for fixed header */
 }
 
 /* Header/Navigation */
@@ -26,6 +27,8 @@ body {
     width: 100%;
     z-index: 1000;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    height: 60px; /* Add explicit height */
+    overflow: hidden; /* Prevent content overflow */
 }
 
 .nav-container {
