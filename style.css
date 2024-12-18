@@ -33,19 +33,20 @@ body {
 .nav-container {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Ensures spacing between hamburger, tagline, and nav-links */
     width: 100%;
     position: relative;
 }
 
 .header-tagline {
-    margin: 0 auto; /* Centers the tagline within the flex container */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     color: #a3b3c9;
     font-size: 1rem;
     font-weight: 300;
     letter-spacing: 0.5px;
     white-space: nowrap;
-    text-align: center; /* Ensures proper alignment for multiline taglines */
 }
 
 .header-tagline span {
@@ -58,7 +59,7 @@ body {
 }
 
 .hamburger-menu {
-    display: none; /* Hidden for now as it's desktop-specific */
+    display: none;
     background: none;
     border: none;
     color: #fff;
@@ -72,8 +73,7 @@ body {
     display: flex;
     gap: 2rem;
     align-items: center;
-    justify-content: flex-end; /* Aligns links to the right */
-    margin-left: auto; /* Pushes links to the end of the container */
+    margin-left: auto;
 }
 
 .nav-links a {
@@ -95,7 +95,6 @@ body {
     color: #f4821e;
     background-color: rgba(244, 130, 30, 0.1);
 }
-
 
 /* Mobile Menu Styles */
 @media (max-width: 768px) {
