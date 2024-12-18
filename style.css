@@ -890,11 +890,25 @@ footer img {
 /* PDF Viewer and CV Page Styles 
 -------------------------------------------------- */
 
+/* Ensure box-sizing for all elements */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Ensure html and body occupy full height */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 /* Main CV Page Layout */
 .cv-page {
     width: 100%;
-    min-height: calc(100vh - 120px);
-    margin-top: 80px;
+    height: calc(100vh - 80px); /* Full viewport height minus header height */
+    margin-top: 80px; /* Adjust based on your header's height */
     padding: 0 20px;
     display: flex;
     flex-direction: column;
@@ -915,7 +929,7 @@ footer img {
     display: flex;
     flex-direction: column;
     overflow: hidden; /* Prevents overflow from child elements */
-    height: 100%; /* Ensures it fills the parent container */
+    height: 100%; /* Fills the parent container */
 }
 
 /* Download Section */
@@ -957,8 +971,13 @@ footer img {
     width: 100%;
     background: #fff;
     border-radius: 4px;
-    overflow: auto; /* Enables both vertical and horizontal scrolling */
+    overflow: hidden; /* Prevents scrollbars on the wrapper */
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0; /* Ensure no padding */
+    margin: 0; /* Ensure no margin */
 }
 
 /* PDF Viewer */
@@ -966,11 +985,13 @@ footer img {
     width: 100%;
     height: 100%;
     border: none;
-    overflow: auto; /* Ensures the PDF can be scrolled */
+    overflow: auto; /* Enable scrolling */
     display: block;
 }
 
 /* Responsive Design */
+
+/* Tablet and above */
 @media (max-width: 1400px) {
     .cv-container {
         max-width: 1200px;
@@ -983,9 +1004,10 @@ footer img {
     }
 }
 
+/* Mobile Devices */
 @media (max-width: 768px) {
     .cv-page {
-        margin-top: 60px;
+        margin-top: 60px; /* Reduced header margin */
         padding: 10px;
         min-height: 100vh;
         height: auto;
@@ -994,7 +1016,7 @@ footer img {
     .cv-container {
         padding: 10px;
         height: auto;
-        min-height: calc(100vh - 100px);
+        min-height: calc(100vh - 100px); /* Adjust based on your layout */
     }
 
     .download-section {
@@ -1008,7 +1030,7 @@ footer img {
     }
 
     .pdf-wrapper {
-        height: calc(100vh - 180px);
+        height: calc(100vh - 180px); /* Adjust based on your layout */
         overflow: auto; /* Ensure scrolling is enabled */
     }
 
@@ -1020,6 +1042,7 @@ footer img {
     }
 }
 
+/* Extra Small Devices */
 @media (max-width: 480px) {
     .cv-page {
         padding: 5px;
@@ -1030,7 +1053,7 @@ footer img {
     }
 
     .pdf-wrapper {
-        height: calc(100vh - 170px);
+        height: calc(100vh - 170px); /* Adjust based on your layout */
     }
 
     .pdf-viewer {
@@ -1056,11 +1079,4 @@ footer img {
 /* Dark Mode Considerations */
 [data-theme="dark"] .pdf-wrapper {
     border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* Ensure HTML and Body Occupy Full Height */
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
 }
