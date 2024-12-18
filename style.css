@@ -528,6 +528,130 @@ body {
     font-size: 0.9rem;
 }
 
+/* Education Section */
+.education-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.education-list li {
+    margin-bottom: 1.5rem;
+    padding: 0.5rem 0;
+}
+
+.education-list li:last-child {
+    margin-bottom: 0;
+}
+
+.degree {
+    font-weight: 600;
+    color: #fff;
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+}
+
+.university {
+    color: #a3b3c9;
+    font-size: 1rem;
+}
+
+/* CV Page Styles */
+.cv-page {
+    width: 100%;
+    min-height: calc(100vh - 60px);
+    margin-top: 48px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    background-color: #282c34;
+}
+
+.cv-container {
+    flex: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    background-color: #1a1d23;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.pdf-wrapper {
+    flex: 1;
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 200px);
+    background: #fff;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 1rem;
+}
+
+.pdf-viewer {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.download-section {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem 0;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid rgba(244, 130, 30, 0.2);
+}
+
+.download-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #f4821e;
+    color: #1a1d23;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.download-button:hover {
+    background-color: #ff9f4a;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(244, 130, 30, 0.3);
+}
+
+/* CV Page Mobile Adjustments */
+@media (max-width: 768px) {
+    .cv-page {
+        padding: 0.5rem;
+    }
+
+    .cv-container {
+        padding: 1rem;
+    }
+
+    .pdf-wrapper {
+        height: calc(100vh - 180px);
+    }
+
+    .download-button {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Sections Grid */
+.sections-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
 /* Footer */
 footer {
     background-color: #1a1d23;
