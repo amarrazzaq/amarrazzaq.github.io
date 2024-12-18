@@ -168,7 +168,7 @@ body {
     flex-grow: 1;
     display: grid;
     grid-template-columns: 300px 1fr;
-    gap: 2rem;
+    gap: 4rem;
 }
 
 .single-column {
