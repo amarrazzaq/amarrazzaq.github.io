@@ -22,21 +22,21 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <header class="top-header">
-        <a href="index.htm" class="logo">
-            <span class="logo-text">Amar Razzaq</span>
-        </a>
-        <nav class="nav-links">
+    
+<header class="top-header">
+    <div class="nav-container">
+        <button class="hamburger-menu" aria-label="Menu">
+            <i class="fas fa-bars"></i>
+        </button>
+        <nav class="nav-links" id="nav-menu">
             <a href="index.htm">About</a>
             <a href="research.htm">Research</a>
             <a href="outreach.htm">Outreach</a>
             <a href="services.htm">Professional Services</a>
             <a href="cv.htm" class="active">CV</a>
-            <button class="theme-toggle" aria-label="Toggle dark mode">
-                <i class="fas fa-moon"></i>
-            </button>
         </nav>
-    </header>
+    </div>
+</header>
 
     <main class="cv-page">
         <div class="cv-container">
@@ -59,6 +59,41 @@
         <span>&copy; 2024 Amar Razzaq | All Rights Reserved</span>
     </p>
 </footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.querySelector('.hamburger-menu');
+    const nav = document.querySelector('.nav-links');
+    const body = document.body;
+
+    // Create overlay div
+    const overlay = document.createElement('div');
+    overlay.className = 'menu-overlay';
+    body.appendChild(overlay);
+
+    hamburger.addEventListener('click', function() {
+        nav.classList.toggle('active');
+        overlay.classList.toggle('active');
+        body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
+    });
+
+    // Close menu when clicking overlay
+    overlay.addEventListener('click', function() {
+        nav.classList.remove('active');
+        overlay.classList.remove('active');
+        body.style.overflow = '';
+    });
+
+    // Close menu when clicking a link
+    nav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', function() {
+            nav.classList.remove('active');
+            overlay.classList.remove('active');
+            body.style.overflow = '';
+        });
+    });
+});
+</script>
 
 </body>
 </html>
