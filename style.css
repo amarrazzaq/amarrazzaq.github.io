@@ -913,6 +913,7 @@ footer img {
     padding: 20px;
     display: flex;
     flex-direction: column;
+    overflow: hidden; /* Prevents overflow from child elements */
 }
 
 /* Download Section */
@@ -951,23 +952,20 @@ footer img {
 /* PDF Container */
 .pdf-wrapper {
     flex: 1;
-    position: relative;
     width: 100%;
     min-height: calc(100vh - 250px);
     background: #fff;
     border-radius: 4px;
-    overflow: hidden;
+    overflow: auto; /* Enables scrolling */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .pdf-viewer {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
     border: none;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
 }
 
 /* Responsive Design */
@@ -1008,12 +1006,11 @@ footer img {
     }
 
     .pdf-wrapper {
-        position: relative;
         height: calc(100vh - 180px);
     }
 
     .pdf-viewer {
-        position: relative;
+        width: 100%;
         height: 100%;
         overflow-y: scroll;
         -webkit-overflow-scrolling: touch;
