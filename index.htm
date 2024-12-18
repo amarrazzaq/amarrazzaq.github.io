@@ -50,21 +50,22 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <header class="top-header">
-        <a href="index.htm" class="logo">
-            <span class="logo-text">Amar Razzaq</span>
-        </a>
-        <nav class="nav-links">
-            <a href="index.htm" class="active">About</a>
-            <a href="research.htm">Research</a>
-            <a href="outreach.htm">Outreach</a>
-            <a href="services.htm">Professional Services</a>
-            <a href="cv.htm">CV</a>
-            <button class="theme-toggle" aria-label="Toggle dark mode">
-                <i class="fas fa-moon"></i>
-            </button>
-        </nav>
-    </header>
+   
+<header class="top-header">
+    <button class="mobile-menu-toggle" aria-label="Toggle menu">
+        <i class="fas fa-bars"></i>
+    </button>
+    <nav class="nav-links">
+        <a href="index.htm">About</a>
+        <a href="research.htm">Research</a>
+        <a href="outreach.htm">Outreach</a>
+        <a href="services.htm">Professional Services</a>
+        <a href="cv.htm">CV</a>
+        <button class="theme-toggle" aria-label="Toggle dark mode">
+            <i class="fas fa-moon"></i>
+        </button>
+    </nav>
+</header>
 
     <main class="main-content">
         <div class="profile-section">
@@ -158,6 +159,25 @@
         <span>&copy; 2024 Amar Razzaq | All Rights Reserved</span>
     </p>
 </footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.querySelector('.mobile-menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuToggle.addEventListener('click', function() {
+        navLinks.classList.toggle('active');
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+        if (!event.target.closest('.nav-links') && 
+            !event.target.closest('.mobile-menu-toggle')) {
+            navLinks.classList.remove('active');
+        }
+    });
+});
+</script>
 
 </body>
 </html>
