@@ -28,19 +28,17 @@ body {
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-
 .nav-container {
     display: flex;
     align-items: center;
+    justify-content: space-between; /* Distribute space between items */
     width: 100%;
     position: relative;
 }
 
 .header-tagline {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    flex: 1; /* Allow the tagline to take available space */
+    text-align: center; /* Center the tagline text */
     color: #a3b3c9;
     font-size: 1rem;
     font-weight: 300;
@@ -72,7 +70,7 @@ body {
     display: flex;
     gap: 2rem;
     align-items: center;
-    margin-left: auto;
+    /* Removed margin-left: auto; */
 }
 
 .nav-links a {
@@ -333,10 +331,6 @@ body {
     padding-left: 1.5rem;
 }
 
-.timeline-item:last-child {
-    margin-bottom: 0;
-}
-
 .timeline-item::before {
     content: "";
     position: absolute;
@@ -391,7 +385,7 @@ body {
 /* Footer */
 footer {
     background-color: #1a1d23;
-    padding: 0.75rem;
+    padding: 0.5rem; /* Updated to match mobile optimizations */
     margin-top: auto;
     border-top: 1px solid #333;
     color: #a3b3c9;
@@ -401,7 +395,7 @@ footer p {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.75rem;
+    gap: 0.75rem; /* Updated gap */
     white-space: nowrap;
     font-size: 0.9rem;
 }
@@ -760,7 +754,7 @@ footer img {
     .outreach-card {
         padding: 1.25rem;
     }
-}
+    
     .talks-timeline {
         padding-left: 1.5rem;
     }
@@ -772,59 +766,8 @@ footer img {
     .talk-item {
         padding-left: 1rem;
     }
-}
 
-/* Timeline Section - NEW */
-.timeline {
-    position: relative;
-    padding-left: 2rem;
-}
-
-.timeline::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background: rgba(244, 130, 30, 0.3);
-}
-
-.timeline-item {
-    position: relative;
-    margin-bottom: 2rem;
-    padding-left: 1.5rem;
-}
-
-.timeline-item::before {
-    content: "";
-    position: absolute;
-    left: -2rem;
-    top: 0.5rem;
-    width: 1rem;
-    height: 1rem;
-    border-radius: 50%;
-    background: #f4821e;
-    border: 2px solid #1a1d23;
-}
-
-.timeline-date {
-    color: #f4821e;
-    font-size: 0.9rem;
-    margin-bottom: 0.5rem;
-}
-
-.timeline-content h3 {
-    color: #fff;
-    margin-bottom: 0.5rem;
-}
-
-.timeline-content p {
-    color: #a3b3c9;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
+    /* Adjust header styles */
     .main-content {
         margin-top: 56px;  /* Increased for subtle gap below header */
         padding: 0.5rem;
@@ -930,19 +873,19 @@ footer img {
     }
 }
 
- /* Footer mobile optimizations */
-    footer {
-        padding: 0.5rem;
-    }
-    
-    footer p {
-        font-size: 0.8rem;
-        gap: 0.5rem;
-    }
-    
-    footer img {
-        height: 18px;
-    }
+/* Footer mobile optimizations */
+footer {
+    padding: 0.5rem;
+}
+
+footer p {
+    font-size: 0.8rem;
+    gap: 0.5rem;
+}
+
+footer img {
+    height: 18px;
+}
 
 /* PDF Viewer and CV Page Styles 
 -------------------------------------------------- */
