@@ -899,6 +899,7 @@ footer img {
     display: flex;
     flex-direction: column;
     background-color: #282c34;
+    box-sizing: border-box;
 }
 
 /* CV Container */
@@ -914,6 +915,7 @@ footer img {
     display: flex;
     flex-direction: column;
     overflow: hidden; /* Prevents overflow from child elements */
+    height: 100%; /* Ensures it fills the parent container */
 }
 
 /* Download Section */
@@ -949,23 +951,23 @@ footer img {
     font-size: 16px;
 }
 
-/* PDF Container */
+/* PDF Wrapper */
 .pdf-wrapper {
     flex: 1;
     width: 100%;
-    min-height: calc(100vh - 250px);
     background: #fff;
     border-radius: 4px;
-    overflow: auto; /* Enables scrolling */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    overflow: auto; /* Enables both vertical and horizontal scrolling */
+    position: relative;
 }
 
+/* PDF Viewer */
 .pdf-viewer {
     width: 100%;
     height: 100%;
     border: none;
+    overflow: auto; /* Ensures the PDF can be scrolled */
+    display: block;
 }
 
 /* Responsive Design */
@@ -1007,13 +1009,14 @@ footer img {
 
     .pdf-wrapper {
         height: calc(100vh - 180px);
+        overflow: auto; /* Ensure scrolling is enabled */
     }
 
     .pdf-viewer {
         width: 100%;
         height: 100%;
-        overflow-y: scroll;
-        -webkit-overflow-scrolling: touch;
+        overflow: auto; /* Enable scrolling within the iframe */
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
     }
 }
 
@@ -1029,9 +1032,16 @@ footer img {
     .pdf-wrapper {
         height: calc(100vh - 170px);
     }
+
+    .pdf-viewer {
+        width: 100%;
+        height: 100%;
+        overflow: auto; /* Enable scrolling within the iframe */
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    }
 }
 
-/* iOS Safari specific styles */
+/* iOS Safari Specific Styles */
 @supports (-webkit-touch-callout: none) {
     .pdf-wrapper {
         -webkit-overflow-scrolling: touch;
@@ -1043,7 +1053,14 @@ footer img {
     }
 }
 
-/* Dark mode considerations */
+/* Dark Mode Considerations */
 [data-theme="dark"] .pdf-wrapper {
     border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Ensure HTML and Body Occupy Full Height */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
