@@ -18,12 +18,13 @@ body {
 /* Header/Navigation */
 .top-header {
     background-color: #1a1d23;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    padding: 0.5rem 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    padding: 0.75rem 1rem;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .nav-container {
@@ -128,7 +129,7 @@ body {
 /* Main Content */
 .main-content {
     max-width: 1200px;
-    margin: 100px auto 2rem;
+    margin: 72px auto 2rem;  /* Changed from 100px to 72px */
     padding: 2rem;
     flex-grow: 1;
     display: grid;
@@ -1005,29 +1006,22 @@ footer {
 @media (max-width: 768px) {
     .main-content {
         margin-top: 60px;
-        padding: 1rem;
+        padding: 0.75rem;
+        grid-template-columns: 1fr;
     }
 
     .profile-section {
-        margin-top: 0;
-        padding: 1.5rem;
+        margin-top: 0.75rem;
+        padding: 1.25rem;
+        position: static;
     }
 
-    /* Welcome Message Fix */
-    .content-section h1 {
-        font-size: 2rem;
-        line-height: 1.2;
-        margin-bottom: 1.5rem;
-        text-align: left;
+    .profile-pic {
+        width: 140px;
+        height: 140px;
+        margin-bottom: 1rem;
     }
 
-    /* Left-aligned content */
-    .content-section {
-        text-align: left;
-        padding: 1.5rem;
-    }
-
-    /* Profile section adjustments */
     .profile-name {
         font-size: 1.75rem;
         margin-bottom: 0.5rem;
@@ -1036,11 +1030,34 @@ footer {
     .profile-title {
         font-size: 1.1rem;
         margin-bottom: 0.5rem;
+        padding: 0 0.5rem;
     }
 
     .profile-affiliation {
         font-size: 0.9rem;
+        margin-bottom: 1rem;
+        padding: 0 0.5rem;
+    }
+
+    .social-links {
+        gap: 1.2rem;
+        margin-top: 1rem;
+    }
+
+    .social-links a {
+        font-size: 1.3rem;
+    }
+
+    .content-section {
+        padding: 1.25rem;
+        text-align: left;
+    }
+
+    .content-section h1 {
+        font-size: 2rem;
+        line-height: 1.2;
         margin-bottom: 1.5rem;
+        text-align: left;
     }
 
     /* Section spacing */
