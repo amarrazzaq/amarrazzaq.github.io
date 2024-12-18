@@ -52,19 +52,21 @@
 <body>
    
 <header class="top-header">
-    <button class="mobile-menu-toggle" aria-label="Toggle menu">
-        <i class="fas fa-bars"></i>
-    </button>
-    <nav class="nav-links">
-        <a href="index.htm">About</a>
-        <a href="research.htm">Research</a>
-        <a href="outreach.htm">Outreach</a>
-        <a href="services.htm">Professional Services</a>
-        <a href="cv.htm">CV</a>
-        <button class="theme-toggle" aria-label="Toggle dark mode">
-            <i class="fas fa-moon"></i>
+    <div class="nav-container">
+        <button class="hamburger-menu" aria-label="Menu">
+            <i class="fas fa-bars"></i>
         </button>
-    </nav>
+        <nav class="nav-links" id="nav-menu">
+            <a href="index.htm">About</a>
+            <a href="research.htm">Research</a>
+            <a href="outreach.htm">Outreach</a>
+            <a href="services.htm">Professional Services</a>
+            <a href="cv.htm">CV</a>
+            <button class="theme-toggle" aria-label="Toggle dark mode">
+                <i class="fas fa-moon"></i>
+            </button>
+        </nav>
+    </div>
 </header>
 
     <main class="main-content">
@@ -162,19 +164,35 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    const menuToggle = document.querySelector('.mobile-menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
+    const hamburger = document.querySelector('.hamburger-menu');
+    const nav = document.querySelector('.nav-links');
+    const body = document.body;
 
-    menuToggle.addEventListener('click', function() {
-        navLinks.classList.toggle('active');
+    // Create overlay div
+    const overlay = document.createElement('div');
+    overlay.className = 'menu-overlay';
+    body.appendChild(overlay);
+
+    hamburger.addEventListener('click', function() {
+        nav.classList.toggle('active');
+        overlay.classList.toggle('active');
+        body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
     });
 
-    // Close menu when clicking outside
-    document.addEventListener('click', function(event) {
-        if (!event.target.closest('.nav-links') && 
-            !event.target.closest('.mobile-menu-toggle')) {
-            navLinks.classList.remove('active');
-        }
+    // Close menu when clicking overlay
+    overlay.addEventListener('click', function() {
+        nav.classList.remove('active');
+        overlay.classList.remove('active');
+        body.style.overflow = '';
+    });
+
+    // Close menu when clicking a link
+    nav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', function() {
+            nav.classList.remove('active');
+            overlay.classList.remove('active');
+            body.style.overflow = '';
+        });
     });
 });
 </script>
