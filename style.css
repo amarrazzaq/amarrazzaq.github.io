@@ -29,6 +29,30 @@ body {
     align-items: center;
 }
 
+/* Add these new styles here */
+.header-tagline {
+    color: #a3b3c9;
+    font-size: 1rem;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    margin-left: 3.5rem;
+}
+
+.header-tagline span {
+    display: inline-block;
+    color: #f4821e;
+    font-weight: 400;
+    font-size: 1.1rem;
+    font-family: "Playfair Display", serif;
+    padding-right: 2px;
+}
+
+@media (max-width: 768px) {
+    .header-tagline {
+        display: none;
+    }
+}
+
 .nav-container {
     display: flex;
     align-items: center;
