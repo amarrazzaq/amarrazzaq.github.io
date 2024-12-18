@@ -1080,3 +1080,39 @@ html, body {
 [data-theme="dark"] .pdf-wrapper {
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
+
+/* Desktop Navigation Enhancements */
+@media (min-width: 769px) {
+    /* Adjust nav-container to center navigation links */
+    .nav-container {
+        display: flex;
+        align-items: center;
+        justify-content: center; /* Center the nav-links */
+        position: relative; /* For positioning the tagline */
+        padding: 0 2rem; /* Add horizontal padding */
+    }
+
+    /* Shift the tagline slightly to the left */
+    .header-tagline {
+        position: absolute;
+        left: 20px; /* Adjust this value to move the tagline left */
+        text-align: left;
+        flex: 0 0 auto; /* Prevent the tagline from stretching */
+        color: #a3b3c9; /* Ensure the color matches your theme */
+        font-size: 1rem; /* Adjust font size if necessary */
+    }
+
+    /* Style the navigation links */
+    .nav-links {
+        display: flex;
+        gap: 2rem; /* Increase or decrease the spacing between links */
+        justify-content: center; /* Ensure links are centered */
+    }
+
+    /* Optional: Adjust individual nav-links for better spacing */
+    .nav-links a {
+        padding: 0.5rem 1rem; /* Reduce padding if links are too spaced out */
+        font-size: 1rem; /* Ensure font size is consistent */
+    }
+}
+
