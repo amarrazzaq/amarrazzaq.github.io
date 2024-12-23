@@ -440,38 +440,56 @@ body {
 }
 
 /* Footer */
-footer {
-    background-color: #1a1d23;
-    padding: 0.5rem 1rem; /* Added horizontal padding */
-    margin-top: auto;
-    border-top: 1px solid #333;
-    color: #a3b3c9;
-    display: flex; /* Use flex to keep items in one line */
-    justify-content: center;
-    align-items: center;
+@media (max-width: 768px) {
+    /* Reduce horizontal padding to prevent overflow */
+    footer {
+        padding: 0.5rem 0.5rem; /* Reduced from 0.5rem 1rem */
+    }
+
+    /* Ensure footer-container fits within viewport and add horizontal padding */
+    .footer-container {
+        max-width: 100%;          /* Override max-width for smaller screens */
+        padding: 0 0.5rem;        /* Add horizontal padding */
+        box-sizing: border-box;   /* Include padding in width calculations */
+    }
+
+    /* Adjust footer text and elements */
+    footer p {
+        font-size: 0.8rem;        /* Slightly reduce font size */
+        gap: 0.5rem;              /* Reduce gap between elements */
+        white-space: nowrap;      /* Keep text in a single line */
+        overflow: hidden;         /* Hide any overflowing content */
+        text-overflow: ellipsis;  /* Add ellipsis for overflowing text */
+    }
+
+    /* Ensure footer images scale appropriately */
+    footer img {
+        height: 16px;              /* Maintain small image height */
+        max-width: 100%;           /* Prevent images from exceeding container width */
+    }
 }
 
-.footer-container {
-    max-width: 1200px; /* Adjust as needed */
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: nowrap; /* Prevent wrapping */
-}
+@media (max-width: 480px) {
+    /* Further reduce padding for very small screens */
+    footer {
+        padding: 0.5rem 0.25rem; /* Further reduce horizontal padding */
+    }
 
-footer p {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.75rem; /* Updated gap */
-    white-space: nowrap; /* Prevent wrapping */
-    font-size: 0.9rem;
-}
+    /* Further adjust footer-container */
+    .footer-container {
+        padding: 0 0.25rem;       /* Further reduce horizontal padding */
+    }
 
-footer img {
-    max-width: 100%; /* Ensure images do not exceed container */
-    height: auto; /* Maintain aspect ratio */
+    /* Further adjust footer text */
+    footer p {
+        font-size: 0.75rem;       /* Further reduce font size */
+        gap: 0.35rem;             /* Further reduce gap */
+    }
+
+    /* Further adjust footer images */
+    footer img {
+        height: 14px;              /* Slightly reduce image height */
+    }
 }
 
 /* Journal Names */
