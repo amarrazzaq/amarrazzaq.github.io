@@ -903,7 +903,7 @@ footer img {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    color: #f4821e;
+    color: #61dafb; /* Light blue color for better visibility */
     text-decoration: none;
     font-size: 0.9rem;
     transition: all 0.2s ease;
@@ -911,17 +911,17 @@ footer img {
 }
 
 .outreach-link:hover {
-    color: #ff9f4a;
-    transform: translateX(5px);
+    color: #f4821e; /* Orange on hover */
 }
 
-.outreach-link .arrow {
-    display: inline-block;
+.outreach-link i {
+    font-size: 0.9rem;
     transition: transform 0.2s ease;
+    margin-left: 4px;
 }
 
-.outreach-link:hover .arrow {
-    transform: translateX(3px);
+.outreach-link:hover i {
+    transform: translate(2px, -2px);
 }
 
 /* Outreach Talks Section */
@@ -1015,7 +1015,7 @@ footer img {
     
     .outreach-card {
         padding: 1.25rem;
-        padding-bottom: 3rem; /* Adjusted space for link */
+        padding-bottom: 3rem;
     }
     
     .outreach-link {
@@ -1023,7 +1023,6 @@ footer img {
         bottom: 0.75rem;
     }
     
-    /* Rest of your existing mobile styles */
     .talks-timeline {
         padding-left: 1.5rem;
     }
@@ -1035,6 +1034,7 @@ footer img {
     .talk-item {
         padding-left: 1rem;
     }
+}
 
 .welcome-heading {
         font-size: 2rem;
