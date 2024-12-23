@@ -1,3 +1,14 @@
+:root {
+    --main-bg-color: #282c34;
+    --sub-bg-color: #1a1d23;
+    --accent-color: #f4821e;
+    --light-text-color: #a3b3c9;
+    --white-text-color: #fff;
+    --link-highlight-color: #61dafb;
+    --shadow-color: rgba(0, 0, 0, 0.2);
+    --hover-shadow-color: rgba(0, 0, 0, 0.3);
+}
+
 /* General Reset */
 * {
     margin: 0;
@@ -8,62 +19,64 @@
 
 body {
     line-height: 1.6;
-    color: #fff;
-    background-color: #282c34;
+    color: var(--white-text-color);
+    background-color: var(--main-bg-color);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    padding-top: 80px; /* Adjusted to account for fixed header height */
+    /* Reduced from 80px to 60px */
+    padding-top: 60px; 
 }
 
 /* Header/Navigation */
 .top-header {
-    background-color: #1a1d23;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    background-color: var(--sub-bg-color);
+    box-shadow: 0 2px 8px var(--hover-shadow-color);
     padding: 0.75rem 1rem;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    height: 60px; /* Explicit height */
-    overflow: hidden; /* Prevent content overflow */
+    height: 60px;
+    overflow: hidden;
 }
 
+/* 
+   Updated nav-container so tagline is on the left and links on right 
+*/
 .nav-container {
     display: flex;
     align-items: center;
-    justify-content: center; /* Center navigation links */
+    justify-content: flex-end; 
     width: 100%;
     position: relative;
-    gap: 2rem; /* Space between tagline and nav-links */
+    gap: 2rem;
 }
 
 /* Header Tagline */
 .header-tagline {
-    flex: 0 1 auto; /* Prevent stretching */
-    text-align: center;
-    color: #a3b3c9;
+    /* This places the tagline on the left */
+    margin-right: auto;
+    text-align: left;
+
+    color: var(--light-text-color);
     font-size: 1rem;
     font-weight: 300;
     letter-spacing: 0.5px;
     white-space: nowrap;
     text-decoration: none;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .header-tagline:hover {
-    color: #f4821e;
-    transition: color 0.3s ease;
-}
-
-.header-tagline:hover span {
-    color: #f4821e;
+    color: var(--accent-color);
 }
 
 .header-tagline span {
     display: inline-block;
-    color: #f4821e;
+    color: var(--accent-color);
     font-weight: 400;
     font-size: 1.1rem;
     font-family: "Playfair Display", serif;
@@ -75,11 +88,11 @@ body {
     display: none;
     background: none;
     border: none;
-    color: #fff;
+    color: var(--white-text-color);
     font-size: 1.5rem;
     cursor: pointer;
     padding: 0.5rem;
-    z-index: 1001; /* Ensure it's above the nav-links */
+    z-index: 1001;
 }
 
 /* Navigation Links */
@@ -90,22 +103,18 @@ body {
 }
 
 .nav-links a {
-    color: #a3b3c9;
+    color: var(--light-text-color);
     text-decoration: none;
     font-size: 1rem;
     font-weight: 500;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
     padding: 0.5rem 1rem;
     border-radius: 4px;
 }
 
-.nav-links a:hover {
-    color: #f4821e;
-    background-color: rgba(244, 130, 30, 0.1);
-}
-
+.nav-links a:hover,
 .nav-links a.active {
-    color: #f4821e;
+    color: var(--accent-color);
     background-color: rgba(244, 130, 30, 0.1);
 }
 
@@ -116,44 +125,44 @@ body {
     }
 
     .header-tagline {
-        font-size: 0.9rem;     /* Override font size for mobile */
-        padding: 0.5rem 0;     /* Add vertical padding for mobile */
-        flex: 1;               /* Allow tagline to take available space */
-        text-align: center;    /* Center text on mobile */
+        font-size: 0.9rem;
+        padding: 0.5rem 0;
+        flex: 1;
+        text-align: center;
     }
 
     .header-tagline span {
-        font-size: 1rem;       /* Override span font size for mobile */
+        font-size: 1rem;
     }
 
-    .header-tagline:active {   /* Mobile-specific touch feedback */
+    .header-tagline:active {
         opacity: 0.8;
     }
 
     .nav-links {
         position: fixed;
         top: 0;
-        right: -250px; /* Position off-screen on the right */
+        right: -250px;
         width: 250px;
         height: 100vh;
-        background-color: #1a1d23;
+        background-color: var(--sub-bg-color);
         flex-direction: column;
         padding: 4rem 1rem 1rem 1rem;
-        transition: right 0.3s ease; /* Sliding effect */
-        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2); /* Shadow on the left side */
+        transition: right 0.3s ease;
+        box-shadow: -2px 0 5px var(--shadow-color);
         z-index: 1000;
         margin: 0;
         gap: 0;
     }
 
     .nav-links.active {
-        right: 0; /* Align the menu with the right edge */
+        right: 0;
     }
 
     .nav-links a {
         padding: 1rem;
         width: 100%;
-        text-align: left; /* Align text to the left */
+        text-align: left;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         font-size: 1.1rem;
     }
@@ -164,9 +173,10 @@ body {
 }
 
 /* Main Content */
+/* Reduced from 80px top margin to 60px */
 .main-content {
     max-width: 1200px;
-    margin: 80px auto 2rem;  /* Increased top margin to 80px to match header height */
+    margin: 60px auto 2rem; 
     padding: 2rem;
     flex-grow: 1;
     display: grid;
@@ -182,12 +192,12 @@ body {
 /* Profile Section */
 .profile-section {
     text-align: center;
-    background-color: #1a1d23;
+    background-color: var(--sub-bg-color);
     padding: 2rem;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 4px var(--shadow-color);
     position: sticky;
-    top: 80px; /* Adjusted to match main content's top margin */
+    top: 60px; /* Adjusted if you like, or keep 80px */
     height: fit-content;
 }
 
@@ -203,17 +213,17 @@ body {
 .profile-name {
     font-size: 2rem;
     margin-bottom: 0.5rem;
-    color: #fff;
+    color: var(--white-text-color);
 }
 
 .profile-title {
-    color: #f4821e;
+    color: var(--accent-color);
     margin-bottom: 1rem;
     font-size: 1.1rem;
 }
 
 .profile-affiliation {
-    color: #a3b3c9;
+    color: var(--light-text-color);
     margin-bottom: 2rem;
 }
 
@@ -226,16 +236,17 @@ body {
 }
 
 .social-links a {
-    color: #a3b3c9;
+    color: var(--light-text-color);
     font-size: 1.5rem;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .social-links a:hover {
-    color: #f4821e;
+    color: var(--accent-color);
 }
 
+/* Specific icon colors */
 .social-links .fa-google {
     color: #4285F4;
 }
@@ -249,16 +260,16 @@ body {
 }
 
 .social-links .fa-university {
-    color: #f4821e;  /* Matching your theme's orange */
+    color: var(--accent-color);
 }
 
 .social-links .fa-envelope {
     color: #EA4335;
 }
 
-/* CV Link Style */
+/* CV Link */
 .social-links .cv-link {
-    color: #f4821e;
+    color: var(--accent-color);
     font-weight: 500;
     font-size: 1rem;
     text-decoration: none;
@@ -269,25 +280,21 @@ body {
 }
 
 .social-links .cv-link:hover {
-    color: #f4821e;
-    border-color: #f4821e;
+    color: var(--accent-color);
+    border-color: var(--accent-color);
     transform: translateY(-2px);
-}
-
-.social-links a:hover i {
-    color: #f4821e;  /* Matching your hover color */
 }
 
 /* Content Section */
 .content-section {
-    background-color: #1a1d23;
+    background-color: var(--sub-bg-color);
     padding: 2rem;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 4px var(--shadow-color);
 }
 
 .content-section h1 {
-    color: #fff;
+    color: var(--white-text-color);
     margin-bottom: 1.5rem;
     font-size: 2.5rem;
 }
@@ -296,15 +303,15 @@ body {
     text-align: left;
     font-size: 2.5rem;
     line-height: 1.2;
-    margin-bottom: 1rem; /* Reduced from 2rem to 1rem */
+    margin-bottom: 1rem;
     width: 100%;
     font-weight: bold;
-    color: #fff;  /* Keep consistent with your theme */
+    color: var(--white-text-color);
 }
 
 .content-section p {
     margin-bottom: 1.5rem;
-    color: #a3b3c9;
+    color: var(--light-text-color);
 }
 
 /* Sections Grid */
@@ -319,7 +326,7 @@ body {
 }
 
 .section-title {
-    color: #f4821e;
+    color: var(--accent-color);
     margin-bottom: 1rem;
     font-size: 1.25rem;
     text-align: left;
@@ -331,19 +338,19 @@ body {
     position: relative;
     width: 100%;
     margin-bottom: 2rem;
-    background-color: #1a1d23;
+    background-color: var(--sub-bg-color);
     padding: 2rem;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 4px var(--shadow-color);
 }
 
 .experience-section h2 {
-    color: #f4821e;
+    color: var(--accent-color);
     font-size: 1.5rem;
     margin-bottom: 2rem;
     padding-bottom: 0.5rem;
     border-bottom: 2px solid rgba(255, 255, 255, 0.1);
-    margin-top: 0; /* Ensure no extra top margin */
+    margin-top: 0;
 }
 
 .timeline {
@@ -376,24 +383,24 @@ body {
     width: 1rem;
     height: 1rem;
     border-radius: 50%;
-    background: #f4821e;
-    border: 2px solid #1a1d23;
+    background: var(--accent-color);
+    border: 2px solid var(--sub-bg-color);
 }
 
 .timeline-date {
-    color: #f4821e;
+    color: var(--accent-color);
     font-size: 0.9rem;
     margin-bottom: 0.5rem;
 }
 
 .timeline-content h4 {
-    color: #fff;
+    color: var(--white-text-color);
     margin-bottom: 0.5rem;
     font-size: 1.1rem;
 }
 
 .timeline-content p {
-    color: #a3b3c9;
+    color: var(--light-text-color);
     font-size: 0.9rem;
 }
 
@@ -402,19 +409,19 @@ body {
     width: 100%;
     position: relative;
     margin-bottom: 2rem;
-    background-color: #1a1d23;
+    background-color: var(--sub-bg-color);
     padding: 2rem;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 4px var(--shadow-color);
 }
 
 .education h2 {
-    color: #f4821e;
+    color: var(--accent-color);
     font-size: 1.5rem;
     margin-bottom: 2rem;
     padding-bottom: 0.5rem;
     border-bottom: 2px solid rgba(255, 255, 255, 0.1);
-    margin-top: 0; /* Ensure no extra top margin */
+    margin-top: 0;
 }
 
 .education-list {
@@ -432,122 +439,113 @@ body {
 
 .degree {
     font-weight: 600;
-    color: #fff;
+    color: var(--white-text-color);
 }
 
 .university {
-    color: #a3b3c9;
+    color: var(--light-text-color);
 }
 
 /* Footer */
 footer {
-    background-color: #1a1d23;
-    padding: 0.5rem 1rem; /* Existing horizontal padding */
+    background-color: var(--sub-bg-color);
+    padding: 0.5rem 1rem;
     margin-top: auto;
     border-top: 1px solid #333;
-    border-bottom: 1px solid #333; /* Added bottom border to restore the below bar */
-    color: #a3b3c9;
-    display: flex; /* Use flex to keep items in one line */
+    border-bottom: 1px solid #333;
+    color: var(--light-text-color);
+    display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden; /* Prevent content from overflowing */
+    overflow: hidden;
 }
 
 .footer-container {
-    max-width: 1200px; /* Existing max-width */
+    max-width: 1200px;
     margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: nowrap; /* Prevent wrapping */
+    flex-wrap: nowrap;
 }
 
 footer p {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.75rem; /* Existing gap */
-    white-space: nowrap; /* Prevent wrapping */
+    gap: 0.75rem;
+    white-space: nowrap;
     font-size: 0.9rem;
 }
 
 footer img {
-    max-width: 100%; /* Ensure images do not exceed container */
-    height: auto; /* Maintain aspect ratio */
+    max-width: 100%;
+    height: auto;
 }
 
-/* Footer Specific Fixes */
+/* Footer Mobile */
 @media (max-width: 768px) {
-    /* Reduce horizontal padding to prevent overflow */
     footer {
-        padding: 0.5rem 0.5rem; /* Reduced from 0.5rem 1rem */
+        padding: 0.5rem 0.5rem;
     }
 
-    /* Ensure footer-container fits within viewport and add horizontal padding */
     .footer-container {
-        max-width: 100%;          /* Override max-width for smaller screens */
-        padding: 0 0.5rem;        /* Add horizontal padding */
-        box-sizing: border-box;   /* Include padding in width calculations */
+        max-width: 100%;
+        padding: 0 0.5rem;
+        box-sizing: border-box;
     }
 
-    /* Adjust footer text and elements */
     footer p {
-        font-size: 0.8rem;        /* Slightly reduce font size */
-        gap: 0.5rem;              /* Reduce gap between elements */
-        white-space: nowrap;      /* Keep text in a single line */
-        overflow: hidden;         /* Hide any overflowing content */
-        text-overflow: ellipsis;  /* Add ellipsis for overflowing text */
+        font-size: 0.8rem;
+        gap: 0.5rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
-    /* Ensure footer images scale appropriately */
     footer img {
-        height: 16px;              /* Maintain small image height */
-        max-width: 100%;           /* Prevent images from exceeding container width */
+        height: 16px;
     }
 }
 
 @media (max-width: 480px) {
-    /* Further reduce padding for very small screens */
     footer {
-        padding: 0.5rem 0.25rem; /* Further reduce horizontal padding */
+        padding: 0.5rem 0.25rem;
     }
 
-    /* Further adjust footer-container */
     .footer-container {
-        padding: 0 0.25rem;       /* Further reduce horizontal padding */
+        padding: 0 0.25rem;
     }
 
-    /* Further adjust footer text */
     footer p {
-        font-size: 0.75rem;       /* Further reduce font size */
-        gap: 0.35rem;             /* Further reduce gap */
+        font-size: 0.75rem;
+        gap: 0.35rem;
     }
 
-    /* Further adjust footer images */
     footer img {
-        height: 14px;              /* Slightly reduce image height */
+        height: 14px;
     }
 }
 
 /* Journal Names */
 .journal-name {
     font-style: italic;
-    color: #61dafb;
+    color: var(--link-highlight-color);
 }
 
 /* Theme Toggle Button */
 .theme-toggle {
     background: none;
     border: none;
-    color: #a3b3c9;
+    color: var(--light-text-color);
     cursor: pointer;
     font-size: 1.2rem;
     padding: 0.5rem;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .theme-toggle:hover {
-    color: #f4821e;
+    color: var(--accent-color);
 }
 
 /* Publications Section */
@@ -560,7 +558,7 @@ footer img {
 }
 
 .category-title {
-    color: #f4821e;
+    color: var(--accent-color);
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
     padding-bottom: 0.5rem;
@@ -577,7 +575,7 @@ footer img {
 .pub-item {
     margin-bottom: 1.5rem;
     padding-left: 1rem;
-    border-left: 3px solid #f4821e;
+    border-left: 3px solid var(--accent-color);
 }
 
 .pub-item:last-child {
@@ -585,50 +583,49 @@ footer img {
 }
 
 .pub-item .authors {
-    color: #a3b3c9;
+    color: var(--light-text-color);
     margin-bottom: 0.3rem;
     font-size: 0.9rem;
 }
 
 .pub-item .title {
-    color: #fff;
+    color: var(--white-text-color);
     margin-bottom: 0.3rem;
     font-weight: 500;
 }
 
 .pub-item .journal {
-    color: #61dafb;
+    color: var(--link-highlight-color);
     font-style: italic;
     font-size: 0.9rem;
 }
 
-/* Services Section Styling */
+/* Services Section */
 .services-section {
     margin-bottom: 4rem;
 }
 
 .service-cards {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Exactly two cards per row */
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
     margin-bottom: 3rem;
 }
 
-/* Service Card */
 .service-card {
     background: rgba(255, 255, 255, 0.05);
     border-radius: 8px;
     padding: 1.5rem;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    border-top: 3px solid #f4821e;
+    border-top: 3px solid var(--accent-color);
     display: flex;
     flex-direction: column;
-    height: 100%; /* Ensure equal height cards */
+    height: 100%;
 }
 
 .service-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px var(--shadow-color);
 }
 
 .card-header {
@@ -639,13 +636,13 @@ footer img {
 }
 
 .card-header i {
-    color: #f4821e;
+    color: var(--accent-color);
     font-size: 1.8rem;
     flex-shrink: 0;
 }
 
 .card-header h3 {
-    color: #fff;
+    color: var(--white-text-color);
     font-size: 1.3rem;
     margin: 0;
     line-height: 1.3;
@@ -658,14 +655,14 @@ footer img {
 }
 
 .card-content .journal-name {
-    color: #61dafb;
+    color: var(--link-highlight-color);
     font-style: italic;
     font-size: 1.1rem;
     margin-bottom: 0.75rem;
 }
 
 .card-content .role-description {
-    color: #a3b3c9;
+    color: var(--light-text-color);
     font-size: 0.95rem;
     line-height: 1.5;
     margin-bottom: 1rem;
@@ -676,7 +673,7 @@ footer img {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    color: #f4821e;
+    color: var(--accent-color);
     text-decoration: none;
     font-size: 0.9rem;
     transition: color 0.2s ease;
@@ -687,7 +684,7 @@ footer img {
     text-decoration: underline;
 }
 
-/* Review Summary Section */
+/* Review Summary */
 .review-summary {
     background: rgba(255, 255, 255, 0.05);
     border-radius: 8px;
@@ -698,13 +695,13 @@ footer img {
     display: flex;
     align-items: center;
     gap: 1rem;
-    color: #f4821e;
+    color: var(--accent-color);
     font-size: 1.2rem;
     margin-bottom: 1.5rem;
 }
 
 .journals-list h3 {
-    color: #fff;
+    color: var(--white-text-color);
     margin-bottom: 1rem;
 }
 
@@ -716,26 +713,26 @@ footer img {
 }
 
 .journals-list li {
-    color: #a3b3c9;
+    color: var(--light-text-color);
     position: relative;
     padding-left: 1.5rem;
 }
 
 .journals-list li::before {
     content: "•";
-    color: #f4821e;
+    color: var(--accent-color);
     position: absolute;
     left: 0;
 }
 
-/* Outreach Work Section */
+/* Outreach Work */
 .outreach-work-section {
     margin-bottom: 4rem;
 }
 
 .outreach-cards {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Two cards per row */
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
     margin-top: 2rem;
 }
@@ -745,15 +742,15 @@ footer img {
     border-radius: 8px;
     padding: 1.5rem;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    border-top: 3px solid #f4821e;
-    height: 100%; /* Ensure equal height */
+    border-top: 3px solid var(--accent-color);
+    height: 100%;
     display: flex;
     flex-direction: column;
 }
 
 .outreach-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px var(--shadow-color);
 }
 
 .outreach-card .card-header {
@@ -764,12 +761,12 @@ footer img {
 }
 
 .outreach-card .card-header i {
-    color: #f4821e;
+    color: var(--accent-color);
     font-size: 1.5rem;
 }
 
 .outreach-card .card-header h3 {
-    color: #fff;
+    color: var(--white-text-color);
     font-size: 1.2rem;
     margin: 0;
 }
@@ -781,13 +778,13 @@ footer img {
 }
 
 .outreach-card .card-content p {
-    color: #a3b3c9;
+    color: var(--light-text-color);
     font-size: 0.95rem;
     line-height: 1.6;
     margin: 0;
 }
 
-/* Outreach Talks Section */
+/* Outreach Talks */
 .outreach-talks-section {
     margin-top: 4rem;
 }
@@ -813,7 +810,7 @@ footer img {
 }
 
 .year-header {
-    color: #f4821e;
+    color: var(--accent-color);
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
     position: relative;
@@ -827,8 +824,8 @@ footer img {
     width: 1rem;
     height: 1rem;
     border-radius: 50%;
-    background: #f4821e;
-    border: 2px solid #1a1d23;
+    background: var(--accent-color);
+    border: 2px solid var(--sub-bg-color);
 }
 
 .talk-item {
@@ -843,19 +840,19 @@ footer img {
 }
 
 .talk-date {
-    color: #f4821e;
+    color: var(--accent-color);
     font-size: 0.9rem;
     margin-bottom: 0.5rem;
 }
 
 .talk-content h4 {
-    color: #fff;
+    color: var(--white-text-color);
     margin-bottom: 0.5rem;
     font-size: 1.1rem;
 }
 
 .talk-venue {
-    color: #a3b3c9;
+    color: var(--light-text-color);
     font-size: 0.9rem;
     margin-bottom: 0.5rem;
 }
@@ -863,7 +860,7 @@ footer img {
 .keynote-badge {
     display: inline-block;
     background-color: rgba(244, 130, 30, 0.1);
-    color: #f4821e;
+    color: var(--accent-color);
     padding: 0.2rem 0.5rem;
     border-radius: 4px;
     font-size: 0.8rem;
@@ -873,11 +870,11 @@ footer img {
 /* Responsive Design for Outreach Sections */
 @media (max-width: 768px) {
     .outreach-cards {
-        grid-template-columns: 1fr; /* Single column on mobile */
+        grid-template-columns: 1fr;
     }
 
     .outreach-card {
-        padding: 1rem; /* Adjust padding */
+        padding: 1rem;
     }
 
     .talks-timeline {
@@ -899,15 +896,13 @@ footer img {
         padding: 0 0.5rem;
     }
 
-    /* Adjust main-content for mobile */
     .main-content {
-        margin-top: 80px;  /* Set to match header height */
+        margin-top: 60px; /* Adjust if needed for consistent spacing */
         padding: 0.5rem;
         grid-template-columns: 1fr;
-        gap: 0.75rem;     /* Reduced gap between cards */
+        gap: 0.75rem;
     }
 
-    /* Profile Section adjustments for mobile */
     .profile-section {
         margin-top: 0.25rem;
         margin-bottom: 0.5rem;
@@ -936,7 +931,6 @@ footer img {
         margin-bottom: 1rem;
     }
 
-    /* Content Section adjustments for mobile */
     .content-section {
         padding: 1.25rem;
         text-align: left;
@@ -949,10 +943,9 @@ footer img {
         margin-bottom: 1.5rem;
     }
 
-    /* More compact cards for mobile */
     .service-cards,
     .outreach-cards {
-        gap: 0.75rem;  /* Further reduced gap */
+        gap: 0.75rem;
         grid-template-columns: 1fr;
         margin-bottom: 0.75rem;
     }
@@ -967,7 +960,6 @@ footer img {
         grid-template-columns: 1fr;
     }
 
-    /* Timeline adjustments for mobile */
     .timeline {
         padding-left: 1.5rem;
     }
@@ -981,7 +973,6 @@ footer img {
         left: -1.5rem;
     }
 
-    /* Navigation Links adjustments for mobile */
     .nav-links {
         gap: 1rem;
     }
@@ -991,30 +982,6 @@ footer img {
         font-size: 0.9rem;
     }
 
-    /* Rounded Corners and Shadows to Card Elements on Mobile */
-    .download-section,
-    .pdf-wrapper,
-    .card, /* General card class */
-    .service-card,
-    .outreach-card,
-    .content-section,
-    .experience-section,
-    .education-list li,
-    .publications-section,
-    .outreach-work-section,
-    .talk-item {
-        border-radius: 8px; /* Slightly rounded corners */
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-        padding: 1rem; /* Uniform padding */
-        margin-bottom: 1rem; /* Space between cards */
-    }
-
-    /* Further adjustments for better aesthetics */
-    .content-section h1 {
-        margin-bottom: 1.5rem; /* Increase space below headers */
-    }
-
-    /* Ensure consistent padding within cards */
     .download-section,
     .pdf-wrapper,
     .card,
@@ -1026,11 +993,17 @@ footer img {
     .publications-section,
     .outreach-work-section,
     .talk-item {
-        padding: 1rem; /* Uniform padding */
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .content-section h1 {
+        margin-bottom: 1.5rem;
     }
 }
 
-/* Extra Small Devices */
 @media (max-width: 480px) {
     .profile-pic {
         width: 130px;
@@ -1046,10 +1019,9 @@ footer img {
         padding: 1.25rem;
     }
 
-    /* Rounded Corners and Shadows on Extra Small Devices */
     .download-section,
     .pdf-wrapper,
-    .card, /* General card class */
+    .card,
     .service-card,
     .outreach-card,
     .content-section,
@@ -1058,10 +1030,10 @@ footer img {
     .publications-section,
     .outreach-work-section,
     .talk-item {
-        border-radius: 8px; /* Slightly rounded corners */
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-        padding: 1rem; /* Uniform padding */
-        margin-bottom: 1rem; /* Space between cards */
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 1rem;
+        margin-bottom: 1rem;
     }
 }
 
@@ -1081,54 +1053,49 @@ footer img {
     display: block;
 }
 
-/* PDF Viewer and CV Page Styles 
--------------------------------------------------- */
-
-/* Main CV Page Layout */
+/* PDF Viewer and CV Page Styles */
 .cv-page {
     width: 100%;
-    height: calc(100vh - 80px); /* Full viewport height minus header height */
-    margin-top: 80px; /* Adjust based on your header's height */
+    height: calc(100vh - 60px);
+    margin-top: 60px; /* matches body padding if needed */
     padding: 0 20px;
     display: flex;
     flex-direction: column;
-    background-color: #282c34;
+    background-color: var(--main-bg-color);
     box-sizing: border-box;
 }
 
-/* CV Container */
 .cv-container {
     flex: 1;
     max-width: 1400px;
     margin: 0 auto;
     width: 100%;
-    background-color: #1a1d23;
+    background-color: var(--sub-bg-color);
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 4px var(--shadow-color);
     padding: 20px;
     display: flex;
     flex-direction: column;
-    overflow: hidden; /* Prevents overflow from child elements */
-    height: 100%; /* Fills the parent container */
+    overflow: hidden;
+    height: 100%;
 }
 
-/* Download Section */
 .download-section {
     display: flex;
     justify-content: flex-end;
     padding: 10px 0;
     margin-bottom: 15px;
     border-bottom: 1px solid rgba(244, 130, 30, 0.2);
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .download-button {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background-color: #f4821e;
-    color: #1a1d23;
+    background-color: var(--accent-color);
+    color: var(--sub-bg-color);
     padding: 10px 20px;
     border-radius: 4px;
     text-decoration: none;
@@ -1147,34 +1114,30 @@ footer img {
     font-size: 16px;
 }
 
-/* PDF Wrapper */
 .pdf-wrapper {
     flex: 1;
     width: 100%;
     background: #fff;
-    border-radius: 8px; /* Rounded corners */
-    overflow: hidden; /* Prevents scrollbars on the wrapper */
+    border-radius: 8px;
+    overflow: hidden;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0; /* Ensure no padding */
-    margin: 0; /* Ensure no margin */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 0;
+    margin: 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* PDF Viewer */
 .pdf-viewer {
     width: 100%;
     height: 100%;
     border: none;
-    overflow: auto; /* Enable scrolling */
+    overflow: auto;
     display: block;
 }
 
-/* Responsive Design */
-
-/* Tablet and above */
+/* Tablet */
 @media (max-width: 1400px) {
     .cv-container {
         max-width: 1200px;
@@ -1187,10 +1150,10 @@ footer img {
     }
 }
 
-/* Mobile Devices */
+/* Mobile CV */
 @media (max-width: 768px) {
     .cv-page {
-        margin-top: 80px; /* Adjusted to match header height */
+        margin-top: 60px;
         padding: 10px;
         min-height: 100vh;
         height: auto;
@@ -1199,7 +1162,7 @@ footer img {
     .cv-container {
         padding: 10px;
         height: auto;
-        min-height: calc(100vh - 100px); /* Adjust based on your layout */
+        min-height: calc(100vh - 100px);
     }
 
     .download-section {
@@ -1213,15 +1176,15 @@ footer img {
     }
 
     .pdf-wrapper {
-        height: calc(100vh - 180px); /* Adjust based on your layout */
-        overflow: auto; /* Ensure scrolling is enabled */
+        height: calc(100vh - 180px);
+        overflow: auto;
     }
 
     .pdf-viewer {
         width: 100%;
         height: 100%;
-        overflow: auto; /* Enable scrolling within the iframe */
-        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
     }
 }
 
@@ -1259,42 +1222,7 @@ footer img {
     }
 }
 
-/* Extra Small Devices */
-@media (max-width: 480px) {
-    .profile-pic {
-        width: 130px;
-        height: 130px;
-    }
-
-    .content-section {
-        padding: 1rem;
-    }
-
-    .service-card,
-    .outreach-card {
-        padding: 1.25rem;
-    }
-
-    /* Rounded Corners and Shadows on Extra Small Devices */
-    .download-section,
-    .pdf-wrapper,
-    .card, /* General card class */
-    .service-card,
-    .outreach-card,
-    .content-section,
-    .experience-section,
-    .education-list li,
-    .publications-section,
-    .outreach-work-section,
-    .talk-item {
-        border-radius: 8px; /* Slightly rounded corners */
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-        padding: 1rem; /* Uniform padding */
-        margin-bottom: 1rem; /* Space between cards */
-    }
-}
-
-/* iOS Safari Specific Styles */
+/* iOS Safari */
 @supports (-webkit-touch-callout: none) {
     .pdf-wrapper {
         -webkit-overflow-scrolling: touch;
@@ -1306,63 +1234,51 @@ footer img {
     }
 }
 
-/* Dark Mode Considerations */
+/* Dark Mode PDF Wrapper */
 [data-theme="dark"] .pdf-wrapper {
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* Desktop Navigation Enhancements */
 @media (min-width: 769px) {
-    /* Style the navigation links */
     .nav-links {
         display: flex;
-        gap: 2rem; /* Increase or decrease the spacing between links */
-        justify-content: center; /* Ensure links are centered */
+        gap: 2rem;
+        justify-content: center;
     }
 
-    /* Optional: Adjust individual nav-links for better spacing */
     .nav-links a {
-        padding: 0.5rem 1rem; /* Adjust padding */
-        font-size: 1rem; /* Ensure font size is consistent */
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
     }
 }
 
-/* Fix Alignment Issues for Experience and Education Sections */
-
-/* Ensure Experience and Education headings are horizontally aligned on desktop */
+/* Keep Experience and Education Aligned */
 .experience-section,
 .education {
-    /* Ensure both sections have the same padding and margin */
     padding-left: 0;
     margin-left: 0;
+    text-align: left;
 }
 
 .experience-section h2,
 .education h2 {
-    /* Ensure consistent alignment */
     margin-top: 0;
     padding-left: 0;
-    /* Align text to the left */
-    text-align: left;
 }
 
-/* Balance spacing in Education and Experience headings on mobile */
+/* Balance Spacing for Mobile */
 @media (max-width: 768px) {
-    .education h2 {
-        margin-top: 1rem; /* Adjust this value to balance the spacing */
-    }
-
+    .education h2,
     .experience-section h2 {
-        margin-top: 1rem; /* Ensure both headings have the same top margin */
+        margin-top: 1rem;
     }
 
-    /* Reduce space between Professional Services heading and its content */
     .services-section {
-        margin-top: 1rem; /* Adjust as needed */
+        margin-top: 1rem;
     }
 
-    /* Reduce space between Education heading and its content */
     .education {
-        margin-top: 1rem; /* Adjust as needed */
+        margin-top: 1rem;
     }
 }
