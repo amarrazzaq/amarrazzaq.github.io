@@ -26,150 +26,7 @@ body {
     width: 100%;
     z-index: 1000;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    height: 60px;
-    overflow: hidden;
-}
-
-.nav-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    position: relative;
-}
-
-.header-tagline {
-    flex: 0 0 auto; /* Changed from flex: 1 */
-    margin-right: auto; /* Push nav to center */
-    text-align: center;
-    color: #a3b3c9;
-    font-size: 1rem;
-    font-weight: 300;
-    letter-spacing: 0.5px;
-    white-space: nowrap;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.header-tagline:hover {
-    color: #f4821e;
-    transition: color 0.3s ease;
-}
-
-.header-tagline:hover span {
-    color: #f4821e;
-}
-
-.header-tagline span {
-    display: inline-block;
-    color: #f4821e;
-    font-weight: 400;
-    font-size: 1.1rem;
-    font-family: "Playfair Display", serif;
-    padding-right: 2px;
-}
-
-.hamburger-menu {
-    display: none;
-    background: none;
-    border: none;
-    color: #fff;
-    font-size: 1.5rem;
-    cursor: pointer;
-    padding: 0.5rem;
-    z-index: 1000;
-}
-
-.nav-links {
-    display: flex;
-    gap: 2rem;
-    align-items: center;
-}
-
-.nav-links a {
-    color: #a3b3c9;
-    text-decoration: none;
-    font-size: 1rem;
-    font-weight: 500;
-    transition: color 0.3s ease;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-}
-
-.nav-links a:hover {
-    color: #f4821e;
-    background-color: rgba(244, 130, 30, 0.1);
-}
-
-.nav-links a.active {
-    color: #f4821e;
-    background-color: rgba(244, 130, 30, 0.1);
-}
-
-/* Mobile Menu Styles */
-@media (max-width: 768px) {
-    .hamburger-menu {
-        display: block;
-    }
-
-    .header-tagline {
-        font-size: 0.9rem;
-        padding: 0.5rem 0;
-        flex: 1; /* Restore flex: 1 for mobile */
-    }
-
-    .header-tagline span {
-        font-size: 1rem;
-    }
-
-    .header-tagline:active {
-        opacity: 0.8;
-    }
-
-    .nav-links {
-        position: fixed;
-        top: 0;
-        right: -250px;
-        width: 250px;
-        height: 100vh;
-        background-color: #1a1d23;
-        flex-direction: column;
-        padding: 4rem 1rem 1rem 1rem;
-        transition: right 0.3s ease;
-        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
-        z-index: 999;
-        margin: 0;
-        gap: 0;
-    }
-
-    .nav-links.active {
-        right: 0;
-    }
-
-    .nav-links a {
-        padding: 1rem;
-        width: 100%;
-        text-align: left;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        font-size: 1.1rem;
-    }
-
-    .nav-links a:last-child {
-        border-bottom: none;
-    }
-}
-
-/* Header/Navigation */
-.top-header {
-    background-color: #1a1d23;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-    padding: 0.75rem 1rem;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    height: 60px; /* Add explicit height */
+    height: 60px; /* Explicit height */
     overflow: hidden; /* Prevent content overflow */
 }
 
@@ -182,7 +39,7 @@ body {
 }
 
 .header-tagline {
-    flex: 0 1 200px;  /* Changed from flex: 1 */
+    flex: 0 0 auto; /* Prevent stretching */
     text-align: center;
     color: #a3b3c9;
     font-size: 1rem;
@@ -226,7 +83,6 @@ body {
     display: flex;
     gap: 2rem;
     align-items: center;
-    /* Removed margin-left: auto; */
 }
 
 .nav-links a {
@@ -259,6 +115,9 @@ body {
         font-size: 0.9rem;     /* Only override font size */
         padding: 0.5rem 0;     /* Add touch padding for mobile only */
         flex: 1;               /* Restore flex: 1 for mobile */
+        position: static;      /* Reset position */
+        text-align: center;    /* Center text */
+        left: auto;            /* Reset left positioning */
     }
 
     .header-tagline span {
@@ -302,71 +161,7 @@ body {
     }
 }
 
-    /* Reduce Top Spacing on Mobile */
-    .main-content {
-        margin-top: 100px; /* Reduced from 100px to 50px */
-        padding: 0.5rem;
-        grid-template-columns: 1fr;
-        gap: 0.75rem; /* Reduced gap between cards */
-    }
-
-    /* Add Rounded Corners and Subtle Shadows to Card Elements on Mobile */
-    .download-section,
-    .pdf-wrapper,
-    .card, /* General card class */
-    .service-card,
-    .outreach-card,
-    .content-section,
-    .experience-section,
-    .education-list li,
-    .publications-section,
-    .outreach-work-section,
-    .talk-item {
-        border-radius: 8px; /* Slightly rounded corners */
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-        padding: 1rem; /* Uniform padding */
-        margin-bottom: 1rem; /* Space between cards */
-    }
-
-    /* Further adjustments for better aesthetics */
-    .content-section h1 {
-        margin-bottom: 1.5rem; /* Increase space below headers */
-    }
-
-    /* Ensure consistent padding within cards */
-    .download-section,
-    .pdf-wrapper,
-    .card,
-    .service-card,
-    .outreach-card,
-    .content-section,
-    .experience-section,
-    .education-list li,
-    .publications-section,
-    .outreach-work-section,
-    .talk-item {
-        padding: 1rem; /* Uniform padding */
-    }
-}
-
-/* Overlay for mobile menu */
-.menu-overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0,0,0,0.5);
-    z-index: 998;
-}
-
-.menu-overlay.active {
-    display: block;
-}
-
 /* Main Content */
-
 .main-content {
     max-width: 1200px;
     margin: 72px auto 2rem;  /* Changed from 100px to 72px */
@@ -527,7 +322,6 @@ body {
     font-size: 1.25rem;
     text-align: left;
     width: 100%;
-    
 }
 
 /* Experience Section */
@@ -547,57 +341,8 @@ body {
     margin-bottom: 2rem;
     padding-bottom: 0.5rem;
     border-bottom: 2px solid rgba(255, 255, 255, 0.1);
-}
-
-.timeline {
-    position: relative;
-    padding-left: 2rem;
-    margin-top: 1rem;
-}
-
-.timeline::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background: rgba(244, 130, 30, 0.3);
-}
-
-.timeline-item {
-    position: relative;
-    margin-bottom: 2rem;
-    padding-left: 1.5rem;
-}
-
-.timeline-item::before {
-    content: "";
-    position: absolute;
-    left: -2rem;
-    top: 0.5rem;
-    width: 1rem;
-    height: 1rem;
-    border-radius: 50%;
-    background: #f4821e;
-    border: 2px solid #1a1d23;
-}
-
-.timeline-date {
-    color: #f4821e;
-    font-size: 0.9rem;
-    margin-bottom: 0.5rem;
-}
-
-.timeline-content h4 {
-    color: #fff;
-    margin-bottom: 0.5rem;
-    font-size: 1.1rem;
-}
-
-.timeline-content p {
-    color: #a3b3c9;
-    font-size: 0.9rem;
+    /* Added for alignment */
+    margin-top: 0;
 }
 
 /* Education Section */
@@ -617,6 +362,8 @@ body {
     margin-bottom: 2rem;
     padding-bottom: 0.5rem;
     border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    /* Added for alignment */
+    margin-top: 0;
 }
 
 .education-list {
@@ -644,10 +391,19 @@ body {
 /* Footer */
 footer {
     background-color: #1a1d23;
-    padding: 0.5rem; /* Updated to match mobile optimizations */
+    padding: 0.5rem 1rem; /* Added horizontal padding */
     margin-top: auto;
     border-top: 1px solid #333;
     color: #a3b3c9;
+}
+
+.footer-container {
+    max-width: 1200px; /* Adjust as needed */
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping if needed */
 }
 
 footer p {
@@ -655,12 +411,15 @@ footer p {
     align-items: center;
     justify-content: center;
     gap: 0.75rem; /* Updated gap */
-    white-space: nowrap;
+    white-space: normal; /* Allow content to wrap */
     font-size: 0.9rem;
+    flex-wrap: wrap; /* Allow flex items to wrap */
+    word-wrap: break-word; /* Prevent long words from causing overflow */
 }
 
 footer img {
-    height: 20px;
+    max-width: 100%; /* Ensure images do not exceed container */
+    height: auto; /* Maintain aspect ratio */
 }
 
 /* Journal Names */
@@ -1009,11 +768,11 @@ footer img {
     .outreach-cards {
         grid-template-columns: 1fr; /* Single column on mobile */
     }
-    
+
     .outreach-card {
         padding: 1.25rem;
     }
-    
+
     .talks-timeline {
         padding-left: 1.5rem;
     }
@@ -1026,7 +785,7 @@ footer img {
         padding-left: 1rem;
     }
 
-.welcome-heading {
+    .welcome-heading {
         font-size: 2rem;
         margin-bottom: 1.5rem;
         text-align: left;
@@ -1195,59 +954,21 @@ footer img {
     }
 }
 
-/* Footer mobile optimizations */
-footer {
-    background-color: #1a1d23;
-    padding: 0.5rem 1rem; /* Added horizontal padding */
-    margin-top: auto;
-    border-top: 1px solid #333;
-    color: #a3b3c9;
-    /* Removed width: 100%; */
+/* Overlay for mobile menu */
+.menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 998;
 }
 
-/* Footer Container to Center Content */
-.footer-container {
-    max-width: 1200px; /* Adjust as needed */
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap; /* Allow wrapping if needed */
+.menu-overlay.active {
+    display: block;
 }
-
-/* Footer Paragraph */
-footer p {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.75rem; /* Updated gap */
-    white-space: normal; /* Allow content to wrap */
-    font-size: 0.9rem;
-    /* Removed width: 100%; */
-    flex-wrap: wrap; /* Allow flex items to wrap */
-    word-wrap: break-word; /* Prevent long words from causing overflow */
-}
-
-/* Footer Images */
-footer img {
-    max-width: 100%; /* Ensure images do not exceed container */
-    height: auto; /* Maintain aspect ratio */
-}
-
-@media screen and (max-width: 768px) {
-    footer p {
-        font-size: 0.75rem; /* Adjusted font size */
-        gap: 0.35rem; /* Adjusted gap */
-    }
-    
-    footer img {
-        height: 16px; /* Adjusted image height */
-        max-width: 100%; /* Ensure responsiveness */
-    }
-}
-
-/* PDF Viewer and CV Page Styles 
--------------------------------------------------- */
 
 /* Main CV Page Layout */
 .cv-page {
@@ -1406,7 +1127,7 @@ footer img {
     .education h2 {
         font-size: 1.3rem;
         margin-bottom: 1.5rem;
-        padding: 0.5rem 0;
+        padding-bottom: 0.5rem;
     }
 
     .timeline {
@@ -1467,21 +1188,7 @@ footer img {
 @media (min-width: 769px) {
     /* Adjust nav-container to center navigation links */
     .nav-container {
-        display: flex;
-        align-items: center;
-        justify-content: center; /* Center the nav-links */
-        position: relative; /* For positioning the tagline */
-        padding: 0 2rem; /* Add horizontal padding */
-    }
-
-    /* Shift the tagline slightly to the left */
-    .header-tagline {
-        position: absolute;
-        left: 20px; /* Adjust this value to move the tagline left */
-        text-align: left;
-        flex: 0 0 auto; /* Prevent the tagline from stretching */
-        color: #a3b3c9; /* Ensure the color matches your theme */
-        font-size: 1rem; /* Adjust font size if necessary */
+        justify-content: space-between; /* Maintain space between tagline and nav-links */
     }
 
     /* Style the navigation links */
@@ -1495,5 +1202,35 @@ footer img {
     .nav-links a {
         padding: 0.5rem 1rem; /* Reduce padding if links are too spaced out */
         font-size: 1rem; /* Ensure font size is consistent */
+    }
+}
+
+/* Fix Alignment Issues for Experience and Education Sections */
+
+/* Ensure Experience and Education headings are horizontally aligned on desktop */
+.experience-section,
+.education {
+    /* Ensure both sections have the same padding and margin */
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.experience-section h2,
+.education h2 {
+    /* Ensure consistent alignment */
+    margin-top: 0;
+    padding-left: 0;
+    /* Optionally, add text-align if needed */
+    text-align: left;
+}
+
+/* Balance spacing in Education heading on mobile */
+@media (max-width: 768px) {
+    .education h2 {
+        margin-top: 1rem; /* Adjust this value to balance the spacing */
+    }
+
+    .experience-section h2 {
+        margin-top: 1rem; /* Ensure both headings have the same top margin */
     }
 }
