@@ -40,13 +40,24 @@ body {
 }
 
 .header-tagline {
-    flex: 1; /* Allow the tagline to take available space */
-    text-align: center; /* Center the tagline text */
+    flex: 1;
+    text-align: center;
     color: #a3b3c9;
     font-size: 1rem;
     font-weight: 300;
     letter-spacing: 0.5px;
     white-space: nowrap;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.header-tagline:hover {
+    color: #f4821e;
+    transition: color 0.3s ease;
+}
+
+.header-tagline:hover span {
+    color: #f4821e;
 }
 
 .header-tagline span {
@@ -98,17 +109,23 @@ body {
 
 /* Mobile Menu Styles */
 @media (max-width: 768px) {
-    .hamburger-menu {
+     .hamburger-menu {
         display: block;
     }
 
     .header-tagline {
-        font-size: 0.9rem;
+        font-size: 0.9rem;     /* Only override font size */
+        padding: 0.5rem 0;     /* Add touch padding for mobile only */
     }
 
     .header-tagline span {
-        font-size: 1rem;
+        font-size: 1rem;       /* Only override span font size */
     }
+
+    .header-tagline:active {   /* Mobile-specific touch feedback */
+        opacity: 0.8;
+    }
+}
 
     .nav-links {
         position: fixed;
