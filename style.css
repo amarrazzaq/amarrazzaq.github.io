@@ -33,13 +33,15 @@ body {
 .nav-container {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Distribute space between items */
+    justify-content: center; /* Center navigation links */
     width: 100%;
     position: relative;
+    gap: 2rem; /* Space between tagline and nav-links */
 }
 
+/* Header Tagline */
 .header-tagline {
-    flex: 0 0 auto; /* Prevent stretching */
+    flex: 0 1 auto; /* Prevent stretching */
     text-align: center;
     color: #a3b3c9;
     font-size: 1rem;
@@ -68,6 +70,7 @@ body {
     padding-right: 2px;
 }
 
+/* Hamburger Menu */
 .hamburger-menu {
     display: none;
     background: none;
@@ -79,6 +82,7 @@ body {
     z-index: 1000;
 }
 
+/* Navigation Links */
 .nav-links {
     display: flex;
     gap: 2rem;
@@ -112,16 +116,14 @@ body {
     }
 
     .header-tagline {
-        font-size: 0.9rem;     /* Only override font size */
-        padding: 0.5rem 0;     /* Add touch padding for mobile only */
-        flex: 1;               /* Restore flex: 1 for mobile */
-        position: static;      /* Reset position */
-        text-align: center;    /* Center text */
-        left: auto;            /* Reset left positioning */
+        font-size: 0.9rem;     /* Override font size for mobile */
+        padding: 0.5rem 0;     /* Add vertical padding for mobile */
+        flex: 1;               /* Allow tagline to take available space */
+        text-align: center;    /* Center text on mobile */
     }
 
     .header-tagline span {
-        font-size: 1rem;       /* Only override span font size */
+        font-size: 1rem;       /* Override span font size for mobile */
     }
 
     .header-tagline:active {   /* Mobile-specific touch feedback */
@@ -341,8 +343,58 @@ body {
     margin-bottom: 2rem;
     padding-bottom: 0.5rem;
     border-bottom: 2px solid rgba(255, 255, 255, 0.1);
-    /* Added for alignment */
-    margin-top: 0;
+    margin-top: 0; /* Ensure no extra top margin */
+}
+
+.timeline {
+    position: relative;
+    padding-left: 2rem;
+    margin-top: 1rem;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: rgba(244, 130, 30, 0.3);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 2rem;
+    padding-left: 1.5rem;
+}
+
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -2rem;
+    top: 0.5rem;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background: #f4821e;
+    border: 2px solid #1a1d23;
+}
+
+.timeline-date {
+    color: #f4821e;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-content h4 {
+    color: #fff;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.timeline-content p {
+    color: #a3b3c9;
+    font-size: 0.9rem;
 }
 
 /* Education Section */
@@ -362,8 +414,7 @@ body {
     margin-bottom: 2rem;
     padding-bottom: 0.5rem;
     border-bottom: 2px solid rgba(255, 255, 255, 0.1);
-    /* Added for alignment */
-    margin-top: 0;
+    margin-top: 0; /* Ensure no extra top margin */
 }
 
 .education-list {
@@ -395,6 +446,9 @@ footer {
     margin-top: auto;
     border-top: 1px solid #333;
     color: #a3b3c9;
+    display: flex; /* Use flex to keep items in one line */
+    justify-content: center;
+    align-items: center;
 }
 
 .footer-container {
@@ -403,7 +457,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap; /* Allow wrapping if needed */
+    flex-wrap: nowrap; /* Prevent wrapping */
 }
 
 footer p {
@@ -411,10 +465,8 @@ footer p {
     align-items: center;
     justify-content: center;
     gap: 0.75rem; /* Updated gap */
-    white-space: normal; /* Allow content to wrap */
+    white-space: nowrap; /* Prevent wrapping */
     font-size: 0.9rem;
-    flex-wrap: wrap; /* Allow flex items to wrap */
-    word-wrap: break-word; /* Prevent long words from causing overflow */
 }
 
 footer img {
@@ -495,7 +547,7 @@ footer img {
     font-size: 0.9rem;
 }
 
-/* Services Section Styling - NEW */
+/* Services Section Styling */
 .services-section {
     margin-bottom: 4rem;
 }
@@ -507,7 +559,7 @@ footer img {
     margin-bottom: 3rem;
 }
 
-/* Update the existing service-card class */
+/* Service Card */
 .service-card {
     background: rgba(255, 255, 255, 0.05);
     border-radius: 8px;
@@ -580,7 +632,7 @@ footer img {
     text-decoration: underline;
 }
 
-/* Review Summary Section - NEW */
+/* Review Summary Section */
 .review-summary {
     background: rgba(255, 255, 255, 0.05);
     border-radius: 8px;
@@ -770,7 +822,7 @@ footer img {
     }
 
     .outreach-card {
-        padding: 1.25rem;
+        padding: 1rem; /* Adjust padding */
     }
 
     .talks-timeline {
@@ -792,14 +844,15 @@ footer img {
         padding: 0 0.5rem;
     }
 
-    /* Adjust header styles */
+    /* Adjust main-content for mobile */
     .main-content {
-        margin-top: 50px;  /* Reduced from 100px to 50px */
+        margin-top: 50px;  /* Reduced from 72px to 50px */
         padding: 0.5rem;
         grid-template-columns: 1fr;
         gap: 0.75rem;     /* Reduced gap between cards */
     }
 
+    /* Profile Section adjustments for mobile */
     .profile-section {
         margin-top: 0.25rem;
         margin-bottom: 0.5rem;
@@ -828,6 +881,7 @@ footer img {
         margin-bottom: 1rem;
     }
 
+    /* Content Section adjustments for mobile */
     .content-section {
         padding: 1.25rem;
         text-align: left;
@@ -840,7 +894,7 @@ footer img {
         margin-bottom: 1.5rem;
     }
 
-    /* More compact cards */
+    /* More compact cards for mobile */
     .service-cards,
     .outreach-cards {
         gap: 0.75rem;  /* Further reduced gap */
@@ -858,7 +912,7 @@ footer img {
         grid-template-columns: 1fr;
     }
 
-    /* Timeline adjustments */
+    /* Timeline adjustments for mobile */
     .timeline {
         padding-left: 1.5rem;
     }
@@ -872,6 +926,7 @@ footer img {
         left: -1.5rem;
     }
 
+    /* Navigation Links adjustments for mobile */
     .nav-links {
         gap: 1rem;
     }
@@ -881,7 +936,7 @@ footer img {
         font-size: 0.9rem;
     }
 
-    /* Add Rounded Corners and Subtle Shadows to Card Elements on Mobile */
+    /* Rounded Corners and Shadows to Card Elements on Mobile */
     .download-section,
     .pdf-wrapper,
     .card, /* General card class */
@@ -920,6 +975,7 @@ footer img {
     }
 }
 
+/* Extra Small Devices */
 @media (max-width: 480px) {
     .profile-pic {
         width: 130px;
@@ -969,6 +1025,9 @@ footer img {
 .menu-overlay.active {
     display: block;
 }
+
+/* PDF Viewer and CV Page Styles 
+-------------------------------------------------- */
 
 /* Main CV Page Layout */
 .cv-page {
@@ -1147,23 +1206,36 @@ footer img {
 
 /* Extra Small Devices */
 @media (max-width: 480px) {
-    .cv-page {
-        padding: 5px;
+    .profile-pic {
+        width: 130px;
+        height: 130px;
     }
 
-    .cv-container {
-        padding: 8px;
+    .content-section {
+        padding: 1rem;
     }
 
-    .pdf-wrapper {
-        height: calc(100vh - 170px); /* Adjust based on your layout */
+    .service-card,
+    .outreach-card {
+        padding: 1.25rem;
     }
 
-    .pdf-viewer {
-        width: 100%;
-        height: 100%;
-        overflow: auto; /* Enable scrolling within the iframe */
-        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    /* Rounded Corners and Shadows on Extra Small Devices */
+    .download-section,
+    .pdf-wrapper,
+    .card, /* General card class */
+    .service-card,
+    .outreach-card,
+    .content-section,
+    .experience-section,
+    .education-list li,
+    .publications-section,
+    .outreach-work-section,
+    .talk-item {
+        border-radius: 8px; /* Slightly rounded corners */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        padding: 1rem; /* Uniform padding */
+        margin-bottom: 1rem; /* Space between cards */
     }
 }
 
@@ -1186,11 +1258,6 @@ footer img {
 
 /* Desktop Navigation Enhancements */
 @media (min-width: 769px) {
-    /* Adjust nav-container to center navigation links */
-    .nav-container {
-        justify-content: space-between; /* Maintain space between tagline and nav-links */
-    }
-
     /* Style the navigation links */
     .nav-links {
         display: flex;
@@ -1200,7 +1267,7 @@ footer img {
 
     /* Optional: Adjust individual nav-links for better spacing */
     .nav-links a {
-        padding: 0.5rem 1rem; /* Reduce padding if links are too spaced out */
+        padding: 0.5rem 1rem; /* Adjust padding */
         font-size: 1rem; /* Ensure font size is consistent */
     }
 }
@@ -1220,11 +1287,11 @@ footer img {
     /* Ensure consistent alignment */
     margin-top: 0;
     padding-left: 0;
-    /* Optionally, add text-align if needed */
+    /* Align text to the left */
     text-align: left;
 }
 
-/* Balance spacing in Education heading on mobile */
+/* Balance spacing in Education and Experience headings on mobile */
 @media (max-width: 768px) {
     .education h2 {
         margin-top: 1rem; /* Adjust this value to balance the spacing */
@@ -1232,5 +1299,20 @@ footer img {
 
     .experience-section h2 {
         margin-top: 1rem; /* Ensure both headings have the same top margin */
+    }
+
+    /* Reduce space between introductory text and Professional Services heading */
+    .welcome-heading {
+        margin-bottom: 1rem; /* Reduced from 2rem to 1rem */
+    }
+
+    /* Reduce space between Professional Services heading and its content */
+    .services-section {
+        margin-top: 1rem; /* Adjust as needed */
+    }
+
+    /* Reduce space between Education heading and its content */
+    .education {
+        margin-top: 1rem; /* Adjust as needed */
     }
 }
