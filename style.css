@@ -17,7 +17,6 @@ body {
 }
 
 /* Header/Navigation */
-
 .top-header {
     background-color: #1a1d23;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
@@ -27,20 +26,21 @@ body {
     width: 100%;
     z-index: 1000;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    height: 60px; /* Add explicit height */
-    overflow: hidden; /* Prevent content overflow */
+    height: 60px;
+    overflow: hidden;
 }
 
 .nav-container {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Distribute space between items */
+    justify-content: space-between;
     width: 100%;
     position: relative;
 }
 
 .header-tagline {
-    flex: 1;
+    flex: 0 0 auto; /* Changed from flex: 1 */
+    margin-right: auto; /* Push nav to center */
     text-align: center;
     color: #a3b3c9;
     font-size: 1rem;
@@ -84,7 +84,6 @@ body {
     display: flex;
     gap: 2rem;
     align-items: center;
-    /* Removed margin-left: auto; */
 }
 
 .nav-links a {
@@ -109,48 +108,48 @@ body {
 
 /* Mobile Menu Styles */
 @media (max-width: 768px) {
-     .hamburger-menu {
+    .hamburger-menu {
         display: block;
     }
 
     .header-tagline {
-        font-size: 0.9rem;     /* Only override font size */
-        padding: 0.5rem 0;     /* Add touch padding for mobile only */
+        font-size: 0.9rem;
+        padding: 0.5rem 0;
+        flex: 1; /* Restore flex: 1 for mobile */
     }
 
     .header-tagline span {
-        font-size: 1rem;       /* Only override span font size */
+        font-size: 1rem;
     }
 
-    .header-tagline:active {   /* Mobile-specific touch feedback */
+    .header-tagline:active {
         opacity: 0.8;
     }
-}
 
     .nav-links {
         position: fixed;
         top: 0;
-        right: -250px; /* Position off-screen on the right */
+        right: -250px;
         width: 250px;
         height: 100vh;
         background-color: #1a1d23;
         flex-direction: column;
         padding: 4rem 1rem 1rem 1rem;
-        transition: right 0.3s ease; /* Sliding effect */
-        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2); /* Shadow on the left side */
+        transition: right 0.3s ease;
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
         z-index: 999;
         margin: 0;
         gap: 0;
     }
 
     .nav-links.active {
-        right: 0; /* Align the menu with the right edge */
+        right: 0;
     }
 
     .nav-links a {
         padding: 1rem;
         width: 100%;
-        text-align: left; /* Align text to the left */
+        text-align: left;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         font-size: 1.1rem;
     }
@@ -158,6 +157,7 @@ body {
     .nav-links a:last-child {
         border-bottom: none;
     }
+}
 
     /* Reduce Top Spacing on Mobile */
     .main-content {
