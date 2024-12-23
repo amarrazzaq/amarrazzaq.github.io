@@ -516,17 +516,24 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
     margin-top: 2rem;
+    text-align: left;  /* Add this to ensure consistent left alignment */
+    width: 100%;      /* Add this to ensure full width */
+    padding: 0;       /* Add this to remove any potential padding */
 }
 
 .section-title {
     color: #f4821e;
     margin-bottom: 1rem;
     font-size: 1.25rem;
+    text-align: left;
+    width: 100%;
+    
 }
 
 /* Experience Section */
 .experience-section {
     position: relative;
+    width: 100%;        /* Add this */
 }
 
 .timeline {
@@ -580,6 +587,11 @@ body {
 }
 
 /* Education Section */
+.education {
+    width: 100%;
+    position: relative;  /* Add this to match experience section */
+}
+
 .education-list {
     list-style: none;
 }
