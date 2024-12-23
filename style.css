@@ -513,12 +513,12 @@ body {
 /* Sections Grid */
 .sections-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
     margin-top: 2rem;
-    text-align: left;  /* Add this to ensure consistent left alignment */
-    width: 100%;      /* Add this to ensure full width */
-    padding: 0;       /* Add this to remove any potential padding */
+    text-align: left;
+    width: 100%;
+    padding: 0;
 }
 
 .section-title {
@@ -533,12 +533,26 @@ body {
 /* Experience Section */
 .experience-section {
     position: relative;
-    width: 100%;        /* Add this */
+    width: 100%;
+    margin-bottom: 2rem;
+    background-color: #1a1d23;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.experience-section h2 {
+    color: #f4821e;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
 }
 
 .timeline {
     position: relative;
     padding-left: 2rem;
+    margin-top: 1rem;
 }
 
 .timeline::before {
@@ -589,19 +603,33 @@ body {
 /* Education Section */
 .education {
     width: 100%;
-    position: relative;  /* Add this to match experience section */
+    position: relative;
+    margin-bottom: 2rem;
+    background-color: #1a1d23;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.education h2 {
+    color: #f4821e;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
 }
 
 .education-list {
     list-style: none;
+    margin-top: 1rem;
+    padding: 0;
 }
 
 .education-list li {
     margin-bottom: 1.5rem;
-}
-
-.education-list li:last-child {
-    margin-bottom: 0;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
 }
 
 .degree {
@@ -1359,6 +1387,40 @@ footer img {
         height: 100%;
         overflow: auto; /* Enable scrolling within the iframe */
         -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    }
+}
+
+@media (max-width: 768px) {
+    .sections-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .experience-section,
+    .education {
+        margin-bottom: 1.5rem;
+        padding: 1.5rem;
+    }
+
+    .experience-section h2,
+    .education h2 {
+        font-size: 1.3rem;
+        margin-bottom: 1.5rem;
+        padding: 0.5rem 0;
+    }
+
+    .timeline {
+        padding-left: 1.5rem;
+        margin-top: 0.75rem;
+    }
+
+    .education-list {
+        margin-top: 0.75rem;
+    }
+
+    .education-list li {
+        padding: 0.75rem;
+        margin-bottom: 1rem;
     }
 }
 
