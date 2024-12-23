@@ -13,7 +13,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    padding-top: 20px; /* Add padding to account for fixed header */
+    padding-top: 80px; /* Adjusted to account for fixed header height */
 }
 
 /* Header/Navigation */
@@ -79,7 +79,7 @@ body {
     font-size: 1.5rem;
     cursor: pointer;
     padding: 0.5rem;
-    z-index: 1000;
+    z-index: 1001; /* Ensure it's above the nav-links */
 }
 
 /* Navigation Links */
@@ -141,7 +141,7 @@ body {
         padding: 4rem 1rem 1rem 1rem;
         transition: right 0.3s ease; /* Sliding effect */
         box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2); /* Shadow on the left side */
-        z-index: 999;
+        z-index: 1000;
         margin: 0;
         gap: 0;
     }
@@ -166,7 +166,7 @@ body {
 /* Main Content */
 .main-content {
     max-width: 1200px;
-    margin: 72px auto 2rem;  /* Changed from 100px to 72px */
+    margin: 80px auto 2rem;  /* Increased top margin to 80px to match header height */
     padding: 2rem;
     flex-grow: 1;
     display: grid;
@@ -187,7 +187,7 @@ body {
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     position: sticky;
-    top: 100px;
+    top: 80px; /* Adjusted to match main content's top margin */
     height: fit-content;
 }
 
@@ -296,7 +296,7 @@ body {
     text-align: left;
     font-size: 2.5rem;
     line-height: 1.2;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem; /* Reduced from 2rem to 1rem */
     width: 100%;
     font-weight: bold;
     color: #fff;  /* Keep consistent with your theme */
@@ -440,6 +440,43 @@ body {
 }
 
 /* Footer */
+footer {
+    background-color: #1a1d23;
+    padding: 0.5rem 1rem; /* Existing horizontal padding */
+    margin-top: auto;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333; /* Added bottom border to restore the below bar */
+    color: #a3b3c9;
+    display: flex; /* Use flex to keep items in one line */
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Prevent content from overflowing */
+}
+
+.footer-container {
+    max-width: 1200px; /* Existing max-width */
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap; /* Prevent wrapping */
+}
+
+footer p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem; /* Existing gap */
+    white-space: nowrap; /* Prevent wrapping */
+    font-size: 0.9rem;
+}
+
+footer img {
+    max-width: 100%; /* Ensure images do not exceed container */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Footer Specific Fixes */
 @media (max-width: 768px) {
     /* Reduce horizontal padding to prevent overflow */
     footer {
@@ -864,7 +901,7 @@ body {
 
     /* Adjust main-content for mobile */
     .main-content {
-        margin-top: 50px;  /* Reduced from 72px to 50px */
+        margin-top: 80px;  /* Set to match header height */
         padding: 0.5rem;
         grid-template-columns: 1fr;
         gap: 0.75rem;     /* Reduced gap between cards */
@@ -1153,7 +1190,7 @@ body {
 /* Mobile Devices */
 @media (max-width: 768px) {
     .cv-page {
-        margin-top: 60px; /* Adjusted earlier, now reduced in main-content */
+        margin-top: 80px; /* Adjusted to match header height */
         padding: 10px;
         min-height: 100vh;
         height: auto;
@@ -1317,11 +1354,6 @@ body {
 
     .experience-section h2 {
         margin-top: 1rem; /* Ensure both headings have the same top margin */
-    }
-
-    /* Reduce space between introductory text and Professional Services heading */
-    .welcome-heading {
-        margin-bottom: 1rem; /* Reduced from 2rem to 1rem */
     }
 
     /* Reduce space between Professional Services heading and its content */
