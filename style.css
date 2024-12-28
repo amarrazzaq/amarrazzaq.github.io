@@ -1291,3 +1291,7 @@ footer img {
         grid-template-columns: 1fr; /* Single column on mobile */
     }
 }
+/* Awards and Honors Section */
+.education .awards-section {
+    margin-top: 4rem; /* Increased spacing */
+}
