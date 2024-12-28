@@ -17,7 +17,6 @@ body {
 }
 
 /* Header/Navigation */
-
 .top-header {
     background-color: #1a1d23;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
@@ -73,7 +72,6 @@ body {
     display: flex;
     gap: 2rem;
     align-items: center;
-    /* Removed margin-left: auto; */
 }
 
 .nav-links a {
@@ -206,7 +204,6 @@ body {
 }
 
 /* Main Content */
-
 .main-content {
     max-width: 1200px;
     margin: 72px auto 2rem;  /* Changed from 100px to 72px */
@@ -343,7 +340,7 @@ body {
 /* Sections Grid */
 .sections-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(2, 1fr); /* Two columns on desktop */
     gap: 2rem;
     margin-top: 2rem;
 }
@@ -412,6 +409,7 @@ body {
 /* Education Section */
 .education-list {
     list-style: none;
+    padding-left: 1rem; /* Add padding to align with other content */
 }
 
 .education-list li {
@@ -429,6 +427,33 @@ body {
 
 .university {
     color: #a3b3c9;
+}
+
+/* Awards and Honors Section */
+.awards-section {
+    margin-top: 2rem; /* Increased spacing */
+}
+
+.awards-list {
+    list-style: none;
+    padding-left: 1rem; /* Add padding to align with other content */
+    margin-top: 1rem;
+}
+
+.awards-list li {
+    margin-bottom: 1.5rem; /* Space between list items */
+}
+
+.award-title {
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.award-description {
+    color: #a3b3c9;
+    font-size: 0.95rem;
+    line-height: 1.6;
 }
 
 /* Footer */
@@ -1245,37 +1270,4 @@ footer img {
         padding: 0.5rem 1rem; /* Reduce padding if links are too spaced out */
         font-size: 1rem; /* Ensure font size is consistent */
     }
-}
-/* Sections Grid Layout */
-.sections-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Two columns on desktop */
-    gap: 2rem;
-    margin-top: 2rem;
-}
-
-/* Awards and Honors Section */
-.awards-section {
-    margin-top: 2rem; /* Increased spacing */
-}
-
-.awards-list {
-    list-style: none; /* Remove default bullet points */
-    margin-top: 1rem;
-}
-
-.awards-list li {
-    margin-bottom: 1.5rem; /* Space between list items */
-}
-
-.award-title {
-    color: #fff;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-}
-
-.award-description {
-    color: #a3b3c9;
-    font-size: 0.95rem;
-    line-height: 1.6;
 }
