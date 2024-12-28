@@ -1255,39 +1255,27 @@ footer img {
 }
 
 /* Awards and Honors Section */
-.education .awards-section {
+.awards-section {
     margin-top: 2rem; /* Increased spacing */
 }
 
-.awards-grid {
-    display: grid;
-    grid-template-columns: 1fr; /* Single column inside the Awards section */
-    gap: 1.5rem;
+.awards-list {
+    list-style: none; /* Remove default bullet points */
     margin-top: 1rem;
 }
 
-.award-item {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 1.5rem;
-    border-radius: 8px;
-    border-top: 3px solid #f4821e;
+.awards-list li {
+    margin-bottom: 1.5rem; /* Space between list items */
 }
 
-.award-item h4 {
+.award-title {
     color: #fff;
-    margin-bottom: 0.75rem;
-    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
 }
 
 .award-description {
     color: #a3b3c9;
     font-size: 0.95rem;
     line-height: 1.6;
-}
-
-/* Mobile Layout */
-@media (max-width: 768px) {
-    .awards-grid {
-        grid-template-columns: 1fr; /* Single column on mobile */
-    }
 }
