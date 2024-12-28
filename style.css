@@ -1246,3 +1246,40 @@ footer img {
         font-size: 1rem; /* Ensure font size is consistent */
     }
 }
+/* Awards and Honors Section */
+.awards-section {
+    margin-top: 2rem;
+}
+
+.awards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns on desktop */
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.award-item {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-top: 3px solid #f4821e;
+}
+
+.award-item h4 {
+    color: #fff;
+    margin-bottom: 0.75rem;
+    font-size: 1.25rem;
+}
+
+.award-description {
+    color: #a3b3c9;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Mobile Layout */
+@media (max-width: 768px) {
+    .awards-grid {
+        grid-template-columns: 1fr; /* Single column on mobile */
+    }
+}
