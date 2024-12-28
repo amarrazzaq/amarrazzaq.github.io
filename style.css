@@ -1255,8 +1255,8 @@ footer img {
 }
 
 /* Awards and Honors Section */
-.awards-section {
-    margin-top: 4rem; /* Add space between Education and Awards sections */
+.education .awards-section {
+    margin-top: 4rem; /* Increased spacing */
 }
 
 .awards-grid {
@@ -1290,8 +1290,4 @@ footer img {
     .awards-grid {
         grid-template-columns: 1fr; /* Single column on mobile */
     }
-}
-/* Awards and Honors Section */
-.education .awards-section {
-    margin-top: 4rem; /* Increased spacing */
 }
