@@ -1246,16 +1246,24 @@ footer img {
         font-size: 1rem; /* Ensure font size is consistent */
     }
 }
+/* Sections Grid Layout */
+.sections-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns on desktop */
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
 /* Awards and Honors Section */
 .awards-section {
-    margin-top: 2rem;
+    margin-top: 0; /* Remove top margin to align with Education section */
 }
 
 .awards-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Two columns on desktop */
-    gap: 2rem;
-    margin-top: 1.5rem;
+    grid-template-columns: 1fr; /* Single column inside the Awards section */
+    gap: 1.5rem;
+    margin-top: 1rem;
 }
 
 .award-item {
@@ -1279,6 +1287,10 @@ footer img {
 
 /* Mobile Layout */
 @media (max-width: 768px) {
+    .sections-grid {
+        grid-template-columns: 1fr; /* Single column on mobile */
+    }
+
     .awards-grid {
         grid-template-columns: 1fr; /* Single column on mobile */
     }
