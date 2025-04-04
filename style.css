@@ -1246,3 +1246,258 @@ footer img {
         font-size: 1rem; /* Ensure font size is consistent */
     }
 }
+
+/* Insights Page Styles */
+
+/* Featured Article */
+.featured-article {
+    margin-bottom: 3rem;
+}
+
+.featured-article-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 3px solid #f4821e;
+}
+
+.featured-article-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.article-image {
+    overflow: hidden;
+    height: 100%;
+}
+
+.article-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.featured-article-card:hover .article-image img {
+    transform: scale(1.05);
+}
+
+.article-content {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.article-meta {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.article-date, .article-category {
+    color: #a3b3c9;
+    font-size: 0.9rem;
+}
+
+.article-category {
+    color: #f4821e;
+}
+
+.article-title {
+    color: #fff;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+.article-excerpt {
+    color: #a3b3c9;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.read-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #f4821e;
+    text-decoration: none;
+    font-weight: 500;
+    transition: gap 0.3s ease;
+    align-self: flex-start;
+}
+
+.read-more:hover {
+    gap: 0.8rem;
+}
+
+/* Recent Articles Grid */
+.recent-articles {
+    margin-bottom: 3rem;
+}
+
+.articles-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.article-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 3px solid #f4821e;
+    height: 100%;
+}
+
+.article-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.article-card .article-image {
+    height: 200px;
+}
+
+/* Topics Section */
+.topics-section {
+    margin-top: 4rem;
+}
+
+.topics-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.topic-tag {
+    background: rgba(244, 130, 30, 0.1);
+    color: #f4821e;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.topic-tag:hover {
+    background: rgba(244, 130, 30, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Article Template Styles */
+.article-header {
+    margin-bottom: 3rem;
+}
+
+.article-header .article-meta {
+    margin-bottom: 1rem;
+}
+
+.article-header .article-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.article-author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.author-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.author-info p {
+    margin: 0;
+}
+
+.author-name {
+    color: #fff;
+    font-weight: 500;
+}
+
+.author-title {
+    color: #a3b3c9;
+    font-size: 0.9rem;
+}
+
+.article-content h2 {
+    color: #f4821e;
+    margin: 2rem 0 1rem;
+}
+
+.article-content p {
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+.article-image-full {
+    width: 100%;
+    margin: 2rem 0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.article-image-full img {
+    width: 100%;
+}
+
+.article-image-caption {
+    text-align: center;
+    color: #a3b3c9;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+/* Related Articles */
+.related-articles {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.related-articles-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+/* Mobile Responsiveness for Insights */
+@media (max-width: 1024px) {
+    .articles-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .featured-article-card {
+        grid-template-columns: 1fr;
+    }
+    
+    .article-image {
+        height: 200px;
+    }
+    
+    .articles-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .related-articles-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .article-header .article-title {
+        font-size: 1.8rem;
+    }
+}
