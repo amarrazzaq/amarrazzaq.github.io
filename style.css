@@ -1501,3 +1501,9 @@ footer img {
         font-size: 1.8rem;
     }
 }
+
+.article-content p,
+.article-content ul li,
+.article-content ol li {
+    color: #fff; /* This would make all text white */
+}
