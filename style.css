@@ -1533,3 +1533,57 @@ footer img {
 .article-image a:hover img {
     transform: scale(1.05);
 }
+
+/* References Section Styling */
+.references a {
+    color: #f4821e; /* This is your site's orange accent color */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.references a:hover {
+    color: #ff9f4a; /* A lighter shade for hover state */
+    text-decoration: underline;
+}
+
+/* Improved spacing for Insights article content */
+.article-content p {
+    margin-bottom: 1.5rem; /* Consistent spacing for paragraphs */
+}
+
+/* Global spacing for all h2 elements in article content */
+.article-content h2 {
+    margin-top: 1.5rem !important;
+    margin-bottom: 1.5rem !important;
+}
+
+/* Reduced spacing for the first h2 in a section */
+.article-content section:first-child h2:first-child {
+    margin-top: 0.75rem !important;
+}
+
+/* Spacing for lists in article content */
+.article-content ul,
+.article-content ol {
+    margin-bottom: 1.5rem;
+}
+
+.article-content li {
+    margin-bottom: 1rem;
+}
+
+.article-content li:last-child {
+    margin-bottom: 0;
+}
+
+/* Extra spacing when a paragraph immediately follows a list */
+.article-content ul + p,
+.article-content ol + p {
+    margin-top: 1.5rem;
+}
+
+/* Space between sections */
+.article-content section + section {
+    margin-top: 2.5rem;
+}
+>>>>>>> Insights
