@@ -1522,44 +1522,41 @@ footer img {
 
 /* Improved spacing for Insights article content */
 .article-content p {
-    margin-bottom: 1.5rem; /* Consistent paragraph spacing */
+    margin-bottom: 1.5rem; /* Consistent spacing for paragraphs */
 }
 
-/* Force specific h2 spacing to override any existing styles */
-.content-section .article-content h2,
-.article-content section h2 {
-    margin-top: 1.5rem !important; /* Reduced spacing with !important to override */
-    margin-bottom: 1.5rem;
+/* Global spacing for all h2 elements in article content */
+.article-content h2 {
+    margin-top: 1.5rem !important;
+    margin-bottom: 1.5rem !important;
 }
 
-/* Less spacing for first h2 in a section */
+/* Reduced spacing for the first h2 in a section */
 .article-content section:first-child h2:first-child {
     margin-top: 0.75rem !important;
 }
 
-.article-content ul, 
+/* Spacing for lists in article content */
+.article-content ul,
 .article-content ol {
-    margin-bottom: 1.5rem; /* Space after lists */
+    margin-bottom: 1.5rem;
 }
 
 .article-content li {
-    margin-bottom: 1rem; /* Space between list items */
+    margin-bottom: 1rem;
 }
 
 .article-content li:last-child {
-    margin-bottom: 0; /* No extra space after the last list item */
+    margin-bottom: 0;
 }
 
+/* Extra spacing when a paragraph immediately follows a list */
 .article-content ul + p,
 .article-content ol + p {
-    margin-top: 1.5rem; /* Extra space when paragraph follows a list */
+    margin-top: 1.5rem;
 }
 
+/* Space between sections */
 .article-content section + section {
-    margin-top: 2.5rem; /* Space between sections */
-}
-
-.article-content h2 {
-    margin-top: 1.5rem !important;
-    margin-bottom: 1.5rem;
+    margin-top: 2.5rem;
 }
