@@ -1558,3 +1558,8 @@ footer img {
 .article-content section + section {
     margin-top: 2.5rem; /* Space between sections */
 }
+
+.article-content h2 {
+    margin-top: 1.5rem !important;
+    margin-bottom: 1.5rem;
+}
