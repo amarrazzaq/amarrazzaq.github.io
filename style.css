@@ -1525,9 +1525,16 @@ footer img {
     margin-bottom: 1.5rem; /* Consistent paragraph spacing */
 }
 
-.article-content h2 {
-    margin-top: 1.5rem; /* Reduced spacing before headings */
-    margin-bottom: 1.5rem; /* Space after headings */
+/* Force specific h2 spacing to override any existing styles */
+.content-section .article-content h2,
+.article-content section h2 {
+    margin-top: 1.5rem !important; /* Reduced spacing with !important to override */
+    margin-bottom: 1.5rem;
+}
+
+/* Less spacing for first h2 in a section */
+.article-content section:first-child h2:first-child {
+    margin-top: 0.75rem !important;
 }
 
 .article-content ul, 
