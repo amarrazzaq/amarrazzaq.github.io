@@ -1526,7 +1526,7 @@ footer img {
 }
 
 .article-content h2 {
-    margin-top: 2.5rem;
+    margin-top: 1.5rem; /* Reduced spacing before headings */
     margin-bottom: 1.5rem; /* Space after headings */
 }
 
