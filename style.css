@@ -1507,3 +1507,47 @@ footer img {
 .article-content ol li {
     color: #fff; /* This would make all text white */
 }
+
+/* References Section Styling */
+.references a {
+    color: #f4821e; /* This is your site's orange accent color */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.references a:hover {
+    color: #ff9f4a; /* A lighter shade for hover state */
+    text-decoration: underline;
+}
+
+/* Improved spacing for Insights article content */
+.article-content p {
+    margin-bottom: 1.5rem; /* Consistent paragraph spacing */
+}
+
+.article-content h2 {
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem; /* Space after headings */
+}
+
+.article-content ul, 
+.article-content ol {
+    margin-bottom: 1.5rem; /* Space after lists */
+}
+
+.article-content li {
+    margin-bottom: 1rem; /* Space between list items */
+}
+
+.article-content li:last-child {
+    margin-bottom: 0; /* No extra space after the last list item */
+}
+
+.article-content ul + p,
+.article-content ol + p {
+    margin-top: 1.5rem; /* Extra space when paragraph follows a list */
+}
+
+.article-content section + section {
+    margin-top: 2.5rem; /* Space between sections */
+}
