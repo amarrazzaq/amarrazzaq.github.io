@@ -1586,4 +1586,21 @@ footer img {
 .article-content section + section {
     margin-top: 2.5rem;
 }
->>>>>>> Insights
+
+/* Simple fix for article content overflow on mobile - add at the end of style.css */
+@media (max-width: 768px) {
+  /* Ensure article content stays within boundaries */
+  .article-content {
+    overflow-x: hidden;
+    width: 100%;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+  
+  /* Make images responsive */
+  .article-content img,
+  .article-image-full img {
+    max-width: 100%;
+    height: auto;
+  }
+}
