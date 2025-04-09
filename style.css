@@ -1587,20 +1587,31 @@ footer img {
     margin-top: 2.5rem;
 }
 
-/* Simple fix for article content overflow on mobile - add at the end of style.css */
+/* Fix for word wrapping in article content on mobile */
 @media (max-width: 768px) {
-  /* Ensure article content stays within boundaries */
+  /* Enable proper word breaking for all article content */
   .article-content {
-    overflow-x: hidden;
-    width: 100%;
-    box-sizing: border-box;
+    overflow-wrap: break-word;
     word-wrap: break-word;
+    -ms-word-break: break-all;
+    word-break: break-word;
+    hyphens: auto;
   }
   
-  /* Make images responsive */
-  .article-content img,
-  .article-image-full img {
+  /* Fix for long words and strings */
+  .article-content p,
+  .article-content li,
+  .article-content h2,
+  .article-content h3 {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -ms-word-break: break-all;
+    word-break: break-word;
+    hyphens: auto;
+  }
+  
+  /* Ensure all content stays within container */
+  .article-content * {
     max-width: 100%;
-    height: auto;
   }
 }
