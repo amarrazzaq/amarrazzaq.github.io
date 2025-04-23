@@ -1490,7 +1490,14 @@ footer img {
     }
     
     .articles-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important; /* Force single column */
+        gap: 1.5rem; /* Reduced gap for mobile */
+    }
+    
+    /* Make sure the grid layout is preserved */
+    .articles-grid .article-card {
+        width: 100%; /* Ensure full width */
+        margin-bottom: 1.5rem; /* Add space between cards */
     }
     
     .related-articles-grid {
