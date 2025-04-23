@@ -1622,3 +1622,11 @@ footer img {
     max-width: 100%;
   }
 }
+/* ---- Insights: make Recent Articles one column on small screens ---- */
+@media (max-width: 768px) {
+  .articles-grid {               /* force a single, full-width column */
+    grid-template-columns: 1fr !important;
+    gap: 1rem;                   /* smaller gap looks better on phones */
+  }
+}
+
