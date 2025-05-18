@@ -1630,3 +1630,13 @@ footer img {
   }
 }
 
+.new-wheat-article ul,
+.new-wheat-article ol {
+  margin-bottom: 0.5em;
+}
+
+.new-wheat-article ul + p,
+.new-wheat-article ol + p {
+  margin-top: 0;
+}
+
