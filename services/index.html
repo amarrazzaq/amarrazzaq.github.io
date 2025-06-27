@@ -4,16 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Canonical Tag -->
     <link rel="canonical" href="https://amarrazzaq.com/services" />
 
-    <!-- SEO Meta Tags -->
     <meta name="description" content="Professional services and editorial roles of Dr. Amar Razzaq, including academic editing and research consultancy.">
     <meta name="keywords" content="academic editing, research consultancy, professional services, editorial roles, agricultural economics">
     <meta name="author" content="Amar Razzaq">
     <meta name="robots" content="index, follow">
 
-    <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Professional Services - Dr. Amar Razzaq">
     <meta property="og:description" content="Academic editing, research consultancy, and professional services in agricultural economics.">
     <meta property="og:type" content="website">
@@ -28,30 +25,279 @@
     <title>Professional Services - Amar Razzaq</title>
     <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
-<!-- Favicon Links -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
+    
     <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/images/favicon.png" type="image/png">
-    <!-- Optional: Apple Touch Icon for better iOS support -->
     <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+    
+    <style>
+        /* Additional styles for enhanced professional look */
+        .professional-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid rgba(244, 130, 30, 0.3);
+        }
+        
+        .professional-header h2 {
+            margin: 0;
+            color: #fff;
+            font-size: 1.8rem;
+        }
+        
+        .header-decoration {
+            width: 4px;
+            height: 40px;
+            background: linear-gradient(to bottom, #f4821e, #ff9f4a);
+            border-radius: 2px;
+        }
+        
+        .service-card {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, #f4821e, #ff9f4a);
+        }
+        
+        .card-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .role-badge {
+            background: rgba(244, 130, 30, 0.15);
+            color: #f4821e;
+            border: 1px solid rgba(244, 130, 30, 0.3);
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+        }
+        
+        .journal-logo {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+            background: #fff;
+            padding: 8px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card-content {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .journal-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .journal-details h3 {
+            margin: 0 0 0.5rem 0;
+            color: #61dafb;
+            fonts-size: 1.1rem;
+        }
+        
+        .journal-metrics {
+            display: flex;
+            gap: 1rem;
+            margin-top: 0.5rem;
+        }
+        
+        .metric-badge {
+            background: rgba(97, 218, 251, 0.1);
+            color: #61dafb;
+            padding: 0.2rem 0.6rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+        
+        .stats-container {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border: 1px solid rgba(244, 130, 30, 0.2);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #f4821e;
+            display: block;
+        }
+        
+        .stat-label {
+            color: #a3b3c9;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .journals-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .journal-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1rem;
+            border-radius: 6px;
+            border-left: 3px solid #f4821e;
+            transition: all 0.3s ease;
+        }
+        
+        .journal-item:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-2px);
+        }
+        
+        .timeline-enhanced {
+            position: relative;
+            padding-left: 3rem;
+        }
+        
+        .timeline-enhanced::before {
+            content: "";
+            position: absolute;
+            left: 1rem;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, #f4821e, #ff9f4a);
+            border-radius: 2px;
+        }
+        
+        .timeline-item-enhanced {
+            position: relative;
+            margin-bottom: 3rem;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid rgba(244, 130, 30, 0.2);
+        }
+        
+        .timeline-item-enhanced::before {
+            content: "";
+            position: absolute;
+            left: -2.5rem;
+            top: 1.5rem;
+            width: 1.5rem;
+            height: 1.5rem;
+            border-radius: 50%;
+            background: #f4821e;
+            border: 3px solid #1a1d23;
+            box-shadow: 0 0 0 3px rgba(244, 130, 30, 0.3);
+        }
+        
+        .org-logo {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+            background: #fff;
+            padding: 6px;
+            border-radius: 6px;
+            margin-right: 1rem;
+        }
+        
+        .leadership-role {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .professional-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 0.5rem;
+            }
+            
+            .header-decoration {
+                width: 40px;
+                height: 4px;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+            
+            .card-header {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .journal-info {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+            
+            .timeline-enhanced {
+                padding-left: 2rem;
+            }
+            
+            .timeline-item-enhanced::before {
+                left: -1.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
-   
+    
 <header class="top-header">
     <div class="nav-container">
-<span class="header-tagline"><span>L</span>earn. <span>A</span>ct. <span>I</span>mprove.</span>
+        <span class="header-tagline"><span>L</span>earn. <span>A</span>ct. <span>I</span>mprove.</span>
         <button class="hamburger-menu" aria-label="Menu">
             <i class="fas fa-bars"></i>
         </button>
         <nav class="nav-links" id="nav-menu">
-    <a href="/">About</a>
-    <a href="/research">Research</a>
-    <a href="/outreach">Outreach</a>
-    <a href="/services">Professional Services</a>
-    <a href="/insights">Insights</a>
-    <!-- <a href="/cv">CV</a> -->
-</nav>
+            <a href="/">About</a>
+            <a href="/research">Research</a>
+            <a href="/outreach">Outreach</a>
+            <a href="/services">Professional Services</a>
+            <a href="/insights">Insights</a>
+        </nav>
     </div>
 </header>
 
@@ -59,206 +305,270 @@
         <div class="content-section">
             <h1>Professional Services</h1>
             
-            <!-- Editorial Roles Section -->
             <section class="services-section">
-                <h2 class="section-title"><i class="fas fa-crown"></i> Editorial Roles & Leadership</h2>
+                <div class="professional-header">
+                    <div class="header-decoration"></div>
+                    <h2>Editorial Leadership & Journal Management</h2>
+                </div>
+                
                 <div class="service-cards">
                     <div class="service-card">
                         <div class="card-header">
-                            <i class="fas fa-user-edit"></i>
-                            <h3>Academic Editor</h3>
+                            <div class="role-badge">Academic Editor</div>
                         </div>
                         <div class="card-content">
-                            <p class="journal-name">PLOS ONE</p>
-                            <p class="role-description">Academic Editor and Editorial Board member</p>
+                            <div class="journal-info">
+                                <img src="/images/plos-one-logo.png" alt="PLOS ONE Logo" class="journal-logo">
+                                <div class="journal-details">
+                                    <h3>PLOS ONE</h3>
+                                    <div class="journal-metrics">
+                                        <span class="metric-badge">Impact Factor: 2.6</span>
+                                        <span class="metric-badge">Q1 JCR</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="role-description">Member of the Editorial Board, handling manuscripts in environmental and agricultural sciences with expertise in sustainable agriculture and climate adaptation strategies.</p>
                         </div>
                     </div>
 
-<!-- New Editorial Role 1 -->
+                    <div class="service-card">
+                        <div class="card-header">
+                            <div class="role-badge">Associate Editor</div>
+                        </div>
+                        <div class="card-content">
+                            <div class="journal-info">
+                                <img src="/images/frontiers-logo.png" alt="Frontiers Logo" class="journal-logo">
+                                <div class="journal-details">
+                                    <h3>Frontiers in Sustainable Food Systems</h3>
+                                    <div class="journal-metrics">
+                                        <span class="metric-badge">Impact Factor: 3.1</span>
+                                        <span class="metric-badge">Q2 JCR</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="role-description">Leading the peer-review process for research on sustainable food production, agricultural innovation, and food security solutions.</p>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="card-header">
+                            <div class="role-badge">Guest Editor</div>
+                        </div>
+                        <div class="card-content">
+                            <div class="journal-info">
+                                <img src="/images/frontiers-logo.png" alt="Frontiers Logo" class="journal-logo">
+                                <div class="journal-details">
+                                    <h3>Frontiers in Nutrition</h3>
+                                    <div class="journal-metrics">
+                                        <span class="metric-badge">Impact Factor: 5.1</span>
+                                        <span class="metric-badge">Q1 JCR</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="role-description">Editing special issues focused on nutritional science, food quality, and public health nutrition research.</p>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="card-header">
+                            <div class="role-badge">Review Editor</div>
+                        </div>
+                        <div class="card-content">
+                            <div class="journal-info">
+                                <img src="/images/frontiers-logo.png" alt="Frontiers Logo" class="journal-logo">
+                                <div class="journal-details">
+                                    <h3>Frontiers in Environmental Sciences</h3>
+                                    <div class="journal-metrics">
+                                        <span class="metric-badge">Impact Factor: 3.7</span>
+                                        <span class="metric-badge">Q2 JCR</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="role-description">Editorial Board member ensuring rigorous peer review standards for environmental science research and sustainability studies.</p>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="card-header">
+                            <div class="role-badge">Managing Editor</div>
+                        </div>
+                        <div class="card-content">
+                            <div class="journal-info">
+                                <div class="journal-logo" style="background: linear-gradient(135deg, #4a90e2, #357abd); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 0.7rem;">EFS</div>
+                                <div class="journal-details">
+                                    <h3>Entrepreneurship for Sustainability</h3>
+                                    <div class="journal-metrics">
+                                        <span class="metric-badge">Offical Journal of CBEC Group</span>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="role-description">Managing editorial operations for this international peer-reviewed journal focusing on sustainable entrepreneurship and business innovation.</p>
+                        </div>
+                    </div>
+
                 <div class="service-card">
-                    <div class="card-header">
-                        <i class="fas fa-edit"></i>
-                        <h3>Associate Editor</h3>
-                    </div>
-                    <div class="card-content">
-                        <p class="journal-name">Frontiers in Sustainable Food Systems</p>
-                        <p class="role-description">SCI, JCR Q2 Journal</p>
-                    </div>
+    <div class="card-header">
+        <div class="role-badge">Editorial Board Member</div>
+    </div>
+    <div class="card-content">
+        <div class="journal-info">
+            <img src="/images/asian-journal-logo.png" alt="Asian Journal of Agriculture and Rural Development Logo" class="journal-logo">
+            <div class="journal-details">
+                <h3>Asian Journal of Agriculture and Rural Development</h3>
+                <div class="journal-metrics">
+                    <span class="metric-badge">CiteScore: 1.8</span>
+                    <span class="metric-badge">Scopus Q3</span>
                 </div>
-
-                <!-- New Editorial Role 2 -->
-                <div class="service-card">
-                    <div class="card-header">
-                        <i class="fas fa-edit"></i>
-                        <h3>Associate Editor</h3>
-                    </div>
-                    <div class="card-content">
-                        <p class="journal-name">Frontiers in Nutrition</p>
-                        <p class="role-description">SCI, JCR Q2 Journal</p>
-                    </div>
-                </div>
+            </div>
+        </div>
+        <p class="role-description">Contributing to editorial decisions and maintaining scientific standards for agricultural and rural development research in Asia.</p>
+    </div>
+</div>
 
                     <div class="service-card">
                         <div class="card-header">
-                            <i class="fas fa-edit"></i>
-                            <h3>Review Editor</h3>
+                            <div class="role-badge">Editor in Chief</div>
                         </div>
                         <div class="card-content">
-                            <p class="journal-name">Frontiers in Environmental Sciences</p>
-                            <p class="role-description">Editorial Board member and Review Editor</p>
-                        </div>
-                    </div>
-
-                    <div class="service-card">
-                        <div class="card-header">
-                            <i class="fas fa-star"></i>
-                            <h3>Lead Guest Editor</h3>
-                        </div>
-                        <div class="card-content">
-                            <p class="journal-name">Frontiers in Sustainable Food Systems & Frontiers in Nutrition</p>
-                            <p class="role-description">Special Issue: "Sustainable Food Consumption and Production in the 21st Century"</p>
-                            <a href="https://www.frontiersin.org/research-topics/46142" class="special-issue-link" target="_blank">View Special Issue <i class="fas fa-external-link-alt"></i></a>
+                            <div class="journal-info">
+                                <div class="journal-logo" style="background: linear-gradient(135deg, #f4821e, #ff9f4a); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 0.8rem;">IJAS</div>
+                                <div class="journal-details">
+                                    <h3>International Journal of Advanced Social Studies</h3>
+                                    <div class="journal-metrics">
+                                        <span class="metric-badge">HEC Y Category</span>
+                                        <span class="metric-badge">Peer-Reviewed</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="role-description">Leading the editorial strategy and scientific direction for this international journal, fostering interdisciplinary research in social sciences.</p>
                         </div>
                     </div>
 
                     <div class="service-card">
                         <div class="card-header">
-                            <i class="fas fa-tasks"></i>
-                            <h3>Managing Editor</h3>
+                            <div class="role-badge">Special Issues</div>
                         </div>
                         <div class="card-content">
-                            <p class="journal-name">Entrepreneurship for Sustainability</p>
-                            <p class="role-description">International peer-reviewed journal</p>
-                        </div>
-                    </div>
-
-                    <div class="service-card">
-                        <div class="card-header">
-                            <i class="fas fa-chess-king"></i>
-                            <h3>Editor in Chief</h3>
-                        </div>
-                        <div class="card-content">
-                            <p class="journal-name">International Journal of Advanced Social Studies</p>
-                            <p class="role-description">International peer-reviewed journal</p>
-                        </div>
-                    </div>
-
-                    <div class="service-card">
-                        <div class="card-header">
-                            <i class="fas fa-pen-fancy"></i>
-                            <h3>Associate Editor</h3>
-                        </div>
-                        <div class="card-content">
-                            <p class="journal-name">Journal of Economic Impact</p>
-                            <p class="role-description">2019 – 2022</p>
+                            <div class="journal-info">
+                                <img src="/images/frontiers-logo.png" alt="Frontiers Logo" class="journal-logo">
+                                <div class="journal-details">
+                                    <h3>Frontiers Special Issues</h3>
+                                    <div class="journal-metrics">
+                                        <span class="metric-badge">Lead Guest Editor</span>
+                                        <span class="metric-badge">Multiple Volumes</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="role-description">Leading comprehensive special issues on "Sustainable Food Consumption and Production in the 21st Century" across multiple volumes and journals.</p>
+                            <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 1rem;">
+                                <a href="https://www.frontiersin.org/research-topics/46142" class="special-issue-link" target="_blank">Volume I: Sustainable Food Systems <i class="fas fa-external-link-alt"></i></a>
+                                <a href="https://www.frontiersin.org/research-topics/69838/sustainable-food-consumption-and-production-in-the-21st-century-volume-ii" class="special-issue-link" target="_blank">Volume II: Advanced Approaches <i class="fas fa-external-link-alt"></i></a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Journal Reviews Section -->
             <section class="services-section">
-                <h2 class="section-title"><i class="fas fa-check-double"></i> Peer Review Contributions</h2>
-                <div class="review-summary">
-                    <div class="review-count">
-                        <i class="fas fa-file-alt"></i>
-                        <span>100+ Manuscript Reviews</span>
-                    </div>
-                    <div class="journals-list">
-                        <h3>Notable Journals:</h3>
-                        <ul>
-                            <li>Journal of Environmental Management</li>
-                            <li>Agricultural Water Management</li>
-                            <li>Science of the Total Environment</li>
-                            <li>Journal of Cleaner Production</li>
-                            <li>Journal of Retailing and Consumer Services</li>
-                            <li>Agribusiness – an International Journal</li>
-                            <li>Environmental and Sustainability Indicators</li>
-                            <li>Int. J. of Disaster Risk Reduction</li>
-                            <li>Habitat International</li>
-			    <li>Environmental Development</li>
-                        </ul>
-                    </div>
+                <div class="professional-header">
+                    <div class="header-decoration"></div>
+                    <h2>Peer Review Excellence</h2>
                 </div>
-            </section>
-
-            <!-- Professional Leadership -->
-            <section class="services-section">
-                <h2 class="section-title"><i class="fas fa-users"></i> Professional Leadership</h2>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-date">2021.06 – Present</div>
-                        <div class="timeline-content">
-                            <h3>International Alumni Liaison</h3>
-                            <p>International Alumni Association, Huazhong Agricultural University, Wuhan, China</p>
+                
+                <div class="stats-container">
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-number">300+</span>
+                            <span class="stat-label">Manuscripts Reviewed</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">70+</span>
+                            <span class="stat-label">International Journals</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">10+</span>
+                            <span class="stat-label">Years of Experience</span>
                         </div>
                     </div>
                     
-                    <div class="timeline-item">
-                        <div class="timeline-date">2020.07 – 2021.07</div>
-                        <div class="timeline-content">
-                            <h3>Senior Advisor</h3>
-                            <p>International Students Volunteer Center, Huazhong Agricultural University, Wuhan, China</p>
+                    <div>
+                        <h3 style="color: #fff; margin-bottom: 1rem;">Peer Review Portfolio</h3>
+                        <p style="color: #a3b3c9; margin-bottom: 1.5rem;">Providing expert peer review services across prestigious international journals, ensuring the highest standards of scientific rigor and academic integrity.</p>
+                        
+                        <div class="journals-grid">
+                            <div class="journal-item">Journal of Environmental Management</div>
+                            <div class="journal-item">Agricultural Water Management</div>
+                            <div class="journal-item">Science of the Total Environment</div>
+                            <div class="journal-item">Journal of Cleaner Production</div>
+                            <div class="journal-item">Journal of Retailing and Consumer Services</div>
+                            <div class="journal-item">Agribusiness – an International Journal</div>
+                            <div class="journal-item">Sustainable Development</div>
+                            <div class="journal-item">Int. J. of Disaster Risk Reduction</div>
+                            <div class="journal-item">Review of Development Economics</div>
+                            <div class="journal-item">Environmental Development</div>
                         </div>
                     </div>
+                </div>
+            </section>
 
-                    <div class="timeline-item">
-                        <div class="timeline-date">2012.12 – 2014.11</div>
-                        <div class="timeline-content">
-                            <h3>President</h3>
-                            <p>The Society of Young Economists, University of Agriculture, Faisalabad, Pakistan</p>
+            <section class="services-section">
+                <div class="professional-header">
+                    <div class="header-decoration"></div>
+                    <h2>Academic Leadership & Administration</h2>
+                </div>
+                
+                <div class="timeline-enhanced">
+                    <div class="timeline-item-enhanced">
+                        <div class="timeline-date" style="color: #f4821e; font-weight: 600; margin-bottom: 1rem;">June 2021 – Present</div>
+                        <div class="leadership-role">
+                            <img src="/images/huazhong-logo.png" alt="Huazhong Agricultural University Logo" class="org-logo">
+                            <div>
+                                <h3 style="color: #fff; margin: 0 0 0.5rem 0;">International Alumni Liaison</h3>
+                                <p style="color: #a3b3c9; margin: 0; font-size: 0.9rem;">International Alumni Association, Huazhong Agricultural University, China</p>
+                            </div>
                         </div>
+                        <p style="color: #a3b3c9;">Facilitating international alumni engagement, coordinating global networking initiatives, and representing international graduates in university strategic planning.</p>
+                    </div>
+                    
+                    <div class="timeline-item-enhanced">
+                        <div class="timeline-date" style="color: #f4821e; font-weight: 600; margin-bottom: 1rem;">July 2020 – July 2021</div>
+                        <div class="leadership-role">
+                            <img src="/images/huazhong-logo.png" alt="Huazhong Agricultural University Logo" class="org-logo">
+                            <div>
+                                <h3 style="color: #fff; margin: 0 0 0.5rem 0;">Senior Advisor</h3>
+                                <p style="color: #a3b3c9; margin: 0; font-size: 0.9rem;">International Students Volunteer Center, Huazhong Agricultural University, China</p>
+                            </div>
+                        </div>
+                        <p style="color: #a3b3c9;">Mentored international students, developed support programs, and enhanced cross-cultural integration within the university community.</p>
+                    </div>
+
+                    <div class="timeline-item-enhanced">
+                        <div class="timeline-date" style="color: #f4821e; font-weight: 600; margin-bottom: 1rem;">December 2012 – November 2014</div>
+                        <div class="leadership-role">
+                            <img src="/images/uaf-logo.png" alt="University of Agriculture Faisalabad Logo" class="org-logo">
+                            <div>
+                                <h3 style="color: #fff; margin: 0 0 0.5rem 0;">President</h3>
+                                <p style="color: #a3b3c9; margin: 0; font-size: 0.9rem;">The Society of Young Economists, University of Agriculture, Faisalabad, Pakistan</p>
+                            </div>
+                        </div>
+                        <p style="color: #a3b3c9;">Led the academic society, organizing conferences, research symposiums, and professional development programs for economics students.</p>
                     </div>
                 </div>
             </section>
         </div>
     </main>
     
-<footer>
-    <p style="display: flex; align-items: center; justify-content: center; gap: 1rem;">
-        <!-- Hit Web Counter -->
-        <a href="https://www.hitwebcounter.com" target="_blank">
-            <img src="https://hitwebcounter.com/counter/counter.php?page=20154781&style=0007&nbdigits=5&type=page&initCount=2750" title="Counter Widget" alt="Visit counter For Websites" border="0" />
-        </a>
-        <span>|</span>
-        <span>&copy; 2025 Amar Razzaq | All Rights Reserved</span>
-    </p>
-</footer>
+    <footer>
+        <p style="display: flex; align-items: center; justify-content: center; gap: 1rem;">
+            <a href="https://www.hitwebcounter.com" target="_blank">
+                <img src="https://hitwebcounter.com/counter/counter.php?page=20154781&style=0007&nbdigits=5&type=page&initCount=2750" title="Counter Widget" alt="Visit counter For Websites" border="0" />
+            </a>
+            <span>|</span>
+            <span>&copy; 2025 Amar Razzaq | All Rights Reserved</span>
+        </p>
+    </footer>
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const hamburger = document.querySelector('.hamburger-menu');
-    const nav = document.querySelector('.nav-links');
-    const body = document.body;
-
-    // Create overlay div
-    const overlay = document.createElement('div');
-    overlay.className = 'menu-overlay';
-    body.appendChild(overlay);
-
-    hamburger.addEventListener('click', function() {
-        nav.classList.toggle('active');
-        overlay.classList.toggle('active');
-        body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
-    });
-
-    // Close menu when clicking overlay
-    overlay.addEventListener('click', function() {
-        nav.classList.remove('active');
-        overlay.classList.remove('active');
-        body.style.overflow = '';
-    });
-
-    // Close menu when clicking a link
-    nav.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', function() {
-            nav.classList.remove('active');
-            overlay.classList.remove('active');
-            body.style.overflow = '';
-        });
-    });
-});
-</script>
-
+    <script src="/script.js"></script> 
 </body>
 </html>
