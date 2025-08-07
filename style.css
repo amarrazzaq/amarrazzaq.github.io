@@ -13,1629 +13,759 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    padding-top: 20px; /* Add padding to account for fixed header */
+    padding-top: 60px;
 }
 
-/* Header/Navigation */
-
+/* === Header and Navigation === */
 .top-header {
     background-color: #1a1d23;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-    padding: 0.75rem 1rem;
+    padding: 0 2rem;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    height: 60px; /* Add explicit height */
-    overflow: hidden; /* Prevent content overflow */
+    height: 60px;
 }
 
 .nav-container {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Distribute space between items */
-    width: 100%;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 100%;
+}
+
+.header-tagline { 
+    color: #a3b3c9; 
+    font-size: 1rem; 
+    font-weight: 300; 
+}
+
+.header-tagline span { 
+    color: #f4821e; 
+    font-weight: 400; 
+    font-family: "Playfair Display", serif; 
+}
+
+.nav-links { 
+    display: flex; 
+    gap: 1rem; 
+}
+
+.nav-links a { 
+    color: #a3b3c9; 
+    text-decoration: none; 
+    font-size: 1rem; 
+    font-weight: 500; 
+    transition: color 0.3s ease; 
+    padding: 0.5rem 1rem; 
+    border-radius: 4px; 
+}
+
+.nav-links a:hover, 
+.nav-links a.active { 
+    color: #f4821e; 
+    background-color: rgba(244, 130, 30, 0.1); 
+}
+
+.hamburger-menu { 
+    display: none; 
+}
+
+/* === Main Content & Page Layouts === */
+.main-content { 
+    max-width: 1200px; 
+    margin: 36px auto 2rem; 
+    padding: 2rem; 
+    flex-grow: 1; 
+    display: grid; 
+    grid-template-columns: 300px 1fr; 
+    gap: 4rem; 
+}
+
+.single-column { 
+    max-width: 900px; 
+    margin: 36px auto 2rem; 
+    grid-template-columns: 1fr; 
+}
+
+/* Profile Section */
+.profile-section { 
+    text-align: center; 
+    background-color: #1a1d23; 
+    padding: 2rem; 
+    border-radius: 12px; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); 
+    position: sticky; 
+    top: 100px; 
+    height: fit-content; 
+}
+
+.profile-pic { 
+    width: 180px; 
+    height: 180px; 
+    border-radius: 50%; 
+    margin-bottom: 1.5rem; 
+    object-fit: cover; 
+    border: 4px solid rgba(244, 130, 30, 0.2); 
+}
+
+.profile-name { 
+    font-size: 2rem; 
+}
+
+.profile-title { 
+    color: #f4821e; 
+    font-size: 1.1rem; 
+}
+
+/* Social Links */
+.social-links { 
+    display: flex; 
+    justify-content: center; 
+    gap: 1.5rem; 
+    margin-top: 2rem; 
+}
+
+.social-links a { 
+    color: #a3b3c9; 
+    font-size: 1.5rem; 
+    text-decoration: none; 
+    transition: color 0.3s ease; 
+}
+
+.social-links a:hover i { 
+    color: #f4821e !important; 
+}
+
+.social-links .fa-university { color: #f4821e; }
+.social-links .fa-envelope { color: #EA4335; }
+.social-links .fa-google { color: #4285F4; }
+.social-links .fa-researchgate { color: #00CCBB; }
+.social-links .fa-orcid { color: #A6CE39; }
+
+/* General Content Section */
+.content-section { 
+    background-color: #1a1d23; 
+    padding: 2rem; 
+    border-radius: 12px; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); 
+}
+
+.section-title { 
+    color: #f4821e; 
+    margin-bottom: 1.5rem; 
+    font-size: 1.25rem; 
+    padding-bottom: 0.5rem; 
+    border-bottom: 1px solid rgba(255,255,255,0.1); 
+}
+
+/* === Modern "Frosted Glass" Card Design === */
+.modern-card, .experience-card, .article-card, .outreach-card, .service-card {
+    background: rgba(49, 54, 63, 0.5); 
+    backdrop-filter: blur(8px); 
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 12px; 
+    padding: 1.5rem; 
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    display: flex; 
+    flex-direction: column; 
+    height: 100%;
+}
+
+.modern-card:hover, .experience-card:hover, .article-card:hover, .outreach-card:hover, .service-card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25); 
+    border-color: rgba(244, 130, 30, 0.4);
+}
+
+/* === Grid Layouts for Cards === */
+.sections-grid, .experience-grid, .articles-grid, .outreach-cards, .service-cards, .related-articles-grid { 
+    display: grid; 
+    gap: 1.5rem; 
+}
+
+@media (min-width: 769px) {
+    .sections-grid, .experience-grid, .articles-grid, .outreach-cards, .service-cards, .related-articles-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Card Content Styles */
+.degree { font-weight: 600; color: #fff; }
+.university { color: #a3b3c9; font-size: 0.95rem; }
+.education-list { list-style: none; padding: 0; }
+.education-list li { margin-bottom: 1.5rem; }
+.experience-date { color: #f4821e; font-size: 0.9rem; }
+.experience-title { font-size: 1.2rem; }
+.article-image { overflow: hidden; height: 200px; margin-bottom: 1rem; border-radius: 8px; }
+.article-image img { width: 100%; height: 100%; object-fit: cover; }
+.article-content { flex-grow: 1; }
+.article-title-link { color: inherit; text-decoration: none; }
+.read-more { margin-top: auto; color: #f4821e; text-decoration: none; font-weight: 500; }
+
+/* === Publications and Research Styles === */
+.pub-item { 
+    margin-bottom: 1.5rem; 
+    padding-left: 1rem; 
+    border-left: 3px solid #f4821e; 
+}
+
+.pub-item .journal { 
+    color: #61dafb; 
+    font-style: italic; 
+}
+
+.talks-timeline { 
+    position: relative; 
+    padding-left: 2rem; 
+}
+
+.talks-timeline::before { 
+    content: ""; 
+    position: absolute; 
+    left: 0; 
+    top: 0; 
+    bottom: 0; 
+    width: 2px; 
+    background: rgba(244, 130, 30, 0.3); 
+}
+
+.talk-item { 
+    margin-bottom: 2rem; 
+    padding-left: 1.5rem; 
+    border-left: 2px solid rgba(244, 130, 30, 0.2); 
+}
+
+.talk-date { 
+    color: #f4821e; 
+}
+
+/* === Article Pages Styles === */
+.article-header .article-title { 
+    font-size: 2.5rem; 
+    line-height: 1.2; 
+}
+
+.article-author { 
+    display: flex; 
+    align-items: center; 
+    gap: 1rem; 
+    margin-top: 2rem; 
+    margin-bottom: 2rem;
+}
+
+.author-info p { margin: 0; }
+.author-name { font-weight: 500; }
+.author-image { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; }
+
+.single-column .article-content { padding: 0 !important; }
+.single-column .article-content h2 { color: #f4821e; margin: 2.5rem 0 1.5rem; }
+.single-column .article-content p, .single-column .article-content li { color: #c8d6e5; line-height: 1.8; font-size: 1.1rem; }
+.single-column .article-content ul, .single-column .article-content ol { padding-left: 25px; margin-bottom: 1.5rem; }
+.single-column .article-content img { max-width: 100%; height: auto; border-radius: 12px; margin: 2rem 0; }
+
+.article-image-caption { 
+    text-align: center; 
+    color: #a3b3c9; 
+    font-size: 0.9rem; 
+    margin-top: -1rem; 
+    margin-bottom: 2rem; 
+    font-style: italic; 
+}
+
+.references ul { list-style: none; padding-left: 0; }
+.references a { color: #61dafb; text-decoration: none; }
+.references a:hover { color: #f4821e; text-decoration: underline; }
+
+/* === Services Page - Peer Review Section === */
+.review-summary {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    padding: 2rem;
+    margin: 2rem 0;
+    border: 1px solid rgba(244, 130, 30, 0.2);
+}
+
+.journals-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+    padding: 0;
+    list-style: none;
+}
+
+.journals-list li {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 3px solid #f4821e;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: #a3b3c9;
     position: relative;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 0;
+    list-style: none;
 }
 
-.header-tagline {
-    flex: 1; /* Allow the tagline to take available space */
-    text-align: center; /* Center the tagline text */
-    color: #a3b3c9;
-    font-size: 1rem;
-    font-weight: 300;
-    letter-spacing: 0.5px;
-    white-space: nowrap;
-}
-
-.header-tagline span {
-    display: inline-block;
-    color: #f4821e;
-    font-weight: 400;
-    font-size: 1.1rem;
-    font-family: "Playfair Display", serif;
-    padding-right: 2px;
-}
-
-.hamburger-menu {
+.journals-list li::before {
     display: none;
-    background: none;
-    border: none;
+    content: none;
+}
+
+.journals-list li:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     color: #fff;
-    font-size: 1.5rem;
-    cursor: pointer;
-    padding: 0.5rem;
-    z-index: 1000;
+    border-left-color: #ff9f4a;
 }
 
-.nav-links {
-    display: flex;
-    gap: 2rem;
-    align-items: center;
-    /* Removed margin-left: auto; */
-}
-
-.nav-links a {
-    color: #a3b3c9;
-    text-decoration: none;
-    font-size: 1rem;
-    font-weight: 500;
-    transition: color 0.3s ease;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-}
-
-.nav-links a:hover {
-    color: #f4821e;
-    background-color: rgba(244, 130, 30, 0.1);
-}
-
-.nav-links a.active {
-    color: #f4821e;
-    background-color: rgba(244, 130, 30, 0.1);
-}
-
-/* Mobile Menu Styles */
+/* === Mobile & Responsive === */
 @media (max-width: 768px) {
+    /* Content Layout */
+    .main-content, .single-column {
+        margin-top: 10px;
+        padding: 1rem;
+        gap: 1.5rem;
+        grid-template-columns: 1fr;
+    }
+
+    .profile-section {
+        position: static;
+        margin-bottom: 1.5rem;
+    }
+
+    /* Grid layouts - single column on mobile */
+    .sections-grid, .experience-grid, .articles-grid, .outreach-cards, .service-cards, .related-articles-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Force insights article grids to single column */
+    .articles-list .articles-grid,
+    .recent-articles .articles-grid,
+    .related-articles-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem;
+    }
+    
+    /* Featured article card should stack vertically */
+    .featured-article-card {
+        grid-template-columns: 1fr !important;
+    }
+    
+    /* Adjust article image height on mobile */
+    .featured-article .article-image {
+        height: 200px;
+    }
+
+    /* Mobile Navigation */
+    .nav-container {
+        padding: 0 1rem;
+        position: relative;
+    }
+    
+    .header-tagline {
+        display: block;
+        margin-right: 60px;
+        text-align: left;
+    }
+    
     .hamburger-menu {
         display: block;
+        position: absolute;
+        right: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1001;
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: 1.5rem;
+        cursor: pointer;
+        padding: 0.5rem;
+        min-width: 44px;
+        min-height: 44px;
     }
-
-    .header-tagline {
-        font-size: 0.9rem;
-    }
-
-    .header-tagline span {
-        font-size: 1rem;
-    }
-
+    
     .nav-links {
+        display: none;
         position: fixed;
         top: 0;
-        right: -250px; /* Position off-screen on the right */
+        right: -100%;
         width: 250px;
         height: 100vh;
         background-color: #1a1d23;
         flex-direction: column;
         padding: 4rem 1rem 1rem 1rem;
-        transition: right 0.3s ease; /* Sliding effect */
-        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2); /* Shadow on the left side */
+        transition: right 0.3s ease-in-out;
+        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
         z-index: 999;
         margin: 0;
         gap: 0;
+        overflow-y: auto;
     }
-
+    
     .nav-links.active {
-        right: 0; /* Align the menu with the right edge */
+        display: flex;
+        right: 0;
     }
-
+    
     .nav-links a {
         padding: 1rem;
         width: 100%;
-        text-align: left; /* Align text to the left */
+        text-align: left;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         font-size: 1.1rem;
+        display: flex;
+        align-items: center;
+        color: #a3b3c9;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+        min-height: 44px;
     }
-
+    
+    .nav-links a:hover,
+    .nav-links a.active {
+        background-color: rgba(244, 130, 30, 0.1);
+        color: #f4821e;
+    }
+    
     .nav-links a:last-child {
         border-bottom: none;
     }
+    
+    .menu-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 998;
+        transition: opacity 0.3s ease;
+    }
+    
+    .menu-overlay.active {
+        display: block;
+        opacity: 1;
+    }
 
-    /* Reduce Top Spacing on Mobile */
-    .main-content {
-        margin-top: 100px; /* Reduced from 100px to 50px */
-        padding: 0.5rem;
+    /* Peer Review Section - Mobile */
+    .journals-list {
         grid-template-columns: 1fr;
-        gap: 0.75rem; /* Reduced gap between cards */
+        gap: 0.75rem;
+    }
+    
+    .journals-list li {
+        padding: 0.75rem;
+        font-size: 0.9rem;
+    }
+    
+    .review-summary {
+        padding: 1.5rem;
     }
 
-    /* Add Rounded Corners and Subtle Shadows to Card Elements on Mobile */
-    .download-section,
-    .pdf-wrapper,
-    .card, /* General card class */
-    .service-card,
-    .outreach-card,
-    .content-section,
-    .experience-section,
-    .education-list li,
-    .publications-section,
-    .outreach-work-section,
-    .talk-item {
-        border-radius: 8px; /* Slightly rounded corners */
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-        padding: 1rem; /* Uniform padding */
-        margin-bottom: 1rem; /* Space between cards */
+    /* General mobile improvements */
+    body {
+        overflow-x: hidden;
     }
-
-    /* Further adjustments for better aesthetics */
-    .content-section h1 {
-        margin-bottom: 1.5rem; /* Increase space below headers */
-    }
-
-    /* Ensure consistent padding within cards */
-    .download-section,
-    .pdf-wrapper,
-    .card,
-    .service-card,
-    .outreach-card,
-    .content-section,
-    .experience-section,
-    .education-list li,
-    .publications-section,
-    .outreach-work-section,
-    .talk-item {
-        padding: 1rem; /* Uniform padding */
+    
+    .nav-container,
+    .main-content,
+    .content-section {
+        max-width: 100%;
+        overflow-x: hidden;
     }
 }
 
-/* Overlay for mobile menu */
-.menu-overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0,0,0,0.5);
-    z-index: 998;
+/* Hide tagline on very small screens */
+@media (max-width: 480px) {
+    .header-tagline {
+        display: none;
+    }
+    
+    .hamburger-menu {
+        right: 1rem;
+        margin-right: 0;
+    }
 }
 
-.menu-overlay.active {
-    display: block;
+/* Text overflow fixes */
+.service-card, .outreach-card, .article-card {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
 }
 
-/* Main Content */
-
-.main-content {
-    max-width: 1200px;
-    margin: 72px auto 2rem;  /* Changed from 100px to 72px */
-    padding: 2rem;
-    flex-grow: 1;
-    display: grid;
-    grid-template-columns: 300px 1fr;
-    gap: 4rem;
+.service-card h3,
+.service-card p,
+.outreach-card h3,
+.outreach-card p {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
 }
 
-.single-column {
-    max-width: 900px;
-    display: block;
+.journal-details h3 {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    line-height: 1.3;
 }
 
-/* Profile Section */
-.profile-section {
-    text-align: center;
-    background-color: #1a1d23;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    position: sticky;
-    top: 100px;
-    height: fit-content;
+.special-issue-link {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
 }
-
-.profile-pic {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    margin-bottom: 1.5rem;
-    object-fit: cover;
-    border: 4px solid rgba(244, 130, 30, 0.2);
+/* Add this CSS rule to make subtitle orange like section-title */
+.subtitle { 
+    color: #f4821e; 
+    margin-bottom: 1.5rem; 
+    font-size: 1.25rem; 
+    padding-bottom: 0.5rem; 
+    border-bottom: 1px solid rgba(255,255,255,0.1); 
 }
+/* === ENHANCED JOURNAL CARDS STYLING === */
 
-.profile-name {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-    color: #fff;
-}
+/* Add this CSS to your existing stylesheet */
 
-.profile-title {
-    color: #f4821e;
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
-}
-
-.profile-affiliation {
-    color: #a3b3c9;
-    margin-bottom: 2rem;
-}
-
-/* Social Links */
-.social-links {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    margin-top: 2rem;
-}
-
-.social-links a {
-    color: #a3b3c9;
-    font-size: 1.5rem;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.social-links a:hover {
-    color: #f4821e;
-}
-
-.social-links .fa-google {
-    color: #4285F4;
-}
-
-.social-links .fa-researchgate {
-    color: #00CCBB;
-}
-
-.social-links .fa-orcid {
-    color: #A6CE39;
-}
-
-.social-links .fa-university {
-    color: #f4821e;  /* Matching your theme's orange */
-}
-
-.social-links .fa-envelope {
-    color: #EA4335;
-}
-
-/* CV Link Style */
-.social-links .cv-link {
-    color: #f4821e;
-    font-weight: 500;
-    font-size: 1rem;
-    text-decoration: none;
-    padding: 4px 8px;
-    border: 1px solid transparent;
-    border-radius: 4px;
-    transition: all 0.3s ease;
-}
-
-.social-links .cv-link:hover {
-    color: #f4821e;
-    border-color: #f4821e;
-    transform: translateY(-2px);
-}
-
-.social-links a:hover i {
-    color: #f4821e;  /* Matching your hover color */
-}
-
-/* Content Section */
-.content-section {
-    background-color: #1a1d23;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.content-section h1 {
-    color: #fff;
-    margin-bottom: 1.5rem;
-    font-size: 2.5rem;
-}
-
-.content-section p {
-    margin-bottom: 1.5rem;
-    color: #a3b3c9;
-}
-
-/* Sections Grid */
-.sections-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-}
-
-.section-title {
-    color: #f4821e;
-    margin-bottom: 1rem;
-    font-size: 1.25rem;
-}
-
-/* Experience Section */
-.experience-section {
-    position: relative;
-}
-
-.timeline {
-    position: relative;
-    padding-left: 2rem;
-}
-
-.timeline::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background: rgba(244, 130, 30, 0.3);
-}
-
-.timeline-item {
-    position: relative;
-    margin-bottom: 2rem;
-    padding-left: 1.5rem;
-}
-
-.timeline-item::before {
-    content: "";
-    position: absolute;
-    left: -2rem;
-    top: 0.5rem;
-    width: 1rem;
-    height: 1rem;
-    border-radius: 50%;
-    background: #f4821e;
-    border: 2px solid #1a1d23;
-}
-
-.timeline-date {
-    color: #f4821e;
-    font-size: 0.9rem;
-    margin-bottom: 0.5rem;
-}
-
-.timeline-content h4 {
-    color: #fff;
-    margin-bottom: 0.5rem;
-    font-size: 1.1rem;
-}
-
-.timeline-content p {
-    color: #a3b3c9;
-    font-size: 0.9rem;
-}
-
-/* Education Section */
-.education-list {
-    list-style: none;
-}
-
-.education-list li {
-    margin-bottom: 1.5rem;
-}
-
-.education-list li:last-child {
-    margin-bottom: 0;
-}
-
-.degree {
-    font-weight: 600;
-    color: #fff;
-}
-
-.university {
-    color: #a3b3c9;
-}
-
-/* Footer */
-footer {
-    background-color: #1a1d23;
-    padding: 0.5rem; /* Updated to match mobile optimizations */
-    margin-top: auto;
-    border-top: 1px solid #333;
-    color: #a3b3c9;
-}
-
-footer p {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.75rem; /* Updated gap */
-    white-space: nowrap;
-    font-size: 0.9rem;
-}
-
-footer img {
-    height: 20px;
-}
-
-/* Journal Names */
-.journal-name {
-    font-style: italic;
-    color: #61dafb;
-}
-
-/* Theme Toggle Button */
-.theme-toggle {
-    background: none;
-    border: none;
-    color: #a3b3c9;
-    cursor: pointer;
-    font-size: 1.2rem;
-    padding: 0.5rem;
-    transition: color 0.3s ease;
-}
-
-.theme-toggle:hover {
-    color: #f4821e;
-}
-
-/* Publications Section */
-.publications-section {
-    margin-bottom: 4rem;
-}
-
-.publication-category {
-    margin-bottom: 3rem;
-}
-
-.category-title {
-    color: #f4821e;
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
-}
-
-.publication {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 1.5rem;
-    border-radius: 8px;
-    margin-bottom: 1.5rem;
-}
-
-.pub-item {
-    margin-bottom: 1.5rem;
-    padding-left: 1rem;
-    border-left: 3px solid #f4821e;
-}
-
-.pub-item:last-child {
-    margin-bottom: 0;
-}
-
-.pub-item .authors {
-    color: #a3b3c9;
-    margin-bottom: 0.3rem;
-    font-size: 0.9rem;
-}
-
-.pub-item .title {
-    color: #fff;
-    margin-bottom: 0.3rem;
-    font-weight: 500;
-}
-
-.pub-item .journal {
-    color: #61dafb;
-    font-style: italic;
-    font-size: 0.9rem;
-}
-
-/* Services Section Styling - NEW */
-.services-section {
-    margin-bottom: 4rem;
-}
-
-.service-cards {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Exactly two cards per row */
-    gap: 2rem;
-    margin-bottom: 3rem;
-}
-
-/* Update the existing service-card class */
-.service-card {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 8px;
-    padding: 1.5rem;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    border-top: 3px solid #f4821e;
-    display: flex;
-    flex-direction: column;
-    height: 100%; /* Ensure equal height cards */
-}
-
-.service-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.card-header {
+/* Enhanced service card header layout */
+.service-card .card-header {
     display: flex;
     align-items: flex-start;
     gap: 1rem;
     margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.card-header i {
-    color: #f4821e;
-    font-size: 1.8rem;
+/* Journal logo container */
+.journal-logo {
     flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
 }
 
-.card-header h3 {
+/* Journal logo images */
+.journal-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 4px;
+}
+
+/* Fallback icons when image fails to load */
+.logo-fallback {
+    display: none;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #f4821e, #ff9f4a);
+    border-radius: 6px;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+}
+
+/* Text-based logos for journals without images */
+.logo-text {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #f4821e, #ff9f4a);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 0.7rem;
+    text-align: center;
+    line-height: 1;
+}
+
+/* Role information container */
+.role-info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+/* Enhanced role title */
+.role-info h3 {
     color: #fff;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.2;
+}
+
+/* Enhanced journal name - more prominent */
+.role-info .journal-name {
+    color: #61dafb;
+    font-size: 1rem;
+    font-weight: 500;
+    font-style: italic;
     margin: 0;
     line-height: 1.3;
+    letter-spacing: 0.3px;
 }
 
-.card-content {
+/* Enhanced card content */
+.service-card .card-content {
     flex-grow: 1;
-    display: flex;
-    flex-direction: column;
 }
 
-.card-content .journal-name {
-    color: #61dafb;
-    font-style: italic;
-    font-size: 1.1rem;
-    margin-bottom: 0.75rem;
-}
-
-.card-content .role-description {
-    color: #a3b3c9;
-    font-size: 0.95rem;
-    line-height: 1.5;
-    margin-bottom: 1rem;
-}
-
-.special-issue-link {
-    margin-top: auto;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: #f4821e;
-    text-decoration: none;
-    font-size: 0.9rem;
-    transition: color 0.2s ease;
-}
-
-.special-issue-link:hover {
-    color: #ff9f4a;
-    text-decoration: underline;
-}
-
-/* Review Summary Section - NEW */
-.review-summary {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 8px;
-    padding: 2rem;
-}
-
-.review-count {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    color: #f4821e;
-    font-size: 1.2rem;
-    margin-bottom: 1.5rem;
-}
-
-.journals-list h3 {
-    color: #fff;
-    margin-bottom: 1rem;
-}
-
-.journals-list ul {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 0.5rem 2rem;
-    list-style: none;
-}
-
-.journals-list li {
-    color: #a3b3c9;
-    position: relative;
-    padding-left: 1.5rem;
-}
-
-.journals-list li::before {
-    content: "•";
-    color: #f4821e;
-    position: absolute;
-    left: 0;
-}
-
-/* Outreach Work Section */
-.outreach-work-section {
-    margin-bottom: 4rem;
-}
-
-.outreach-cards {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Two cards per row */
-    gap: 2rem;
-    margin-top: 2rem;
-}
-
-.outreach-card {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 8px;
-    padding: 1.5rem;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    border-top: 3px solid #f4821e;
-    height: 100%; /* Ensure equal height */
-    display: flex;
-    flex-direction: column;
-}
-
-.outreach-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.outreach-card .card-header {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 1rem;
-}
-
-.outreach-card .card-header i {
-    color: #f4821e;
-    font-size: 1.5rem;
-}
-
-.outreach-card .card-header h3 {
-    color: #fff;
-    font-size: 1.2rem;
-    margin: 0;
-}
-
-.outreach-card .card-content {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-.outreach-card .card-content p {
+/* Role description styling */
+.role-description {
     color: #a3b3c9;
     font-size: 0.95rem;
     line-height: 1.6;
     margin: 0;
 }
 
-/* Outreach Talks Section */
-.outreach-talks-section {
-    margin-top: 4rem;
-}
-
-.talks-timeline {
-    position: relative;
-    padding-left: 2rem;
-    margin-top: 2rem;
-}
-
-.talks-timeline::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background: rgba(244, 130, 30, 0.3);
-}
-
-.year-group {
-    margin-bottom: 3rem;
-}
-
-.year-header {
+/* Hover effects for enhanced cards */
+.service-card:hover .journal-name {
     color: #f4821e;
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
-    position: relative;
+    transition: color 0.3s ease;
 }
 
-.year-header::before {
-    content: "";
-    position: absolute;
-    left: -2rem;
-    top: 0.5rem;
-    width: 1rem;
-    height: 1rem;
-    border-radius: 50%;
-    background: #f4821e;
-    border: 2px solid #1a1d23;
-}
-
-.talk-item {
-    position: relative;
-    margin-bottom: 2rem;
-    padding-left: 1.5rem;
-    border-left: 2px solid rgba(244, 130, 30, 0.2);
-}
-
-.talk-item:last-child {
-    margin-bottom: 0;
-}
-
-.talk-date {
-    color: #f4821e;
-    font-size: 0.9rem;
-    margin-bottom: 0.5rem;
-}
-
-.talk-content h4 {
-    color: #fff;
-    margin-bottom: 0.5rem;
-    font-size: 1.1rem;
-}
-
-.talk-venue {
-    color: #a3b3c9;
-    font-size: 0.9rem;
-    margin-bottom: 0.5rem;
-}
-
-.keynote-badge {
-    display: inline-block;
-    background-color: rgba(244, 130, 30, 0.1);
-    color: #f4821e;
-    padding: 0.2rem 0.5rem;
-    border-radius: 4px;
-    font-size: 0.8rem;
-    margin-top: 0.5rem;
-}
-
-/* Responsive Design for Outreach Sections */
-@media (max-width: 768px) {
-    .outreach-cards {
-        grid-template-columns: 1fr; /* Single column on mobile */
-    }
-    
-    .outreach-card {
-        padding: 1.25rem;
-    }
-    
-    .talks-timeline {
-        padding-left: 1.5rem;
-    }
-
-    .year-header::before {
-        left: -1.5rem;
-    }
-
-    .talk-item {
-        padding-left: 1rem;
-    }
-
-    /* Adjust header styles */
-    .main-content {
-        margin-top: 50px;  /* Reduced from 100px to 50px */
-        padding: 0.5rem;
-        grid-template-columns: 1fr;
-        gap: 0.75rem;     /* Reduced gap between cards */
-    }
-
-    .profile-section {
-        margin-top: 0.25rem;
-        margin-bottom: 0.5rem;
-        padding: 1rem;
-        position: static;
-    }
-
-    .profile-pic {
-        width: 140px;
-        height: 140px;
-        margin-bottom: 1rem;
-    }
-
-    .profile-name {
-        font-size: 1.75rem;
-        margin-bottom: 0.5rem;
-    }
-
-    .profile-title {
-        font-size: 1.1rem;
-        margin-bottom: 0.5rem;
-    }
-
-    .profile-affiliation {
-        font-size: 0.9rem;
-        margin-bottom: 1rem;
-    }
-
-    .content-section {
-        padding: 1.25rem;
-        text-align: left;
-        margin-bottom: 0.75rem;
-    }
-
-    .content-section h1 {
-        font-size: 2rem;
-        line-height: 1.2;
-        margin-bottom: 1.5rem;
-    }
-
-    /* More compact cards */
-    .service-cards,
-    .outreach-cards {
-        gap: 0.75rem;  /* Further reduced gap */
-        grid-template-columns: 1fr;
-        margin-bottom: 0.75rem;
-    }
-
-    .service-card,
-    .outreach-card {
-        padding: 1rem;
-        margin-bottom: 0.75rem;
-    }
-
-    .journals-list ul {
-        grid-template-columns: 1fr;
-    }
-
-    /* Timeline adjustments */
-    .timeline {
-        padding-left: 1.5rem;
-    }
-
-    .timeline-item {
-        padding-left: 1rem;
-        margin-bottom: 1.5rem;
-    }
-
-    .timeline-item::before {
-        left: -1.5rem;
-    }
-
-    .nav-links {
-        gap: 1rem;
-    }
-
-    .nav-links a {
-        padding: 0.25rem 0.5rem;
-        font-size: 0.9rem;
-    }
-
-    /* Add Rounded Corners and Subtle Shadows to Card Elements on Mobile */
-    .download-section,
-    .pdf-wrapper,
-    .card, /* General card class */
-    .service-card,
-    .outreach-card,
-    .content-section,
-    .experience-section,
-    .education-list li,
-    .publications-section,
-    .outreach-work-section,
-    .talk-item {
-        border-radius: 8px; /* Slightly rounded corners */
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-        padding: 1rem; /* Uniform padding */
-        margin-bottom: 1rem; /* Space between cards */
-    }
-
-    /* Further adjustments for better aesthetics */
-    .content-section h1 {
-        margin-bottom: 1.5rem; /* Increase space below headers */
-    }
-
-    /* Ensure consistent padding within cards */
-    .download-section,
-    .pdf-wrapper,
-    .card,
-    .service-card,
-    .outreach-card,
-    .content-section,
-    .experience-section,
-    .education-list li,
-    .publications-section,
-    .outreach-work-section,
-    .talk-item {
-        padding: 1rem; /* Uniform padding */
-    }
-}
-
-@media (max-width: 480px) {
-    .profile-pic {
-        width: 130px;
-        height: 130px;
-    }
-
-    .content-section {
-        padding: 1rem;
-    }
-
-    .service-card,
-    .outreach-card {
-        padding: 1.25rem;
-    }
-
-    /* Rounded Corners and Shadows on Extra Small Devices */
-    .download-section,
-    .pdf-wrapper,
-    .card, /* General card class */
-    .service-card,
-    .outreach-card,
-    .content-section,
-    .experience-section,
-    .education-list li,
-    .publications-section,
-    .outreach-work-section,
-    .talk-item {
-        border-radius: 8px; /* Slightly rounded corners */
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-        padding: 1rem; /* Uniform padding */
-        margin-bottom: 1rem; /* Space between cards */
-    }
-}
-
-/* Footer mobile optimizations */
-footer {
-    background-color: #1a1d23;
-    padding: 0.5rem 1rem; /* Added horizontal padding */
-    margin-top: auto;
-    border-top: 1px solid #333;
-    color: #a3b3c9;
-    /* Removed width: 100%; */
-}
-
-/* Footer Container to Center Content */
-.footer-container {
-    max-width: 1200px; /* Adjust as needed */
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap; /* Allow wrapping if needed */
-}
-
-/* Footer Paragraph */
-footer p {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.75rem; /* Updated gap */
-    white-space: normal; /* Allow content to wrap */
-    font-size: 0.9rem;
-    /* Removed width: 100%; */
-    flex-wrap: wrap; /* Allow flex items to wrap */
-    word-wrap: break-word; /* Prevent long words from causing overflow */
-}
-
-/* Footer Images */
-footer img {
-    max-width: 100%; /* Ensure images do not exceed container */
-    height: auto; /* Maintain aspect ratio */
-}
-
-@media screen and (max-width: 768px) {
-    footer p {
-        font-size: 0.75rem; /* Adjusted font size */
-        gap: 0.35rem; /* Adjusted gap */
-    }
-    
-    footer img {
-        height: 16px; /* Adjusted image height */
-        max-width: 100%; /* Ensure responsiveness */
-    }
-}
-
-/* PDF Viewer and CV Page Styles 
--------------------------------------------------- */
-
-/* Main CV Page Layout */
-.cv-page {
-    width: 100%;
-    height: calc(100vh - 80px); /* Full viewport height minus header height */
-    margin-top: 80px; /* Adjust based on your header's height */
-    padding: 0 20px;
-    display: flex;
-    flex-direction: column;
-    background-color: #282c34;
-    box-sizing: border-box;
-}
-
-/* CV Container */
-.cv-container {
-    flex: 1;
-    max-width: 1400px;
-    margin: 0 auto;
-    width: 100%;
-    background-color: #1a1d23;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden; /* Prevents overflow from child elements */
-    height: 100%; /* Fills the parent container */
-}
-
-/* Download Section */
-.download-section {
-    display: flex;
-    justify-content: flex-end;
-    padding: 10px 0;
-    margin-bottom: 15px;
-    border-bottom: 1px solid rgba(244, 130, 30, 0.2);
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-}
-
-.download-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background-color: #f4821e;
-    color: #1a1d23;
-    padding: 10px 20px;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    border: none;
-}
-
-.download-button:hover {
-    background-color: #ff9f4a;
-    transform: translateY(-2px);
-    box-shadow: 0 2px 8px rgba(244, 130, 30, 0.3);
-}
-
-.download-button i {
-    font-size: 16px;
-}
-
-/* PDF Wrapper */
-.pdf-wrapper {
-    flex: 1;
-    width: 100%;
-    background: #fff;
-    border-radius: 8px; /* Rounded corners */
-    overflow: hidden; /* Prevents scrollbars on the wrapper */
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0; /* Ensure no padding */
-    margin: 0; /* Ensure no margin */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-}
-
-/* PDF Viewer */
-.pdf-viewer {
-    width: 100%;
-    height: 100%;
-    border: none;
-    overflow: auto; /* Enable scrolling */
-    display: block;
-}
-
-/* Responsive Design */
-
-/* Tablet and above */
-@media (max-width: 1400px) {
-    .cv-container {
-        max-width: 1200px;
-    }
-}
-
-@media (max-width: 1200px) {
-    .cv-container {
-        max-width: 1000px;
-    }
-}
-
-/* Mobile Devices */
-@media (max-width: 768px) {
-    .cv-page {
-        margin-top: 60px; /* Adjusted earlier, now reduced in main-content */
-        padding: 10px;
-        min-height: 100vh;
-        height: auto;
-    }
-
-    .cv-container {
-        padding: 10px;
-        height: auto;
-        min-height: calc(100vh - 100px); /* Adjust based on your layout */
-    }
-
-    .download-section {
-        justify-content: center;
-        margin-bottom: 10px;
-    }
-
-    .download-button {
-        width: 100%;
-        justify-content: center;
-    }
-
-    .pdf-wrapper {
-        height: calc(100vh - 180px); /* Adjust based on your layout */
-        overflow: auto; /* Ensure scrolling is enabled */
-    }
-
-    .pdf-viewer {
-        width: 100%;
-        height: 100%;
-        overflow: auto; /* Enable scrolling within the iframe */
-        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
-    }
-}
-
-/* Extra Small Devices */
-@media (max-width: 480px) {
-    .cv-page {
-        padding: 5px;
-    }
-
-    .cv-container {
-        padding: 8px;
-    }
-
-    .pdf-wrapper {
-        height: calc(100vh - 170px); /* Adjust based on your layout */
-    }
-
-    .pdf-viewer {
-        width: 100%;
-        height: 100%;
-        overflow: auto; /* Enable scrolling within the iframe */
-        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
-    }
-}
-
-/* iOS Safari Specific Styles */
-@supports (-webkit-touch-callout: none) {
-    .pdf-wrapper {
-        -webkit-overflow-scrolling: touch;
-        overflow-y: scroll;
-    }
-
-    .pdf-viewer {
-        height: 100%;
-    }
-}
-
-/* Dark Mode Considerations */
-[data-theme="dark"] .pdf-wrapper {
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* Desktop Navigation Enhancements */
-@media (min-width: 769px) {
-    /* Adjust nav-container to center navigation links */
-    .nav-container {
-        display: flex;
-        align-items: center;
-        justify-content: center; /* Center the nav-links */
-        position: relative; /* For positioning the tagline */
-        padding: 0 2rem; /* Add horizontal padding */
-    }
-
-    /* Shift the tagline slightly to the left */
-    .header-tagline {
-        position: absolute;
-        left: 20px; /* Adjust this value to move the tagline left */
-        text-align: left;
-        flex: 0 0 auto; /* Prevent the tagline from stretching */
-        color: #a3b3c9; /* Ensure the color matches your theme */
-        font-size: 1rem; /* Adjust font size if necessary */
-    }
-
-    /* Style the navigation links */
-    .nav-links {
-        display: flex;
-        gap: 2rem; /* Increase or decrease the spacing between links */
-        justify-content: center; /* Ensure links are centered */
-    }
-
-    /* Optional: Adjust individual nav-links for better spacing */
-    .nav-links a {
-        padding: 0.5rem 1rem; /* Reduce padding if links are too spaced out */
-        font-size: 1rem; /* Ensure font size is consistent */
-    }
-}
-
-/* Insights Page Styles */
-
-/* Featured Article */
-.featured-article {
-    margin-bottom: 3rem;
-}
-
-.featured-article-card {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 8px;
-    overflow: hidden;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-left: 3px solid #f4821e;
-}
-
-.featured-article-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-}
-
-.article-image {
-    overflow: hidden;
-    height: 100%;
-}
-
-.article-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-.featured-article-card:hover .article-image img {
+.service-card:hover .logo-text {
+    background: linear-gradient(135deg, #ff9f4a, #f4821e);
     transform: scale(1.05);
+    transition: all 0.3s ease;
 }
 
-.article-content {
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
+.service-card:hover .journal-logo img {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
 }
 
-.article-meta {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 1rem;
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+    .service-card .card-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.8rem;
+        align-items: center; /* Ensure everything centers */
+    }
+    
+    .role-info {
+        text-align: center;
+        width: 100%; /* Ensure full width */
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center the flex items */
+    }
+    
+    .role-info h3 {
+        text-align: center;
+        width: 100%;
+        margin: 0;
+    }
+    
+    .role-info .journal-name {
+        text-align: center;
+        width: 100%;
+        font-size: 0.9rem;
+        margin: 0;
+    }
+    
+    .journal-logo {
+        align-self: center;
+    }
+    
+    .role-description {
+        font-size: 0.9rem;
+        text-align: center; /* Changed from left to center */
+        margin-top: 0.5rem;
+    }
 }
 
-.article-date, .article-category {
-    color: #a3b3c9;
-    font-size: 0.9rem;
+@media (max-width: 480px) {
+    .journal-logo {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .journal-logo img,
+    .logo-fallback,
+    .logo-text {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .logo-text {
+        font-size: 0.6rem;
+    }
+    
+    .logo-fallback {
+        font-size: 1rem;
+    }
+    
+    /* Extra centering insurance for very small screens */
+    .role-info h3,
+    .role-info .journal-name {
+        text-align: center !important;
+    }
 }
+/* === JOURNAL METRICS STYLING === */
 
-.article-category {
+/* Add this to your existing CSS */
+
+/* Journal metrics styling */
+.journal-metrics {
     color: #f4821e;
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin: 0.2rem 0 0 0;
+    letter-spacing: 0.3px;
+    opacity: 0.9;
 }
 
-.article-title {
-    color: #fff;
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    line-height: 1.3;
-}
-
-.article-excerpt {
-    color: #a3b3c9;
-    margin-bottom: 1.5rem;
-    flex-grow: 1;
-}
-
-.read-more {
+/* Special issue links styling */
+.special-issue-link {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    color: #f4821e;
+    color: #61dafb;
     text-decoration: none;
-    font-weight: 500;
-    transition: gap 0.3s ease;
-    align-self: flex-start;
+    font-size: 0.85rem;
+    transition: color 0.2s ease;
+    padding: 0.3rem 0;
 }
 
-.read-more:hover {
-    gap: 0.8rem;
-}
-
-/* Recent Articles Grid */
-.recent-articles {
-    margin-bottom: 3rem;
-}
-
-.articles-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-}
-
-.article-card {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 8px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-top: 3px solid #f4821e;
-    height: 100%;
-}
-
-.article-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-}
-
-.article-card .article-image {
-    height: 200px;
-}
-
-/* Topics Section */
-.topics-section {
-    margin-top: 4rem;
-}
-
-.topics-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-}
-
-.topic-tag {
-    background: rgba(244, 130, 30, 0.1);
+.special-issue-link:hover {
     color: #f4821e;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-.topic-tag:hover {
-    background: rgba(244, 130, 30, 0.2);
-    transform: translateY(-2px);
-}
-
-/* Article Template Styles */
-.article-header {
-    margin-bottom: 3rem;
-}
-
-.article-header .article-meta {
-    margin-bottom: 1rem;
-}
-
-.article-header .article-title {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
-
-.article-author {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-top: 2rem;
-}
-
-.author-image {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-.author-info p {
-    margin: 0;
-}
-
-.author-name {
-    color: #fff;
-    font-weight: 500;
-}
-
-.author-title {
-    color: #a3b3c9;
-    font-size: 0.9rem;
-}
-
-.article-content h2 {
-    color: #f4821e;
-    margin: 2rem 0 1rem;
-}
-
-.article-content p {
-    margin-bottom: 1.5rem;
-    line-height: 1.8;
-}
-
-.article-image-full {
-    width: 100%;
-    margin: 2rem 0;
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-.article-image-full img {
-    width: 100%;
-}
-
-.article-image-caption {
-    text-align: center;
-    color: #a3b3c9;
-    font-size: 0.9rem;
-    margin-top: 0.5rem;
-}
-
-/* Related Articles */
-.related-articles {
-    margin-top: 4rem;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.related-articles-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-}
-
-/* Mobile Responsiveness for Insights */
-@media (max-width: 1024px) {
-    .articles-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 768px) {
-    .featured-article-card {
-        grid-template-columns: 1fr;
-    }
-    
-    .article-image {
-        height: 200px;
-    }
-    
-    .articles-grid {
-        grid-template-columns: 1fr !important; /* Force single column */
-        gap: 1.5rem; /* Reduced gap for mobile */
-    }
-    
-    /* Make sure the grid layout is preserved */
-    .articles-grid .article-card {
-        width: 100%; /* Ensure full width */
-        margin-bottom: 1.5rem; /* Add space between cards */
-    }
-    
-    .related-articles-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .article-header .article-title {
-        font-size: 1.8rem;
-    }
-}
-
-.article-content p,
-.article-content ul li,
-.article-content ol li {
-    color: #fff; /* This would make all text white */
-}
-
-/* Make article titles and images clickable */
-.article-title-link {
-    color: inherit;
-    text-decoration: none;
-    display: block;
-    transition: color 0.3s ease;
-}
-
-.article-title-link:hover .article-title {
-    color: #f4821e;
-}
-
-.article-image a {
-    display: block;
-    width: 100%;
-    height: 100%;
-}
-
-.article-image a img {
-    transition: transform 0.5s ease;
-}
-
-.article-image a:hover img {
-    transform: scale(1.05);
-}
-
-/* References Section Styling */
-.references a {
-    color: #f4821e; /* This is your site's orange accent color */
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.references a:hover {
-    color: #ff9f4a; /* A lighter shade for hover state */
     text-decoration: underline;
 }
 
-/* Improved spacing for Insights article content */
-.article-content p {
-    margin-bottom: 1.5rem; /* Consistent spacing for paragraphs */
+.special-issue-link i {
+    font-size: 0.7rem;
 }
 
-/* Global spacing for all h2 elements in article content */
-.article-content h2 {
-    margin-top: 1.5rem !important;
-    margin-bottom: 1.5rem !important;
-}
-
-/* Reduced spacing for the first h2 in a section */
-.article-content section:first-child h2:first-child {
-    margin-top: 0.75rem !important;
-}
-
-/* Spacing for lists in article content */
-.article-content ul,
-.article-content ol {
-    margin-bottom: 1.5rem;
-}
-
-.article-content li {
-    margin-bottom: 1rem;
-}
-
-.article-content li:last-child {
-    margin-bottom: 0;
-}
-
-/* Extra spacing when a paragraph immediately follows a list */
-.article-content ul + p,
-.article-content ol + p {
-    margin-top: 1.5rem;
-}
-
-/* Space between sections */
-.article-content section + section {
-    margin-top: 2.5rem;
-}
-
-/* Fix for word wrapping in article content on mobile */
+/* Mobile adjustments for metrics */
 @media (max-width: 768px) {
-  /* Enable proper word breaking for all article content */
-  .article-content {
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-    -ms-word-break: break-all;
-    word-break: break-word;
-    hyphens: auto;
-  }
-  
-  /* Fix for long words and strings */
-  .article-content p,
-  .article-content li,
-  .article-content h2,
-  .article-content h3 {
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-    -ms-word-break: break-all;
-    word-break: break-word;
-    hyphens: auto;
-  }
-  
-  /* Ensure all content stays within container */
-  .article-content * {
-    max-width: 100%;
-  }
-}
-/* ---- Insights: make Recent Articles one column on small screens ---- */
-@media (max-width: 768px) {
-  .articles-grid {               /* force a single, full-width column */
-    grid-template-columns: 1fr !important;
-    gap: 1rem;                   /* smaller gap looks better on phones */
-  }
-}
-
-.new-wheat-article ul,
-.new-wheat-article ol {
-  margin-bottom: 0.5em;
-}
-
-.new-wheat-article ul + p,
-.new-wheat-article ol + p {
-  margin-top: 0;
+    .journal-metrics {
+        text-align: center;
+        font-size: 0.75rem;
+    }
+    
+    .special-issue-link {
+        font-size: 0.8rem;
+        justify-content: center;
+    }
 }
