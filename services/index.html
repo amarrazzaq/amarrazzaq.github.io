@@ -4,31 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Professional Services - Amar Razzaq</title>
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="/images/favicon.png" type="image/png"/>
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png"/>
     <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
     </head>
 <body>
 
-<header class="top-header">
-    <div class="nav-container">
-        <span class="header-tagline"><span>L</span>earn. <span>A</span>ct. <span>I</span>mprove.</span>
-        <button class="hamburger-menu" aria-label="Menu">
-            <i class="fas fa-bars"></i>
-        </button>
-        <nav class="nav-links" id="nav-menu">
-            <a href="/">About</a>
-            <a href="/research">Research</a>
-            <a href="/outreach">Outreach</a>
-            <a href="/services" class="active">Professional Services</a>
-            <a href="/insights">Insights</a>
-        </nav>
+<header class="top-header" id="header">
+  <div class="nav-container">
+    <a href="/" class="header-brand">
+      <span class="header-brand-name"><span class="first-name">Dr.</span> Amar Razzaq</span>
+      <span class="header-brand-title">Agricultural Economist</span>
+    </a>
+    <div class="nav-actions">
+      <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark/light mode">
+        <i class="fa-solid fa-sun sun-icon" aria-hidden="true"></i>
+        <i class="fa-solid fa-moon moon-icon" aria-hidden="true"></i>
+      </button>
+      <button class="hamburger-menu" aria-label="Menu" aria-expanded="false">
+        <i class="fas fa-bars" aria-hidden="true"></i>
+      </button>
     </div>
+    <nav class="nav-links" id="nav-menu">
+      <a href="/">Home</a>
+      <a href="/research/">Research</a>
+      <a href="/outreach/">Outreach</a>
+      <a href="/services/" aria-current="page">Services</a>
+      <a href="/insights/">Insights</a>
+    </nav>
+  </div>
 </header>
 
 <main class="main-content single-column">
     <div class="content-section">
-        <h1>Professional Services</h1>
+        
         
 <!-- Replace your Editorial Roles section with this enhanced version -->
 <section class="services-section">
@@ -173,15 +186,15 @@
             </div>
             <div class="card-content">
                 <p class="role-description">Leading comprehensive special issues on "Sustainable Food Consumption and Production in the 21st Century" across multiple volumes and journals.</p>
-                <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 1rem;">
-                    <a href="https://www.frontiersin.org/research-topics/46142" class="special-issue-link" target="_blank">Volume I: Sustainable Food Systems <i class="fas fa-external-link-alt"></i></a>
-                    <a href="https://www.frontiersin.org/research-topics/69838/sustainable-food-consumption-and-production-in-the-21st-century-volume-ii" class="special-issue-link" target="_blank">Volume II: Advanced Approaches <i class="fas fa-external-link-alt"></i></a>
+                <div class="special-issue-links">
+                    <a href="https://www.frontiersin.org/research-topics/46142" class="special-issue-link" target="_blank" rel="noopener">Volume I: Sustainable Food Systems <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://www.frontiersin.org/research-topics/69838/sustainable-food-consumption-and-production-in-the-21st-century-volume-ii" class="special-issue-link" target="_blank" rel="noopener">Volume II: Advanced Approaches <i class="fas fa-external-link-alt"></i></a>
                 </div>
             </div>
         </div>
     </div>
 </section>       
-        <section class="review-section" style="margin-top: 3rem;">
+        <section class="review-section section-spaced">
             <h2 class="section-title">Peer Review Contributions</h2>
             <div class="review-summary">
                 <p>Reviewed over 300 manuscripts for more than 70 SCI and SSCI indexed journals, including:</p>
@@ -198,7 +211,7 @@
             </div>
         </section>
 
-         <section class="leadership-section" style="margin-top: 3rem;">
+         <section class="leadership-section section-spaced">
             <h2 class="section-title">Academic Leadership</h2>
              <div class="experience-grid">
                 <div class="experience-card">
@@ -222,86 +235,13 @@
 </main>
 
 <footer>
-    <p style="display: flex; align-items: center; justify-content: center; gap: 1rem;">
-        <a href="https://www.hitwebcounter.com" target="_blank"><img src="https://hitwebcounter.com/counter/counter.php?page=20154781&style=0007&nbdigits=5&type=page&initCount=2750" title="Counter Widget" alt="Visit counter For Websites" border="0" /></a>
+    <p class="footer-meta">
+        <a href="https://www.hitwebcounter.com" target="_blank" rel="noopener"><img src="https://hitwebcounter.com/counter/counter.php?page=20154781&style=0007&nbdigits=5&type=page&initCount=2750" title="Counter Widget" alt="Visit counter For Websites" border="0" /></a>
         <span>|</span>
-        <span>&copy; 2025 Amar Razzaq | All Rights Reserved</span>
+        <span>&copy; 2026 Amar Razzaq | All Rights Reserved</span>
     </p>
 </footer>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const hamburger = document.querySelector('.hamburger-menu');
-    const nav = document.querySelector('.nav-links');
-    const body = document.body;
 
-    // Create overlay div if it doesn't exist
-    let overlay = document.querySelector('.menu-overlay');
-    if (!overlay) {
-        overlay = document.createElement('div');
-        overlay.className = 'menu-overlay';
-        body.appendChild(overlay);
-    }
-
-    // Toggle menu when hamburger is clicked
-    hamburger.addEventListener('click', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        
-        const isActive = nav.classList.contains('active');
-        
-        if (isActive) {
-            // Close menu
-            nav.classList.remove('active');
-            overlay.classList.remove('active');
-            body.style.overflow = '';
-            hamburger.setAttribute('aria-expanded', 'false');
-        } else {
-            // Open menu
-            nav.classList.add('active');
-            overlay.classList.add('active');
-            body.style.overflow = 'hidden';
-            hamburger.setAttribute('aria-expanded', 'true');
-        }
-    });
-
-    // Close menu when clicking overlay
-    overlay.addEventListener('click', function() {
-        nav.classList.remove('active');
-        overlay.classList.remove('active');
-        body.style.overflow = '';
-        hamburger.setAttribute('aria-expanded', 'false');
-    });
-
-    // Close menu when clicking a navigation link
-    nav.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', function() {
-            nav.classList.remove('active');
-            overlay.classList.remove('active');
-            body.style.overflow = '';
-            hamburger.setAttribute('aria-expanded', 'false');
-        });
-    });
-
-    // Close menu on escape key
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && nav.classList.contains('active')) {
-            nav.classList.remove('active');
-            overlay.classList.remove('active');
-            body.style.overflow = '';
-            hamburger.setAttribute('aria-expanded', 'false');
-        }
-    });
-
-    // Handle window resize - close mobile menu if screen becomes large
-    window.addEventListener('resize', function() {
-        if (window.innerWidth > 768 && nav.classList.contains('active')) {
-            nav.classList.remove('active');
-            overlay.classList.remove('active');
-            body.style.overflow = '';
-            hamburger.setAttribute('aria-expanded', 'false');
-        }
-    });
-});
-</script>
+<script src="/site.js"></script>
 </body>
 </html>

@@ -15,3 +15,16 @@
 # System files
 .DS_Store
 Thumbs.db
+
+# Local notes and legacy redirect files (not for routine commits)
+/project_log.md
+/index.htm
+/cv.htm
+/research.htm
+/outreach.htm
+/services.htm
+
+# Newsletter tooling (kept local for now)
+/insights/generate_newsletter.py
+/insights/newsletter-template.html
+/insights/newsletter-sample.json
