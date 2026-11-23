@@ -1,8 +1,6 @@
 <header class="site-header">
   <div class="wrap">
-{%- if nav == "home" %}
-    <span></span>{# the home page shows the name in its own heading #}
-{%- else %}
+{%- if nav != "home" %}{# the home page shows the name in its own heading #}
     <a href="/" class="site-name">{{ site.name }}</a>
 {%- endif %}
     <nav class="site-nav" aria-label="Main">
@@ -12,3 +10,6 @@
     </nav>
   </div>
 </header>
+{%- if nav != "home" %}
+<div class="wrap small-name-bar"><a href="/" class="small-name">{{ site.name }}</a></div>
+{%- endif %}
