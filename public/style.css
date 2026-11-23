@@ -48,7 +48,8 @@ section { margin-bottom: 40px; }
 .intro-photo { width: 170px; height: 170px; object-fit: cover; object-position: 50% 30%; }
 .intro h1 { font-size: 2rem; margin-bottom: 4px; }
 .intro .role { color: var(--muted); font-size: 1.02rem; line-height: 1.5; margin-bottom: 18px; }
-.contact { font: 400 .95rem var(--sans); color: var(--muted); margin: 0; }
+.contact { font: 400 .95rem var(--sans); color: var(--muted); margin: 0; display: none; } /* shown on phones; computers use the links under the photo */
+.side-links { margin: 18px 0 0; font: 400 .9rem/1.9 var(--sans); }
 .plain-list { list-style: none; margin: 0; padding: 0; }
 .pubs li { margin-bottom: 16px; }
 .pubs .t { display: block; color: var(--text); line-height: 1.5; }
@@ -148,6 +149,9 @@ tbody tr:last-child td { border-bottom: 1.5px solid var(--text); }
   .small-name { font: 400 .68rem var(--sans); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
   .small-name-bar + .main-content { padding-top: 18px; }
   .intro { display: block; }
+  .intro-side { display: contents; }
+  .side-links { display: none; }
+  .contact { display: block; }
   .intro-photo { float: left; width: 104px; height: 104px; margin: 6px 18px 10px 0; }
   .intro h1 { font-size: 1.6rem; }
   .intro .role { font-size: .95rem; margin-bottom: 0; }
