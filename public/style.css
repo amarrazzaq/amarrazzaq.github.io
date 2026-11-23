@@ -39,7 +39,7 @@ p { margin: 0 0 1em; }
 .main-content { max-width: var(--width); margin: 0 auto; padding: 36px 24px 8px; }
 .section-title { font: 600 .82rem var(--sans); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 0 0 18px; }
 .page-title { font-size: 2rem; margin-bottom: 10px; }
-.page-lead { color: var(--muted); margin-bottom: 8px; }
+.page-lead { color: var(--muted); margin-bottom: 30px; }
 section { margin-bottom: 40px; }
 
 /* ---------- Home ---------- */
@@ -73,7 +73,7 @@ section { margin-bottom: 40px; }
 .publications-section .more { margin-top: 8px; }
 
 /* ---------- Outreach: talks ---------- */
-.talks { margin: 30px 0 40px; }
+.talks { margin: 0 0 40px; }
 .year-header { font: 600 1.05rem var(--serif); margin: 22px 0 6px; }
 .talks .section-title + .year-header { margin-top: 0; }
 .talk-list { margin: 0; padding-left: 1.1em; }
@@ -86,17 +86,7 @@ section { margin-bottom: 40px; }
 .card-content p { margin: 0; }
 
 /* ---------- Services ---------- */
-.journal-logo, .logo-fallback, .journal-metrics { display: none; }
-.role-info h3 { font-size: 1.1rem; margin: 0; }
-.journal-name { margin: 0 0 4px; font-style: italic; }
-.role-description { color: var(--muted); font-size: .95rem; }
-.special-issue-links { margin-top: 6px; font: 400 .92rem var(--sans); }
-.special-issue-link { display: inline-block; margin-right: 16px; }
-.journals-list { columns: 2; column-gap: 32px; padding-left: 20px; margin: 8px 0 0; }
-.journals-list li { font-style: italic; }
-.experience-date { color: var(--muted); font: 400 .92rem var(--sans); }
-.experience-title { font-size: 1.05rem; margin: 2px 0; }
-.experience-detail { color: var(--muted); font-size: .95rem; margin: 0; }
+.service-list li { padding: 7px 0; border-top: 1px solid var(--rule); line-height: 1.5; }
 
 /* ---------- Insights list and related articles ---------- */
 .articles-grid, .related-articles-grid { display: grid; gap: 0; }
@@ -157,6 +147,5 @@ tbody tr:last-child td { border-bottom: 1.5px solid var(--text); }
   .article-card { grid-template-columns: 96px 1fr; gap: 14px; }
   .article-card .article-image img { width: 96px; height: 72px; }
   .article-excerpt { display: none; }
-  .journals-list { columns: 1; }
   table { display: block; overflow-x: auto; }
 }
