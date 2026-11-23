@@ -1,0 +1,174 @@
+{
+  "forthcoming": [
+    {
+      "year": 2026,
+      "month": "November",
+      "title": "Governance Capacity and the Basic-to-Safe WASH Gap: Environmental Health Implications from 118 Countries, 2015–2024",
+      "venue": "The 16th International Conference on Environmental Pollution and Public Health (EPPH 2026), Kunming, China",
+      "keynote": true
+    },
+    {
+      "year": 2026,
+      "month": "November",
+      "title": "Integrating Groundwater Markets into Water Conservancy Strategies: Pathways for Sustainable Management and Agricultural Resilience",
+      "venue": "The 6th International Conference on Water Conservancy, Hydropower and Building Engineering (WCHBE 2026), Wuhan, China (online)",
+      "keynote": true
+    }
+  ],
+  "years": [
+    {
+      "year": 2026,
+      "talks": [
+        {
+          "month": "November",
+          "title": "Green Transition and Food Security in Sri Lanka: Pathways for Cooperation with China",
+          "venue": "The 7th China–Sri Lanka Communication and Cooperation Forum, Huanggang Normal University, Huanggang, China",
+          "keynote": false
+        },
+        {
+          "month": "October",
+          "title": "Irrigation Metering and Digital Groundwater Governance: Why an Hourly Pumping Charge Cannot Price Water in Pakistan",
+          "venue": "5th Global Food Security Forum for Young Scientists (GFSYS 2026), Huazhong Agricultural University, Wuhan, China",
+          "keynote": false
+        },
+        {
+          "month": "October",
+          "title": "Convergence, Stagnation and Decline in Pakistan’s Crop Yield Trajectories (1990–2024) and Their Implications for Food Security",
+          "venue": "International Conference on Sustainable Food Systems in a Changing Climate, Pakistan Agricultural Scientists Forum, Bahauddin Zakariya University, Multan, Pakistan",
+          "keynote": false
+        }
+      ]
+    },
+    {
+      "year": 2025,
+      "talks": [
+        {
+          "month": "November",
+          "title": "Global Lessons in Digital Youth Empowerment: Insights from Asia's E-Commerce Models",
+          "venue": "3rd International Conference on Advanced STEAM Education: Connecting Technology, Arts and Social Science for Shaping the Future (ICASE 2025), The University of Faisalabad, Faisalabad, Pakistan",
+          "keynote": false
+        },
+        {
+          "month": "May",
+          "title": "Determinants of Financial Inclusion Gaps in Pakistan and Implications for Achieving SDGs",
+          "venue": "The 12th International Agricultural Science and Food Engineering Conference (ASFE 2025), Xi'an, China",
+          "keynote": true
+        }
+      ]
+    },
+    {
+      "year": 2024,
+      "talks": [
+        {
+          "month": "June",
+          "title": "Taobao Villages: The New Engines of Economic Growth and Rural Transformation in China",
+          "venue": "The 4th International Conference on Economic Development and Business Culture (ICEDBC 2024), Dalian, China",
+          "keynote": true
+        },
+        {
+          "month": "May",
+          "title": "Overview of the Rural E-commerce in China, CBEC Initiative, Achievements, and Past Forums",
+          "venue": "The 7th International Cross-Border E-commerce Forum 2023, University of Liberal Arts, Dhaka, Bangladesh",
+          "keynote": true
+        }
+      ]
+    },
+    {
+      "year": 2023,
+      "talks": [
+        {
+          "month": "October",
+          "title": "Groundwater Markets in the Era of Environmental Challenges: Pathways to Sustainability",
+          "venue": "The 6th International Symposium on Water Resource and Environmental Management (WREM 2023), Sanya, China",
+          "keynote": false
+        },
+        {
+          "month": "September",
+          "title": "Empowering Rural Women Through ECommerce: A Comparative Analysis of 'Taobao Villages' in China and the Potential for Application in Pakistan",
+          "venue": "International Conference on CPEC and Tourism for Women Development in Pakistan",
+          "keynote": false
+        },
+        {
+          "month": "March",
+          "title": "How has China's rural landscape transformed through rural ecommerce: The case of \"Taobao Villages\"",
+          "venue": "International Conference on Health Security (ICHS), University of Veterinary and Animal Sciences (UVAS) Lahore, Pakistan",
+          "keynote": true
+        }
+      ]
+    },
+    {
+      "year": 2022,
+      "talks": [
+        {
+          "month": "December",
+          "title": "China's Experience of Poverty Alleviation in Typical Rural Areas: Lessons for Pakistan",
+          "venue": "Government College Women University, Sialkot, Pakistan",
+          "keynote": true
+        },
+        {
+          "month": "December",
+          "title": "Challenges and Opportunities for Pakistan to Revitalize its Rural Economy Through Rural E-Commerce: Lessons from China's 'Taobao Village' Model",
+          "venue": "International Conference on Food Security and Value Chain Improvement under Belt & Road Initiative, MNS University of Agriculture, Multan, Pakistan",
+          "keynote": false
+        },
+        {
+          "month": "December",
+          "title": "The Environmental Footprint of Our Online Shopping Delights: Issues and Solutions for a Sustainable Future",
+          "venue": "The Fifth International Cross-Border E-commerce Forum, China",
+          "keynote": false
+        }
+      ]
+    },
+    {
+      "year": 2021,
+      "talks": [
+        {
+          "month": "December",
+          "title": "The Role of Cross-Border E-commerce in the Global Food Supply Chains during and after the COVID-19 Pandemic",
+          "venue": "The Fourth International Cross-Border E-commerce Forum, China",
+          "keynote": false
+        },
+        {
+          "month": "December",
+          "title": "Rural Revitalization: China’s Rural E-Commerce under the “Taobao Villages” Phenomenon and Its Implications for Belt and Road Countries",
+          "venue": "The Third BRI Sino-Pakistan Agricultural Forum, Huazhong Agricultural University, Wuhan, China (online)",
+          "keynote": false
+        }
+      ]
+    },
+    {
+      "year": 2020,
+      "talks": [
+        {
+          "month": "December",
+          "title": "The Past, the Present, and the Future of the Cross-Border E-Commerce Research",
+          "venue": "The Third International Cross-Border E-commerce Forum, Bangladesh",
+          "keynote": false
+        },
+        {
+          "month": "November",
+          "title": "Research on the Opportunities and Barriers of Cross-Border E-commerce Trade between Pakistan and China",
+          "venue": "Seminar at Pakistan Agricultural Research Council (PARC) Head Office, Islamabad, Pakistan",
+          "keynote": false
+        }
+      ]
+    },
+    {
+      "year": 2019,
+      "talks": [
+        {
+          "month": "December",
+          "title": "The Transformation of China's Rural E-Commerce under the \"Taobao Villages\" Phenomenon",
+          "venue": "The Second International Cross-Border E-commerce Forum, Faisalabad, Pakistan",
+          "keynote": false
+        },
+        {
+          "month": "October",
+          "title": "Experience of Rural E-commerce in China – A few case studies",
+          "venue": "International Academic Exchange Center, Huazhong Agricultural University",
+          "keynote": false
+        }
+      ]
+    }
+  ]
+}

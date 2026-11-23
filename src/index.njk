@@ -1,0 +1,69 @@
+---
+permalink: /index.html
+nav: home
+---
+{% extends "layouts/base.njk" %}
+{% block head %}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dr. Amar Razzaq | Agricultural Economist</title>
+  <meta name="description" content="Associate Professor of Agricultural Economics at Huanggang Normal University, working on water, food systems and agricultural policy in Pakistan and China.">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/images/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+{% endblock %}
+{% block content %}
+<main class="main-content">
+  <div class="intro">
+    <img class="intro-photo" src="/images/amar.jpg" alt="Amar Razzaq">
+    <div>
+      <h1>Amar Razzaq</h1>
+      <p class="role">Associate Professor of Agricultural Economics<br>Business School, Huanggang Normal University, China</p>
+      <p>I am an agricultural and food economist working mainly on Pakistan, China and the wider Asian region. My research covers water and groundwater markets, agricultural productivity and climate risk, food security and nutrition, consumer behaviour in food markets, and rural finance, with a focus on what these mean for policy. I received my PhD in Agricultural Economics from Huazhong Agricultural University in 2021.</p>
+      <p>I have also worked as a consultant to the Asian Development Bank, and I write short policy commentaries on Pakistan's farm economy.</p>
+      <p class="contact">
+        <a href="mailto:amar.razzaq@hotmail.com">amar.razzaq@hotmail.com</a> ·
+        <a href="https://scholar.google.com/citations?user=Mt2iircAAAAJ&amp;hl=en">Google Scholar</a> ·
+        <a href="https://orcid.org/0000-0002-8858-2417">ORCID</a> ·
+        <a href="https://www.researchgate.net/profile/Amar-Razzaq-3">ResearchGate</a>
+      </p>
+    </div>
+  </div>
+
+  <section>
+    <h2 class="section-title">Selected publications</h2>
+{%- set featured = ["10.1016/j.scitotenv.2019.02.266", "10.1016/j.cliser.2026.100765", "10.1016/j.ijdrr.2024.104642", "10.1016/j.jretconser.2021.102556", "10.1111/cjag.12184", "10.1038/s41598-024-63445-6"] %}
+    <ul class="plain-list pubs">
+{%- for group in publications %}{% for p in group.papers %}{% if p.doi in featured %}
+      <li><a class="t" href="https://doi.org/{{ p.doi }}">{{ p.title }}</a><span class="m">{% for a in p.authors %}{% if a == "Razzaq, A." %}<strong>{{ a }}</strong>{% else %}{{ a }}{% endif %}{% if not loop.last %}{% if loop.revindex0 == 1 %} &amp; {% else %}, {% endif %}{% endif %}{% endfor %} ({{ p.year }}). <em>{{ p.journal }}</em>.</span></li>
+{%- endif %}{% endfor %}{% endfor %}
+    </ul>
+    <p class="more"><a href="/research/">All publications &rarr;</a></p>
+  </section>
+
+  <section>
+    <h2 class="section-title">Recent policy writing</h2>
+    <ul class="plain-list dated">
+{%- for a in insights %}{% if loop.index <= 3 %}
+      <li><a href="{{ a.url }}">{{ a.title }}</a><span class="d">{{ a.month }}</span></li>
+{%- endif %}{% endfor %}
+    </ul>
+    <p class="more"><a href="/insights/">All insights &rarr;</a></p>
+  </section>
+
+  <section>
+    <h2 class="section-title">Appointments</h2>
+    <ul class="plain-list roles">
+      <li><span class="y">Since 2021</span>Associate Professor, Business School, Huanggang Normal University, China</li>
+      <li><span class="y">Since 2025</span>Adjunct Associate Professor, National Business School, The University of Faisalabad, Pakistan</li>
+      <li><span class="y">Since 2024</span>Visiting Professor, Silk Road Institute, Guangxi Technical College, Nanning, China</li>
+      <li><span class="y">Since 2024</span>Research Fellow, Shinawatra University, Thailand</li>
+      <li><span class="y">Since 2023</span>Research Fellow, INTI International University, Malaysia</li>
+      <li><span class="y">Since 2017</span>Executive Member, Cross-Border Ecommerce Research Group, Huazhong Agricultural University</li>
+      <li><span class="y">2024</span>Consultant, Asian Development Bank</li>
+    </ul>
+  </section>
+</main>
+{% endblock %}

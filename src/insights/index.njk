@@ -1,0 +1,59 @@
+---
+permalink: /insights/index.html
+nav: insights
+---
+{% extends "layouts/base.njk" %}
+
+{% block head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="canonical" href="https://amarrazzaq.com/insights" />
+
+    <meta name="description" content="Insights and perspectives by Dr. Amar Razzaq on agricultural economics, environmental sustainability, and food systems.">
+    <meta name="keywords" content="agricultural economics insights, sustainability blog, food systems analysis, environmental economics, academic blog">
+    <meta name="author" content="Amar Razzaq">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:title" content="Insights - Dr. Amar Razzaq">
+    <meta property="og:description" content="Professional insights and perspectives on agricultural economics and sustainability.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://amarrazzaq.com/insights">
+    <meta property="og:site_name" content="Amar Razzaq">
+    <meta property="og:image" content="https://amarrazzaq.com/images/amar.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Dr. Amar Razzaq">
+
+    <title>Insights - Amar Razzaq</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+{% endblock %}
+
+{% block content %}
+<main class="main-content single-column">
+    <div class="content-section">
+            <h1 class="page-title">Insights</h1>
+            <p class="page-lead">Short policy commentaries on agriculture, food and rural economies in Pakistan.</p>
+
+        <section class="articles-list">
+            <div class="articles-grid">
+{%- for a in insights %}
+                <div class="article-card">
+                    <div class="article-image"><a href="{{ a.url }}"><img src="{{ a.image }}" alt="{{ a.alt }}" loading="lazy"></a></div>
+                    <div class="article-content">
+                        <p class="article-meta">{{ a.month }}</p>
+                        <h2 class="article-title"><a href="{{ a.url }}" class="article-title-link">{{ a.title }}</a></h2>
+                        <p class="article-excerpt">{{ a.excerpt }}</p>
+                    </div>
+                </div>
+{%- endfor %}
+            </div>
+        </section>
+    </div>
+</main>
+{% endblock %}

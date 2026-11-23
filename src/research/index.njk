@@ -1,0 +1,61 @@
+---
+permalink: /research/index.html
+nav: research
+---
+{% extends "layouts/base.njk" %}
+
+{% block head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Canonical Tag -->
+    <link rel="canonical" href="https://amarrazzaq.com/research" />
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Research work and publications by Dr. Amar Razzaq in agricultural economics, water resources management, and food systems sustainability.">
+    <meta name="keywords" content="agricultural research, water resources management, food systems, sustainability research, environmental economics">
+    <meta name="author" content="Amar Razzaq">
+    <meta name="robots" content="index, follow">
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Research - Dr. Amar Razzaq">
+    <meta property="og:description" content="Explore research publications and projects in agricultural economics and sustainability.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://amarrazzaq.com/research" />
+    <meta property="og:site_name" content="Amar Razzaq">
+    <meta property="og:image" content="https://amarrazzaq.com/images/amar.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Dr. Amar Razzaq">
+    <title>Research - Amar Razzaq</title>
+    <link rel="stylesheet" href="/style.css">
+    <!-- Favicon Links -->
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+    <!-- Optional: Apple Touch Icon for better iOS support -->
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+{% endblock %}
+
+{% block content %}
+    <main class="main-content single-column">
+        <div class="content-section">
+            <h1 class="page-title">Research</h1>
+            <p class="page-lead">Selected publications, grouped by theme. A full list is on <a href="https://scholar.google.com/citations?user=Mt2iircAAAAJ&amp;hl=en">Google Scholar</a>.</p>
+
+            <section class="publications-section">
+{%- for group in publications %}
+                <div class="publication-category">
+                    <h2 class="category-title">{{ group.theme }}</h2>
+{%- for p in group.papers %}
+                    <div class="pub-item">
+                        <p class="title"><a href="https://doi.org/{{ p.doi }}">{{ p.title }}</a></p>
+                        <p class="authors">{% for a in p.authors %}{% if a == "Razzaq, A." %}<strong>{{ a }}</strong>{% else %}{{ a }}{% endif %}{% if not loop.last %}{% if loop.revindex0 == 1 %} &amp; {% else %}, {% endif %}{% endif %}{% endfor %} ({{ p.year }})</p>
+                        <p class="journal"><em>{{ p.journal }}</em>, {{ p.volume }}, {{ p.pages }}</p>
+                    </div>
+{%- endfor %}
+                </div>
+{%- endfor %}
+                <p class="more"><a href="https://scholar.google.com/citations?user=Mt2iircAAAAJ&amp;hl=en">Full list of publications on Google Scholar &rarr;</a></p>
+            </section>
+        </div>
+    </main>
+{% endblock %}

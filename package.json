@@ -1,0 +1,20 @@
+{
+  "name": "amarrazzaq-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Source for amarrazzaq.com (Eleventy static site)",
+  "type": "module",
+  "scripts": {
+    "clean": "node scripts/clean.mjs",
+    "start": "npm run clean && eleventy --serve --port 8080",
+    "build": "npm run clean && eleventy",
+    "check": "node scripts/check-site.mjs",
+    "test": "npm run build && npm run check"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "3.1.8"
+  }
+}

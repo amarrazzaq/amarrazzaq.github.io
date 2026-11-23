@@ -1,0 +1,14 @@
+<header class="site-header">
+  <div class="wrap">
+{%- if nav == "home" %}
+    <span></span>{# the home page shows the name in its own heading #}
+{%- else %}
+    <a href="/" class="site-name">{{ site.name }}</a>
+{%- endif %}
+    <nav class="site-nav" aria-label="Main">
+{%- for item in site.nav %}
+      <a href="{{ item.url }}"{% if item.key == nav %} aria-current="page"{% endif %}>{{ item.label }}</a>
+{%- endfor %}
+    </nav>
+  </div>
+</header>

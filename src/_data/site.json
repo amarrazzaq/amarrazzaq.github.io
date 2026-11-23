@@ -1,0 +1,33 @@
+{
+  "name": "Amar Razzaq",
+  "title": "Agricultural Economist",
+  "url": "https://amarrazzaq.com",
+  "copyrightYear": "2026",
+  "nav": [
+    {
+      "key": "home",
+      "label": "Home",
+      "url": "/"
+    },
+    {
+      "key": "research",
+      "label": "Research",
+      "url": "/research/"
+    },
+    {
+      "key": "outreach",
+      "label": "Outreach",
+      "url": "/outreach/"
+    },
+    {
+      "key": "services",
+      "label": "Services",
+      "url": "/services/"
+    },
+    {
+      "key": "insights",
+      "label": "Insights",
+      "url": "/insights/"
+    }
+  ]
+}
