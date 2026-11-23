@@ -141,9 +141,12 @@ tbody tr:last-child td { border-bottom: 1.5px solid var(--text); }
 @media (max-width: 640px) {
   body { font-size: 17px; }
   .main-content { padding-top: 24px; }
-  .intro { grid-template-columns: 1fr; gap: 20px; }
-  .intro-photo { width: 130px; height: 130px; }
-  .intro h1, .page-title { font-size: 1.7rem; }
+  .intro { display: block; }
+  .intro-photo { float: left; width: 104px; height: 104px; margin: 6px 18px 10px 0; }
+  .intro h1 { font-size: 1.6rem; }
+  .intro .role { font-size: .95rem; margin-bottom: 0; }
+  .intro .role + p { clear: both; padding-top: 18px; }
+  .page-title { font-size: 1.7rem; }
   .article-header .article-title { font-size: 1.7rem; }
   .dated li { flex-direction: column; gap: 0; }
   .roles li { grid-template-columns: 1fr; gap: 0; }
