@@ -1,0 +1,8 @@
+<section class="related-articles">
+  <h2 class="section-title">Related insights</h2>
+  <ul class="plain-list dated">
+{%- for a in insights %}{% if a.url == page.url %}{% for r in a.related %}{% for b in insights %}{% if b.url == r %}
+    <li><a href="{{ b.url }}">{{ b.title }}</a><span class="d">{{ b.month }}</span></li>
+{%- endif %}{% endfor %}{% endfor %}{% endif %}{% endfor %}
+  </ul>
+</section>

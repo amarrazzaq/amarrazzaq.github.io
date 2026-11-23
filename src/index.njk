@@ -46,9 +46,9 @@ nav: home
   <section>
     <h2 class="section-title">Recent policy writing</h2>
     <ul class="plain-list dated">
-      <li><a href="/insights/rethinking-pakistan-farm-economy-2024-agricultural-census.html">Rethinking Pakistan's farm economy after the 2024 Agricultural Census</a><span class="d">February 2026</span></li>
-      <li><a href="/insights/financialization-farmland-pakistan.html">The financialization of farmland in Pakistan</a><span class="d">June 2025</span></li>
-      <li><a href="/insights/rethinking-wheat-support-price-pakistan.html">Rethinking wheat: Has support price made farming too safe in Pakistan?</a><span class="d">May 2025</span></li>
+{%- for a in insights %}{% if loop.index <= 3 %}
+      <li><a href="{{ a.url }}">{{ a.title }}</a><span class="d">{{ a.month }}</span></li>
+{%- endif %}{% endfor %}
     </ul>
     <p class="more"><a href="/insights/">All insights &rarr;</a></p>
   </section>

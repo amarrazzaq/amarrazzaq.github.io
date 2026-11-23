@@ -1,0 +1,74 @@
+[
+  {
+    "url": "/insights/rethinking-pakistan-farm-economy-2024-agricultural-census.html",
+    "title": "Rethinking Pakistan’s farm economy after the 2024 Agricultural Census",
+    "month": "February 2026",
+    "image": "/images/insights/rethinking-pakistan-farm-economy-2024-agricultural-census-featured.jpg",
+    "alt": "Rethinking Pakistan’s farm economy after the 2024 Agricultural Census",
+    "excerpt": "Landholding patterns, irrigation, livestock, mechanization and data lessons from Pakistan’s 2024 Agricultural Census.",
+    "related": [
+      "/insights/financialization-farmland-pakistan.html",
+      "/insights/farm-machinery-rental-pakistan.html"
+    ]
+  },
+  {
+    "url": "/insights/financialization-farmland-pakistan.html",
+    "title": "The financialization of farmland in Pakistan: A ticking time bomb or pathway to modernization?",
+    "month": "June 2025",
+    "image": "/images/insights/farmland-financialization-pakistan.jpg",
+    "alt": "Housing society construction encroaching on former mango orchards in Multan, Pakistan",
+    "excerpt": "How real estate development and investor speculation are rapidly converting fertile land into housing and farm estates in Pakistan, raising new risks for small farmers and food security.",
+    "related": [
+      "/insights/rethinking-pakistan-farm-economy-2024-agricultural-census.html",
+      "/insights/why-young-pakistanis-leaving-farming.html"
+    ]
+  },
+  {
+    "url": "/insights/rethinking-wheat-support-price-pakistan.html",
+    "title": "Rethinking wheat: Has support price made farming too safe in Pakistan?",
+    "month": "May 2025",
+    "image": "/images/insights/wheat-support-price.jpg",
+    "alt": "Pakistan wheat support price policy",
+    "excerpt": "How decades of support prices shaped wheat farming in Pakistan, why farmers protested after deregulation, and what policy could come next.",
+    "related": [
+      "/insights/liberalizing-wheat-prices-pakistan.html",
+      "/insights/rethinking-pakistan-farm-economy-2024-agricultural-census.html"
+    ]
+  },
+  {
+    "url": "/insights/why-young-pakistanis-leaving-farming.html",
+    "title": "Why young Pakistanis are leaving farming",
+    "month": "April 2025",
+    "image": "/images/insights/pakistan-youth-leaving-agriculture.jpg",
+    "alt": "Young Pakistanis leaving farming",
+    "excerpt": "Why young people are leaving agriculture in Pakistan, what this means for food security, and how policy could bring them back.",
+    "related": [
+      "/insights/financialization-farmland-pakistan.html",
+      "/insights/rethinking-pakistan-farm-economy-2024-agricultural-census.html"
+    ]
+  },
+  {
+    "url": "/insights/liberalizing-wheat-prices-pakistan.html",
+    "title": "Liberalizing wheat prices in Pakistan: At what cost and without safety nets?",
+    "month": "April 2025",
+    "image": "/images/insights/wheat-liberalization.jpg",
+    "alt": "Wheat liberalization in Pakistan",
+    "excerpt": "An analysis of Pakistan’s removal of wheat support prices under IMF reforms and the urgent need for farmer safety nets to protect rural livelihoods.",
+    "related": [
+      "/insights/rethinking-wheat-support-price-pakistan.html",
+      "/insights/why-young-pakistanis-leaving-farming.html"
+    ]
+  },
+  {
+    "url": "/insights/farm-machinery-rental-pakistan.html",
+    "title": "Informal farm machinery rental market in Pakistan",
+    "month": "April 2025",
+    "image": "/images/insights/farm-machinery-rental.jpg",
+    "alt": "Farm machinery rental in Pakistan",
+    "excerpt": "An analysis of how Pakistan’s informal machinery rental markets enable smallholder farmers to access critical mechanization despite limited resources.",
+    "related": [
+      "/insights/rethinking-pakistan-farm-economy-2024-agricultural-census.html",
+      "/insights/why-young-pakistanis-leaving-farming.html"
+    ]
+  }
+]

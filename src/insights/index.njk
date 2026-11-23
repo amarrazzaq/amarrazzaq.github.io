@@ -40,124 +40,18 @@ nav: insights
             <h1 class="page-title">Insights</h1>
             <p class="page-lead">Short policy commentaries on agriculture, food and rural economies in Pakistan.</p>
 
-        <h2 class="section-title">Agricultural Policy Commentary</h2>
-
         <section class="articles-list">
             <div class="articles-grid">
-
+{%- for a in insights %}
                 <div class="article-card">
-                    <div class="article-image">
-                        <a href="/insights/rethinking-pakistan-farm-economy-2024-agricultural-census.html">
-                            <img src="/images/insights/rethinking-pakistan-farm-economy-2024-agricultural-census-featured.png" alt="Rethinking Pakistan’s farm economy after the 2024 Agricultural Census" onerror="this.src='/images/placeholder.jpg'">
-                        </a>
-                    </div>
+                    <div class="article-image"><a href="{{ a.url }}"><img src="{{ a.image }}" alt="{{ a.alt }}" loading="lazy"></a></div>
                     <div class="article-content">
-                        <div class="article-meta">
-                            <span class="article-date">February 26, 2026</span>
-                            <span class="article-category">Agricultural Policy</span>
-                        </div>
-                        <a href="/insights/rethinking-pakistan-farm-economy-2024-agricultural-census.html" class="article-title-link">
-                            <h3 class="article-title">Rethinking Pakistan’s Farm Economy after the 2024 Agricultural Census</h3>
-                        </a>
-                        <p class="article-excerpt">An evidence-based policy commentary on landholding patterns, irrigation, livestock, mechanization, and digital data lessons from Pakistan's latest agricultural census.</p>
-                        <a href="/insights/rethinking-pakistan-farm-economy-2024-agricultural-census.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        <p class="article-meta">{{ a.month }}</p>
+                        <h2 class="article-title"><a href="{{ a.url }}" class="article-title-link">{{ a.title }}</a></h2>
+                        <p class="article-excerpt">{{ a.excerpt }}</p>
                     </div>
                 </div>
-
-                <div class="article-card">
-                    <div class="article-image">
-                        <a href="/insights/financialization-farmland-pakistan.html">
-                            <img src="/images/insights/farmland-financialization-pakistan.jpg" alt="Housing society construction encroaching on former mango orchards in Multan, Pakistan" onerror="this.src='/images/placeholder.jpg'">
-                        </a>
-                    </div>
-                    <div class="article-content">
-                        <div class="article-meta">
-                            <span class="article-date">June 2, 2025</span>
-                            <span class="article-category">Agricultural Policy</span>
-                        </div>
-                        <a href="/insights/financialization-farmland-pakistan.html" class="article-title-link">
-                            <h3 class="article-title">The Financialization of Farmland in Pakistan: A Ticking Time Bomb or Pathway to Modernization?</h3>
-                        </a>
-                        <p class="article-excerpt">How real estate development and investor speculation are rapidly converting fertile land into housing and farm estates in Pakistan—raising new risks for small farmers and food security.</p>
-                        <a href="/insights/financialization-farmland-pakistan.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <div class="article-card">
-                    <div class="article-image">
-                        <a href="/insights/rethinking-wheat-support-price-pakistan.html">
-                            <img src="/images/insights/wheat-support-price.jpg" alt="Pakistan wheat support price policy" onerror="this.src='/images/placeholder.jpg'">
-                        </a>
-                    </div>
-                    <div class="article-content">
-                        <div class="article-meta">
-                            <span class="article-date">May 17, 2025</span>
-                            <span class="article-category">Agricultural Policy</span>
-                        </div>
-                        <a href="/insights/rethinking-wheat-support-price-pakistan.html" class="article-title-link">
-                            <h3 class="article-title">Rethinking Wheat: Has Support Price Made Farming Too Safe in Pakistan?</h3>
-                        </a>
-                        <p class="article-excerpt">Did decades of support price make wheat farming too easy in Pakistan? This article examines how MSP shaped habits, farmer protests after deregulation, and what new policies are needed to secure the future of farming.</p>
-                        <a href="/insights/rethinking-wheat-support-price-pakistan.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <div class="article-card">
-                    <div class="article-image">
-                        <a href="/insights/why-young-pakistanis-leaving-farming.html">
-                            <img src="/images/insights/pakistan-youth-leaving-agriculture.jpg" alt="Young Pakistanis leaving farming" onerror="this.src='/images/placeholder.jpg'">
-                        </a>
-                    </div>
-                    <div class="article-content">
-                        <div class="article-meta">
-                            <span class="article-date">April 23, 2025</span>
-                            <span class="article-category">Agricultural Economics</span>
-                        </div>
-                        <a href="/insights/why-young-pakistanis-leaving-farming.html" class="article-title-link">
-                            <h3 class="article-title">Why Young Pakistanis Are Leaving Farming</h3>
-                        </a>
-                        <p class="article-excerpt">An analysis of Pakistan's youth exodus from agriculture, examining the causes, consequences, and policy pathways to re-engage the next generation in farming for national food security.</p>
-                        <a href="/insights/why-young-pakistanis-leaving-farming.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <div class="article-card">
-                    <div class="article-image">
-                        <a href="/insights/liberalizing-wheat-prices-pakistan.html">
-                            <img src="/images/insights/wheat-liberalization.png" alt="Wheat liberalization in Pakistan" onerror="this.src='/images/placeholder.jpg'">
-                        </a>
-                    </div>
-                    <div class="article-content">
-                        <div class="article-meta">
-                            <span class="article-date">April 14, 2025</span>
-                            <span class="article-category">Agricultural Policy</span>
-                        </div>
-                        <a href="/insights/liberalizing-wheat-prices-pakistan.html" class="article-title-link">
-                            <h3 class="article-title">Liberalizing Wheat Prices in Pakistan: At What Cost and Without Safety Nets?</h3>
-                        </a>
-                        <p class="article-excerpt">An analysis of Pakistan's removal of wheat support prices under IMF reforms and the urgent need for farmer safety nets to protect rural livelihoods.</p>
-                        <a href="/insights/liberalizing-wheat-prices-pakistan.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <div class="article-card">
-                    <div class="article-image">
-                        <a href="/insights/farm-machinery-rental-pakistan.html">
-                            <img src="/images/insights/farm-machinery-rental.jpg" alt="Farm Machinery Rental" onerror="this.src='/images/placeholder.jpg'">
-                        </a>
-                    </div>
-                    <div class="article-content">
-                        <div class="article-meta">
-                            <span class="article-date">April 12, 2025</span>
-                            <span class="article-category">Agricultural Economics</span>
-                        </div>
-                        <a href="/insights/farm-machinery-rental-pakistan.html" class="article-title-link">
-                            <h3 class="article-title">Informal Farm Machinery Rental Market in Pakistan</h3>
-                        </a>
-                        <p class="article-excerpt">An analysis of how Pakistan's informal machinery rental markets enable smallholder farmers to access critical mechanization despite limited resources.</p>
-                        <a href="/insights/farm-machinery-rental-pakistan.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
+{%- endfor %}
             </div>
         </section>
     </div>
