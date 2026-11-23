@@ -50,12 +50,14 @@ section { margin-bottom: 40px; }
 .contact { font: 400 .95rem var(--sans); color: var(--muted); margin: 0; }
 .plain-list { list-style: none; margin: 0; padding: 0; }
 .pubs li { margin-bottom: 16px; }
-.pubs .t { display: block; }
-.pubs .m, .meta { color: var(--muted); font-size: .92rem; }
+.pubs .t { display: block; color: var(--text); line-height: 1.5; }
+.pubs .m strong { color: var(--text); font-weight: 600; }
+.pubs .m, .meta { color: var(--muted); font-size: .9rem; line-height: 1.5; }
+.pubs .m { display: block; }
 .dated li { display: flex; justify-content: space-between; gap: 20px; padding: 8px 0; border-top: 1px solid var(--rule); }
 .dated .d { color: var(--muted); font: 400 .9rem var(--sans); white-space: nowrap; }
-.roles li { padding: 4px 0; }
-.roles .y { color: var(--muted); display: inline-block; min-width: 110px; font: 400 .92rem var(--sans); }
+.roles li { display: grid; grid-template-columns: 110px 1fr; gap: 16px; padding: 5px 0; line-height: 1.5; }
+.roles .y { color: var(--muted); font: 400 .9rem/1.75 var(--sans); }
 .more { font: 600 .92rem var(--sans); }
 
 /* ---------- Research: publication list ---------- */
@@ -151,7 +153,7 @@ tbody tr:last-child td { border-bottom: 1.5px solid var(--text); }
   .intro h1, .page-title { font-size: 1.7rem; }
   .article-header .article-title { font-size: 1.7rem; }
   .dated li { flex-direction: column; gap: 0; }
-  .roles .y { display: block; }
+  .roles li { grid-template-columns: 1fr; gap: 0; }
   .article-card { grid-template-columns: 96px 1fr; gap: 14px; }
   .article-card .article-image img { width: 96px; height: 72px; }
   .article-excerpt { display: none; }
