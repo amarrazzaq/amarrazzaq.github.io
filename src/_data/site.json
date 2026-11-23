@@ -3,12 +3,31 @@
   "title": "Agricultural Economist",
   "url": "https://amarrazzaq.com",
   "copyrightYear": "2026",
-  "counterImage": "https://hitwebcounter.com/counter/counter.php?page=20154781&style=0007&nbdigits=5&type=page&initCount=2750",
   "nav": [
-    { "key": "home", "label": "Home", "url": "/" },
-    { "key": "research", "label": "Research", "url": "/research/" },
-    { "key": "outreach", "label": "Outreach", "url": "/outreach/" },
-    { "key": "services", "label": "Services", "url": "/services/" },
-    { "key": "insights", "label": "Insights", "url": "/insights/" }
+    {
+      "key": "home",
+      "label": "Home",
+      "url": "/"
+    },
+    {
+      "key": "research",
+      "label": "Research",
+      "url": "/research/"
+    },
+    {
+      "key": "outreach",
+      "label": "Outreach",
+      "url": "/outreach/"
+    },
+    {
+      "key": "services",
+      "label": "Services",
+      "url": "/services/"
+    },
+    {
+      "key": "insights",
+      "label": "Insights",
+      "url": "/insights/"
+    }
   ]
 }

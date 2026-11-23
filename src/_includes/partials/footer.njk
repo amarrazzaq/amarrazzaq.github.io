@@ -1,19 +1,5 @@
-{#- The home page uses the plain footer (no separator); every other page uses footer-meta. -#}
-<footer>
-{%- if footer == "plain" %}
-  <p>
-    <a href="https://www.hitwebcounter.com" target="_blank" rel="noopener">
-      <img src="{{ site.counterImage | safe }}" title="Counter Widget" alt="Visit counter" border="0"/>
-    </a>
-    <span>&copy; {{ site.copyrightYear }} {{ site.name }} | All Rights Reserved</span>
-  </p>
-{%- else %}
-    <p class="footer-meta">
-        <a href="https://www.hitwebcounter.com" target="_blank" rel="noopener">
-            <img src="{{ site.counterImage | safe }}" title="Counter Widget" alt="Visit counter For Websites" border="0" />
-        </a>
-        <span>|</span>
-        <span>&copy; {{ site.copyrightYear }} {{ site.name }} | All Rights Reserved</span>
-    </p>
-{%- endif %}
+<footer class="site-footer">
+  <div class="wrap">
+    <p>&copy; {{ site.copyrightYear }} {{ site.name }}</p>
+  </div>
 </footer>

@@ -71,8 +71,6 @@ nav: insights
 
     <title>Wheat Deregulation in Pakistan – Who Carries the Risk?</title>
     <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
 
     <!-- Favicon Links -->
     <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
@@ -333,31 +331,3 @@ In sum, the argument for liberalization is that the wheat MSP had become financi
     </main>
 {% endblock %}
 
-{% block scripts %}
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Find all superscripts in the article content
-    const supers = document.querySelectorAll('.article-content sup');
-    
-    // Loop through each superscript
-    supers.forEach(sup => {
-        if (sup.textContent.match(/^\d+$/)) {
-            // Override style using !important to remove any blue underlines
-            sup.style.setProperty('color', '#f4821e', 'important');
-            sup.style.setProperty('text-decoration', 'none', 'important');
-            sup.style.setProperty('text-decoration-color', 'white', 'important');
-        }
-    });
-    
-    // Also target any links inside superscripts if they exist
-    const supLinks = document.querySelectorAll('.article-content sup a');
-    supLinks.forEach(link => {
-        if (link.textContent.match(/^\d+$/)) {
-            link.style.setProperty('color', '#f4821e', 'important');
-            link.style.setProperty('text-decoration', 'none', 'important');
-            link.style.setProperty('text-decoration-color', 'white', 'important');
-        }
-    });
-});
-</script>
-{% endblock %}
